@@ -93,7 +93,7 @@ bool verificationHorizontale(unsigned short int ligne, unsigned short int nombre
     //Variable
     unsigned short int suite = 0; //Calcul le nombre de couleur cote a cote
     //Traitement
-    for (int i = 1; i < 6; i++) //Pour toute la ligne
+    for (int i = 1; i < 7; i++) //Pour toute la ligne
     {
         //Si il y en a 2 a coté
         if (tableau[ligne][i] == nombreAverifier && nombreAverifier == tableau[ligne][i - 1]) 
@@ -206,8 +206,7 @@ bool verificationJeu(unsigned short int colonne, unsigned short int ligne, unsig
     //Traitement
     
     //Verif Horizontale
-    verif = verificationHorizontale(ligne, nombreAverifier, tableau);
-    if (verif == false) //Si il trouve quelque chose on sort.
+    if (!verificationHorizontale(ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
     {return false;}
 
     //Verif Vertical
