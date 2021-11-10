@@ -114,13 +114,13 @@ bool verificationVertical(unsigned short int colonne, unsigned short int nombreA
     //Variable
     unsigned short int suite = 0; //Calcul le nombre de couleur cote a cote
     //Traitement
-    for (int i = 5; i > 0; i--) //Pour toute la colonne
+    for (int i = 5; i >= 0; i--) //Pour toute la colonne
     {
         //Si il en trouve 2 a coté
-        if (tableau[i][colonne] == nombreAverifier && nombreAverifier == tableau[i - 1][colonne])
+        if (tableau[i][colonne] == nombreAverifier)
         {
             suite++; //Augmentation de la suite
-            if (suite == 3)  //Si il en trouve 3 fois 2 a coté le joueur a gagner 
+            if (suite == 4)  //Si il en trouve 3 fois 2 a coté le joueur a gagner 
             {return false;}
         }
         else{suite = 0;} //On remet le compteur a 0
@@ -133,8 +133,11 @@ bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int l
 {
     //Variable
     unsigned short int suite = 0;                  //Calcul le nombre de couleur cote a cote
-    unsigned short int placementColonne = colonne; //Longueur de la diagonal
-    unsigned short int placementLigne = ligne;     //Placement de la verification
+    unsigned short int placementColonne; //Longueur de la diagonal
+    unsigned short int placementLigne;     //Placement de la verification
+
+    unsigned short int placementColonne = colonne;
+    unsigned short int placementLigne = ligne;
 
     //Initialisation des paramettres
     //Se mettre le plus en Haut a Gauche possible
@@ -149,7 +152,7 @@ bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int l
     while (placementLigne < 5 && placementColonne < 6)
     {
         //Si on trouve 2 jetons a coter
-        if (tableau[placementLigne][placementColonne] == nombreAverifier && tableau[placementLigne + 1][placementColonne + 1] == nombreAverifier)
+        if (tableau[placementLigne][placementColonne] == nombreAverifier)
         {
             suite++; //Augmentation de la suite
             if (suite == 3) //Si on en trouve 3. On sort
