@@ -105,6 +105,8 @@ bool verificationHorizontale(unsigned short int ligne, unsigned short int nombre
         //Sinon il remet le compteur a 0
         else {suite = 0;}
     }
+
+    cout << "test" << endl;
     return true;//Si on a rien trouvé on sort
 }
 
