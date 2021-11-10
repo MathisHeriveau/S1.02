@@ -77,7 +77,6 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
 
         cout << "Saisissez une case : "; //Saisie de la colonne du jeton
         cin >> choixDuJoueur;
-
         if (choixDuJoueur == 999){break;}
 
         //verification si la colonne est pleine

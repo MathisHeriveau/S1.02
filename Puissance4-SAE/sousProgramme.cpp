@@ -144,6 +144,7 @@ bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int l
     placementColonne = colonne;
     placementLigne = ligne;
 
+
     //Initialisation des paramettres
     //Se mettre le plus en haut a droite possible
     while (placementLigne != 0 && placementColonne != 6)
@@ -151,10 +152,9 @@ bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int l
         placementLigne--;   //On se decale vers le haut
         placementColonne++; //On se decale vers la droite
     }
-
     //Traitement
     //Diagonal, on se deplace en bas a gauche a chaque fois, en verfifiant si il y a pas 4 jetons cote a cote
-    while (placementLigne <= 5 && placementColonne >= 0)
+    while (placementLigne <= 5 && placementColonne > 0)
     {
         //Si on trouve 2 jetons cote a cote
         if (tableau[placementLigne][placementColonne] == nombreAverifier)
