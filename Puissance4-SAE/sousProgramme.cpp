@@ -215,7 +215,7 @@ bool verificationJeu(unsigned short int colonne, unsigned short int ligne, unsig
         !verificationDiagonalDroite(colonne, ligne, nombreAverifier, tableau) ||
         !verificationDiagonalGauche(colonne, ligne, nombreAverifier, tableau)
         ) {
-            return false
+            return false;
         }
 
     return true; //Si on trouve rien. On sort
