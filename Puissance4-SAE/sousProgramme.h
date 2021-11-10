@@ -107,26 +107,6 @@ void afficherTexteEnCouleur(string chaine, Couleur couleur, bool retourALaLigne 
 
 
 /**
- * @brief Met en pause l'exécution du programme durant un temps
- * déterminé ou jusqu'à ce que l'utilisateur appuie sur une touche.
- *
- * @param [in] dureeEnSecondes la durée en secondes de la pause. Si ce 
- * paramètre est égal à 0, le programme s'interrompt jusqu'à ce que
- * l'utilisateur appuie sur une touche.
- */
-void pause(unsigned int dureeEnSecondes = 0);
-
-
-/**
- * @brief Permet de verifier la ligne horizontale/verticale et la diagonale gauche/droite
- *
- * @param [in] min borne minimum
- * @param [in] max borne maximum
- */
-int random(int min, int max);
-
-
-/**
  * @brief Permet de verifier la ligne horizontale/verticale et la diagonale gauche/droite
  *
  * @param [in] ligne permet de localisé la diagonal a verifier

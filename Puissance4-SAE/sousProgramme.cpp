@@ -7,40 +7,7 @@
 
 #include "sousProgramme.h"
 #include <iostream>
-#include <conio.h> // pour la fonction _getch utilisée dans la procédure pause()
-#include <chrono>  // pour la fonction now() utilisée dans la fonction random()
-#include <random>  // pour la fonction random
 
-//Fonction random
-int random(int min, int max)
-{
-    std::default_random_engine generateur;
-    std::uniform_int_distribution<int> distributionNombres;
-    unsigned int tempsActuel = static_cast<unsigned int>(chrono::steady_clock::now().time_since_epoch().count());
-    generateur.seed(tempsActuel);
-
-    return ((distributionNombres(generateur) % (max + 1)) + min);
-}
-
-
-//Fonction pause avec touche
-void pause(unsigned int dureeEnSecondes)
-{
-    if (dureeEnSecondes == 0) 
-    {
-        //Mise en pause jusqu'a la pression de la touche
-        char touche;
-        touche = char(_getch());    
-        touche = ' ';
-        cout << touche << endl;
-    }
-    else
-    {
-        //Pause de dureeEnSecondes * 10000
-        const unsigned short int UNE_MILLISECONDE = 1000;
-        Sleep(dureeEnSecondes * UNE_MILLISECONDE); 
-    }
-}
 
 //Procedure d'affichage de texte
 void afficherTexteEnCouleur(string chaine, Couleur couleur, bool retourALaLigne)

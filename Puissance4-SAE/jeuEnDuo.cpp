@@ -6,6 +6,7 @@
  */
 #include "sousProgramme.h"
 #include <iostream>
+#include <conio.h> // pour la fonction _getch
 using namespace std;
 
 void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJoueurUn, string NomJoueurDeux){
