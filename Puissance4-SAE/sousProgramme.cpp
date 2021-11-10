@@ -209,23 +209,14 @@ bool verificationJeu(unsigned short int colonne, unsigned short int ligne, unsig
     //Traitement
     
     //Verif Horizontale
-    if (!verificationHorizontale(ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
-    {return false;}
-
-    //Verif Vertical
-    verif = verificationVertical(colonne, nombreAverifier, tableau);
-    if (verif == false) //Si il trouve quelque chose on sort.
-    {return false;}
-
-    //Verif de haut en bas de gauche a droite
-    verif = verificationDiagonalDroite(colonne, ligne, nombreAverifier, tableau);
-    if (verif == false) //Si il trouve quelque chose on sort.
-    {return false;}
-
-    //Verif de haut en bas de droite a gauche
-    verif = verificationDiagonalGauche(colonne, ligne, nombreAverifier, tableau);
-    if (verif == false) //Si il trouve quelque chose on sort.
-    {return false;}
+    if (
+        verificationHorizontale(ligne, nombreAverifier, tableau) &&
+        verificationVertical(ligne, nombreAverifier, tableau) &&
+        verificationDiagonalDroite(colonne, ligne, nombreAverifier, tableau) &&
+        verificationDiagonalGauche(colonne, ligne, nombreAverifier, tableau)
+        ) {
+            return false
+        }
 
     return true; //Si on trouve rien. On sort
 }
