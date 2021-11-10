@@ -136,8 +136,8 @@ bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int l
     unsigned short int placementColonne; //Longueur de la diagonal
     unsigned short int placementLigne;     //Placement de la verification
 
-    unsigned short int placementColonne = colonne;
-    unsigned short int placementLigne = ligne;
+    placementColonne = colonne;
+    placementLigne = ligne;
 
     //Initialisation des paramettres
     //Se mettre le plus en Haut a Gauche possible
