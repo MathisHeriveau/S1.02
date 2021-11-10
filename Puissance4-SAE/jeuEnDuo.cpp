@@ -52,6 +52,7 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
         afficherTitre();
         afficherJeu(tableauDeJeu,joueur1,joueur2);
         cout << "\n                        revenir au menu(999)";
+
         //Si le tour est paire le joueur 2 commence
         if (tourDeJeu % 2 == 1)
         {
@@ -59,8 +60,7 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
             numeroDeLaCase = 1;             //Numero du joueur
 
             //Affichage du tour
-            cout << "\n\nC'est a " << nomDuJoueur << " de jouer." << endl;  //Affiche le nom du joueur
-            cout << "Vous avez les jetons de couleur ";
+            cout << "\n\nC'est a " << nomDuJoueur << " de jouer. \nVous avez les jetons de couleur ";  //Affiche le nom du joueur
             afficherCouleurJoueur(joueur1);  //Affiche la couleur du jetons du joueur    
             cout << "." << endl;
         }
@@ -70,21 +70,21 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
             numeroDeLaCase = 2;             //Numero du joueur
 
             //Affichage du tour
-            cout << "\n\nC'est a " << nomDuJoueur << " de jouer." << endl; //Affiche le nom du joueur
-            cout << "Vous avez les jetons de couleur ";
+            cout << "\n\nC'est a " << nomDuJoueur << " de jouer.\nVous avez les jetons de couleur "; //Affiche le nom du joueur
             afficherCouleurJoueur(joueur2);  //Affiche la couleur du jetons du joueur
             cout << "." << endl;
         }
 
         cout << "Saisissez une case : "; //Saisie de la colonne du jeton
         cin >> choixDuJoueur;
+
         if (choixDuJoueur == 999){break;}
 
         //verification si la colonne est pleine
         while (choixDuJoueur < 0 || choixDuJoueur > 6 || tableauDeJeu[0][choixDuJoueur] > 0)
         {
             if (choixDuJoueur == 999){statutPartie=false ; break;}
-            cout << "Saisissez une case : ";    //Annonce la saisie
+            cout << "Saisissez une case valide : ";    //Annonce la saisie
             cin >> choixDuJoueur;
         }
 
@@ -100,7 +100,6 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
             position++; //On descend de case
         }
         if(choixDuJoueur!=999){
-        
         //Verification
         verificationJeu(choixDuJoueur, position, numeroDeLaCase, tableauDeJeu, statutPartie, nomDeLaVerifGagner);
         if (statutPartie==false){break;}
@@ -116,24 +115,26 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
         system("cls"); //Clear le terminal
         afficherTitre();
         afficherJeu(tableauDeJeu,joueur1,joueur2); //Affiche le jeu
-    }
-    
-    //Si il y un gagnant
-    if (egalite==false && choixDuJoueur != 999){
-        afficherTexteEnCouleur("\n\nNOUS AVONS UN GAGNANT ! ! !\n", rouge, true); //Gagnant 
-        //Affichage de la position du jeton clef
-        cout << nomDuJoueur << " gagne la partie en alignant 4 pions " << nomDeLaVerifGagner << ".";
-        
-    }else if (egalite==true && choixDuJoueur != 999)
-    {
-        afficherTexteEnCouleur("\n\nEGALITE ! ! !", rouge, true);  //Egalité
-        
-    }
-    if (choixDuJoueur!=999){
+
+        //Si il y un gagnant
+        if (egalite==false)
+        {
+            afficherTexteEnCouleur("\n\nNOUS AVONS UN GAGNANT ! ! !\n", rouge, true); //Gagnant 
+            //Affichage de la position de la verification
+            cout << nomDuJoueur << " gagne la partie en alignant 4 pions " << nomDeLaVerifGagner << ".";
+        }
+        else
+        {
+            afficherTexteEnCouleur("\n\nEGALITE ! ! !", rouge, true);  //Egalité
+        }
+
+        //Demande si le joueur veut refaire une partie ou retourner au lobby
         cout << "\n\nAppuyer sur r pour recommencer, sinon tapper une autre touche.";
         choixDeRenouvellerLaPartie=_getwch();
+        //Si il veut recommencer
         if (choixDeRenouvellerLaPartie == 'r'){
             jeuDuo(joueur1,joueur2,NomJoueurUn,NomJoueurDeux);
         }
-    } 
+    }
+    
 }
