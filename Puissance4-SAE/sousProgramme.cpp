@@ -210,9 +210,9 @@ bool verificationJeu(unsigned short int colonne, unsigned short int ligne, unsig
     
     //Verif Horizontale
     if (
-        verificationHorizontale(ligne, nombreAverifier, tableau) &&
-        verificationVertical(ligne, nombreAverifier, tableau) &&
-        verificationDiagonalDroite(colonne, ligne, nombreAverifier, tableau) &&
+        verificationHorizontale(ligne, nombreAverifier, tableau) ||
+        verificationVertical(ligne, nombreAverifier, tableau) ||
+        verificationDiagonalDroite(colonne, ligne, nombreAverifier, tableau) ||
         verificationDiagonalGauche(colonne, ligne, nombreAverifier, tableau)
         ) {
             return false
