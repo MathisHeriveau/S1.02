@@ -93,13 +93,13 @@ bool verificationHorizontale(unsigned short int ligne, unsigned short int nombre
     //Variable
     unsigned short int suite = 0; //Calcul le nombre de couleur cote a cote
     //Traitement
-    for (int i = 1; i < 7; i++) //Pour toute la ligne
+    for (int i = 0; i < 6; i++) //Pour toute la ligne
     {
         //Si il y en a 2 a coté
-        if (tableau[ligne][i] == nombreAverifier && nombreAverifier == tableau[ligne][i - 1]) 
+        if (tableau[ligne][i] == nombreAverifier) 
         {
             suite++; //Augmentation de la suite
-            if (suite == 3) //Si il en trouve 3 fois 2 a coté le joueur a gagner 
+            if (suite == 4) //Si il en trouve 3 fois 2 a coté le joueur a gagner 
             {return false;}
         }
         //Sinon il remet le compteur a 0
