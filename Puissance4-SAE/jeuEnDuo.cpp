@@ -22,6 +22,7 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
 
     string nomDuJoueur;   //Nom du joueur au tour donné
     string nomDuGagnant;  //Nom du gagnant
+    string nomDeLaVerifGagner; //Le nom de la verificarion qui fait gagner le joueur
 
     bool trouve = false;      //Permettant de savoir si il y a de la place dans la colonne
     bool statutPartie = true; //Le statut de la partie : true = en jeu ; false = fin du jeu
@@ -98,8 +99,9 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
             position++; //On descend de case
         }
         if(choixDuJoueur!=999){
-            //Verif
-        statutPartie = verificationJeu(choixDuJoueur, position, numeroDeLaCase, tableauDeJeu);
+        
+        //Verification
+        verificationJeu(choixDuJoueur, position, numeroDeLaCase, tableauDeJeu, statutPartie, nomDeLaVerifGagner);
         if (statutPartie==false){break;}
         if (tourDeJeu==44){statutPartie=false; egalite=true;} //Si il n'y a plus de case libre il y a egalite
         //Fin de la manche
@@ -117,14 +119,13 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
     
     //Si il y un gagnant
     if (egalite==false && choixDuJoueur != 999){
-        afficherTexteEnCouleur("\n\nNOUS AVONS UN GAGNANT ! ! !\n", vert, true); //Gagnant 
+        afficherTexteEnCouleur("\n\nNOUS AVONS UN GAGNANT ! ! !\n", rouge, true); //Gagnant 
         //Affichage de la position du jeton clef
-        cout << nomDuJoueur << " gagne la partie grace au jeton depose a la ligne " << position + 1 << " de la " << choixDuJoueur << "eme colonne(s) !";
+        cout << nomDuJoueur << " gagne la partie en alignant 4 pions " << nomDeLaVerifGagner << ".";
         
     }else if (egalite==true && choixDuJoueur != 999)
     {
-        afficherTexteEnCouleur("\n\nEGALITE ! ! !\n", vert, true);  //Egalité
-        cout << "\n\nAppuyer sur r pour recommencez";
+        afficherTexteEnCouleur("\n\nEGALITE ! ! !", rouge, true);  //Egalité
         
     }
     if (choixDuJoueur!=999){

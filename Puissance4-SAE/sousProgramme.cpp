@@ -157,7 +157,7 @@ bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int l
         if (tableau[placementLigne][placementColonne] == nombreAverifier)
         {
             suite++; //Augmentation de la suite
-            if (suite == 3) //Si on en trouve 3. On sort
+            if (suite == 4) //Si on en trouve 3. On sort
             {return false;}
         }
         else{suite = 0;} //On remet le compteur a 0
@@ -173,8 +173,11 @@ bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int l
 {
     //Variable
     unsigned short int suite = 0;                  //Calcul le nombre de couleur cote a cote
-    unsigned short int placementColonne = colonne; //Longueur de la diagonal
-    unsigned short int placementLigne = ligne;     //Placement de la verification
+    unsigned short int placementColonne; //Longueur de la diagonal
+    unsigned short int placementLigne;     //Placement de la verification
+
+    placementColonne = colonne;
+    placementLigne = ligne;
 
     //Initialisation des paramettres
     //Se mettre le plus en haut a droite possible
@@ -186,13 +189,13 @@ bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int l
 
     //Traitement
     //Diagonal, on se deplace en bas a gauche a chaque fois, en verfifiant si il y a pas 4 jetons cote a cote
-    while (placementLigne < 5 && placementColonne > 0)
+    while (placementLigne <= 5 && placementColonne >= 0)
     {
         //Si on trouve 2 jetons cote a cote
-        if (tableau[placementLigne][placementColonne] == nombreAverifier && tableau[placementLigne + 1][placementColonne - 1] == nombreAverifier)
+        if (tableau[placementLigne][placementColonne] == nombreAverifier)
         {
             suite++; //Augmentation de la suite
-            if (suite == 3) //Si il en trouve 3 d'affiler. On sort
+            if (suite == 4) //Si il en trouve 3 d'affiler. On sort
             {return false;}
         }
         else{suite = 0;} //On remet le compteur a 0
@@ -204,23 +207,13 @@ bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int l
 }
 
 //Fonction de verification complete 
-bool verificationJeu(unsigned short int colonne, unsigned short int ligne, unsigned short int nombreAverifier, unsigned short int tableau[6][7])
+void verificationJeu(unsigned short int colonne, unsigned short int ligne, unsigned short int nombreAverifier, unsigned short int tableau[6][7], bool& etatVerification, string& nomDeLaVerif)
 {
-    //Variable
-    bool verif;
-    //Traitement
-    
     //Verif Horizontale
-    if (
-        !verificationHorizontale(ligne, nombreAverifier, tableau) ||
-        !verificationVertical(colonne, nombreAverifier, tableau) ||
-        !verificationDiagonalDroite(colonne, ligne, nombreAverifier, tableau) ||
-        !verificationDiagonalGauche(colonne, ligne, nombreAverifier, tableau)
-        ) {
-            return false;
-        }
-
-    return true; //Si on trouve rien. On sort
+    if (!verificationHorizontale(ligne, nombreAverifier, tableau)){etatVerification = false; nomDeLaVerif = "horizontalement"; }
+    if (!verificationVertical(colonne,nombreAverifier,tableau)){etatVerification = false; nomDeLaVerif = "verticalement"; }
+    if (!verificationDiagonalGauche(colonne,ligne,nombreAverifier,tableau)){etatVerification = false; nomDeLaVerif = "diagonalement (g)"; }
+    if (!verificationDiagonalDroite(colonne,ligne,nombreAverifier,tableau)){etatVerification = false; nomDeLaVerif = "diagonalement (d)"; }
 }
 
 void afficherTitre(){

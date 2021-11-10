@@ -134,7 +134,7 @@ int random(int min, int max);
  * @param [in] nombreAverifier Comme chaque joueur a un numero, on verifiera qu'un seul joueur a la fois
  * @param [in] tableau le tableau contenant toutes les informations du jeu
  */
-bool verificationJeu(unsigned short int colonne, unsigned short int ligne, unsigned short int nombreAverifier, unsigned short int tableau[6][7]);
+void verificationJeu(unsigned short int colonne, unsigned short int ligne, unsigned short int nombreAverifier, unsigned short int tableau[6][7], bool& etatVerification, string& nomDeLaVerif);
 
 
 /**
