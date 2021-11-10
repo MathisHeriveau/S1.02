@@ -12,7 +12,7 @@ void option(unsigned short int& joueur1, unsigned short int& joueur2)
 {
 
     //Variables
-    string choixDeLoption;
+    char choixDeLoption;
     bool exit = false;
     //Affichage du nom du jeu
     while (exit != true)
@@ -28,7 +28,7 @@ void option(unsigned short int& joueur1, unsigned short int& joueur2)
         cout << "\n\nQue voulez vous faire ? ";
         choixDeLoption=_getwch();
         
-        if (choixDeLoption == "x")
+        if (choixDeLoption == 'x')
         {
             break;
         }
@@ -38,12 +38,12 @@ void option(unsigned short int& joueur1, unsigned short int& joueur2)
         cout << "Les couleurs disponibles sont : \n";
         cout << "Gris = 7,\nbleu = 9,\nvert = 10,\ncyan = 11,\nrouge = 12,\nviolet = 13,\njaune = 14,\nblanc = 15";
         
-        if (choixDeLoption == "j")
+        if (choixDeLoption == 'j')
         {
             cout << "\n\nQuelle couleur voulez-vous avoir pour le joueur 1 ? ";
             cin >> joueur1;
         }
-        else if (choixDeLoption == "c")
+        else if (choixDeLoption == 'c')
         {
             cout << "\n\nQuelle couleur voulez-vous avoir pour le joueur 2 / console ? ";
             cin >> joueur2;
