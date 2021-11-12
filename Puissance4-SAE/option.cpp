@@ -8,22 +8,20 @@
 #include <iostream>
 using namespace std;
 
-void option(unsigned short int& joueur1, unsigned short int& joueur2)
+void option(unsigned short int& couleurJoueur1, unsigned short int& couleurJoueur2)
 {
 
     //Variables
     char choixDeLoption;
-    bool exit = false;
+    bool sortie = false;
     //Affichage du nom du jeu
-    while (exit != true)
+    while (sortie != true)
     {
-        system("cls");
         afficherTitre();
         cout << "Vous avez selectionne l'option.\n\n";
 
         //Choisir la couleur
-        cout << "Voulez vous changer la couleur du titre, du joueur 1 ou du joueur 2 / console ?\n";
-        cout << "                         joueur 1(j)                    joueur 2 / console (c)\n";
+        cout << "Voulez vous changer la couleur du joueur 1 (j) ou du joueur 2 (c) ?\n";
         cout << "Vous pouvez quittez le jeu (x)\n";
         cout << "\n\nQue voulez vous faire ? ";
         choixDeLoption=static_cast<char>(_getwch());
@@ -32,7 +30,6 @@ void option(unsigned short int& joueur1, unsigned short int& joueur2)
         {
             break;
         }
-        system("cls");
         afficherTitre();
         cout << "Vous avez selectionne l'option.\n\n";
         cout << "Les couleurs disponibles sont : \n";
@@ -41,12 +38,12 @@ void option(unsigned short int& joueur1, unsigned short int& joueur2)
         if (choixDeLoption == 'j')
         {
             cout << "\n\nQuelle couleur voulez-vous avoir pour le joueur 1 ? ";
-            cin >> joueur1;
+            cin >> couleurJoueur1;
         }
         else if (choixDeLoption == 'c')
         {
             cout << "\n\nQuelle couleur voulez-vous avoir pour le joueur 2 / console ? ";
-            cin >> joueur2;
+            cin >> couleurJoueur2;
         }
         
     }

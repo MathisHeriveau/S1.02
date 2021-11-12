@@ -21,8 +21,8 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
     //-------------------------------------------------------
     char choixDeRenouvellerLaPartie;      //L'utilisateur choisi de continuer ou pas le jeux
 
-    string nomDuJoueur;   //Nom du joueur au tour donné
-    string nomDuGagnant;  //Nom du gagnant
+    string nomDuJoueur;        //Nom du joueur au tour donné
+    string nomDuGagnant;       //Nom du gagnant
     string nomDeLaVerifGagner; //Le nom de la verificarion qui fait gagner le joueur
 
     bool trouve = false;      //Permettant de savoir si il y a de la place dans la colonne
