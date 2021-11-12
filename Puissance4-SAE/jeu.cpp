@@ -6,7 +6,7 @@
  */
 #include "sousProgramme.h"
 #include <iostream>
-#include <conio.h> // pour la fonction _getch
+#include <conio.h> // pour la fonction _getwch
 using namespace std;
 
 void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJoueurUn, string NomJoueurDeux){
@@ -83,7 +83,7 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
         while (choixDuJoueur > 6 || tableauDeJeu[0][choixDuJoueur] > 0)
         {
             if (choixDuJoueur == 999){statutPartie=false ; break;}
-            cout << "Saisissez une case valide : ";    //Annonce la saisie
+            cout << "Saisissez une case valide [0..6]: ";    //Annonce la saisie
             cin >> choixDuJoueur;
         }
 
@@ -129,7 +129,7 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
 
         //Demande si le joueur veut refaire une partie ou retourner au lobby
         cout << "\n\nAppuyer sur r pour recommencer, sinon tapper une autre touche.";
-        choixDeRenouvellerLaPartie=_getwch();
+        choixDeRenouvellerLaPartie=static_cast<char>(_getwch());
         //Si il veut recommencer
         if (choixDeRenouvellerLaPartie == 'r'){
             jeuDuo(joueur1,joueur2,NomJoueurUn,NomJoueurDeux);

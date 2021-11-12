@@ -35,7 +35,7 @@ int main(void)
         cout << "Une option permettant de changer de couleur est possible (o)" << endl;
         cout << "Vous pouvez quittez le jeu (x)\n";
         cout << "\n\nQue voulez vous faire ? ";
-        modeDeJeu=_getwch();
+        modeDeJeu=static_cast<char>(_getwch());
         if (modeDeJeu == 'd')
         {
             //Affichage du nom du jeu
