@@ -19,17 +19,17 @@ using namespace std;
  * @param [in] joueur2 la couleur du joueur numero 2
  * 
  */
-void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJoueurUn, string NomJoueurDeux);
+void jeuDuo(unsigned short int couleurJoueur1, unsigned short int couleurJoueur2, string nomJoueurUn, string nomJoueurDeux);
 
 
 /**
  * @brief Permettre de modifier la couleur du titre, des joueur et de la console
  *
- * @param [in] joueur1 la couleur du joueur numero 1
- * @param [in] joueur2 la couleur du joueur numero 2
+ * @param [in] couleurJoueur1 la couleur du joueur numero 1
+ * @param [in] couleurJoueur2 la couleur du joueur numero 2
  * 
  */
-void option(unsigned short int& joueur1, unsigned short int& joueur2);
+void option(unsigned short int& couleurJoueur1, unsigned short int& couleurJoueur2);
 
 //! DECLARATION DES TYPES ENUMERE
 //!-------------------------------------------------------
@@ -78,14 +78,6 @@ void afficherJeu(unsigned short int tableau[6][7], unsigned short int joueur1, u
  * 
  */
 void afficherOcouleur(unsigned short int couleur);
-
-/**
- * @brief Permet d'afficher l'interface
- *
- * @param [in] couleur la couleur du joueur
- * 
- */
-void afficherCouleurJoueur(unsigned short int couleur);
 
 /**
  * 

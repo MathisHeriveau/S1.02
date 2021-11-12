@@ -25,6 +25,8 @@ void afficherJeu(unsigned short int tableau[6][7], unsigned short int joueur1, u
 
     //TRAITEMENTS DU SOUS-PROGRAMME
 
+    afficherTitre();    //Affichage du titre
+
     cout <<"\n   0     1     2     3     4     5     6  "; //Affichage de la premiere ligne 
 
     for (int i = 0; i < 6; i++) //Pour toutes les lignes
@@ -33,24 +35,22 @@ void afficherJeu(unsigned short int tableau[6][7], unsigned short int joueur1, u
 
         for (int j = 0; j < 7; j++) //Pour toutes les colonnes
         {
-            if ((tableau[i][j]) == 1)   //Si c'est le numero du joueur 1
+            switch (tableau[i][j])
             {
-                afficherOcouleur(joueur1); //Affichage de O en jaune
-                cout << "|";
-            }
-            else if (tableau[i][j] == 2) //Si c'est le numero du joueur 2
-            {
-                afficherOcouleur(joueur2); //Affichage de O en rouge
-                cout << "|";
-            }
-            else if (tableau[i][j] == 0)    //Si c'est une case vide
-            {
+            case 1: afficherOcouleur(joueur1); //Affichage de O en jaune
+                    cout << "|";
+                break;
+            case 2 : afficherOcouleur(joueur2); //Affichage de O en rouge
+                    cout << "|";
+                break;
+            default:
                 cout << "     |";   //On saute de colonne
+                break;
             }
         }
     }
     cout << "\n+-----+-----+-----+-----+-----+-----+-----+" ; //Affichage de la derniere ligne
-    
+    cout << "\n                        revenir au menu(999)"; //Affichage de la possibilité de quitter 
 }
 
 //Fonction de verification de la ligne horizontale
@@ -182,6 +182,7 @@ void verificationJeu(unsigned short int colonne, unsigned short int ligne, unsig
 }
 
 void afficherTitre(){
+    system("cls");
     afficherTexteEnCouleur(" P ", bleu, false);
     afficherTexteEnCouleur("U ", jaune, false);
     afficherTexteEnCouleur("I ", rouge, false);
@@ -193,20 +194,6 @@ void afficherTitre(){
     afficherTexteEnCouleur("E ", rouge, false);
     afficherTexteEnCouleur(" 4\n", bleu, true);
 
-}
-
-void afficherCouleurJoueur(unsigned short int couleur){
-    switch (couleur)
-    {
-    case 7: afficherTexteEnCouleur("gris", gris, false); break;
-    case 9: afficherTexteEnCouleur("bleu", bleu, false); break;
-    case 10: afficherTexteEnCouleur("vert", vert, false); break;
-    case 11: afficherTexteEnCouleur("cyan", cyan, false); break;
-    case 12: afficherTexteEnCouleur("rouge", rouge, false); break;
-    case 13: afficherTexteEnCouleur("violet", violet, false); break;
-    case 14: afficherTexteEnCouleur("jaune", jaune, false); break;
-    case 15: afficherTexteEnCouleur("blanc", blanc, false); break;   
-    }
 }
 
 void afficherOcouleur(unsigned short int couleur){

@@ -16,10 +16,10 @@ int main(void)
     //Variable utilise
     char modeDeJeu;
     bool exit = false;
-    string NomJoueurUn;   //Nom du joueur1
-    string NomJoueurDeux; //Nom du joueur2
-    unsigned short int joueur1=14;
-    unsigned short int joueur2=12;
+    string nomJoueurUn;   //Nom du joueur1
+    string nomJoueurDeux; //Nom du joueur2
+    unsigned short int couleurJoueur1=14;
+    unsigned short int couleurJoueur2=12;
 
     while (exit != true)
     {
@@ -39,17 +39,16 @@ int main(void)
         if (modeDeJeu == 'd')
         {
             //Affichage du nom du jeu
-            system("cls");
             afficherTitre();
             cout << "Vous avez selectionne le jeu a 2.\n\n" ;
 
             // Initialisation des noms
             cout << "Saisissez le nom du joueur 1 : ";  //Demande le nom du joueur 1
-            cin >> NomJoueurUn;
+            cin >> nomJoueurUn;
             cout << "Saisissez le nom du joueur 2 : ";  //Demande le nom du joueur 2
-            cin >> NomJoueurDeux;
+            cin >> nomJoueurDeux;
 
-            jeuDuo(joueur1,joueur2,NomJoueurUn,NomJoueurDeux);
+            jeuDuo(couleurJoueur1,couleurJoueur2,nomJoueurUn,nomJoueurDeux);
 
         }
         else if (modeDeJeu == 'x')
@@ -58,7 +57,7 @@ int main(void)
         }
         else if(modeDeJeu == 'o')
         {
-            option(joueur1,joueur2);
+            option(couleurJoueur1,couleurJoueur2);
         }
     }
 
