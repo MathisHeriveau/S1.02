@@ -116,7 +116,7 @@ bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int l
 
     //Traitement
     //Diagonal, on se deplace en bas a gauche a chaque fois, en verfifiant si il y a pas 4 jetons cote a cote
-    while (placementLigne < 5 && placementColonne < 6)
+    while (placementLigne <= 5 && placementColonne <= 6)
     {
         //Si on trouve 2 jetons a coter
         if (tableau[placementLigne][placementColonne] == nombreAverifier)
@@ -154,7 +154,7 @@ bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int l
     }
     //Traitement
     //Diagonal, on se deplace en bas a gauche a chaque fois, en verfifiant si il y a pas 4 jetons cote a cote
-    while (placementLigne <= 5 && placementColonne > 0)
+    while (placementLigne <= 5)
     {
         //Si on trouve 2 jetons cote a cote
         if (tableau[placementLigne][placementColonne] == nombreAverifier)
