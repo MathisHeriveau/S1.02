@@ -7,7 +7,9 @@
 
 #include "sousProgramme.h"
 #include <iostream>
+
 #include <conio.h> // pour la fonction _getch utilisée dans la procédure pause()
+
 #include <chrono>  // pour la fonction now() utilisée dans la fonction random()
 #include <random>  // pour la fonction random
 
@@ -204,22 +206,19 @@ bool verificationJeu(unsigned short int colonne, unsigned short int ligne, unsig
     //Traitement
     
     //Verif Horizontale
-    if (!verificationHorizontale(ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
+    if (! verificationHorizontale(ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
     {return false;}
 
     //Verif Vertical
-    verif = verificationVertical(colonne, nombreAverifier, tableau);
-    if (verif == false) //Si il trouve quelque chose on sort.
+    if (! verificationVertical(colonne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
     {return false;}
 
     //Verif de haut en bas de gauche a droite
-    verif = verificationDiagonalDroite(colonne, ligne, nombreAverifier, tableau);
-    if (verif == false) //Si il trouve quelque chose on sort.
+    if (! verificationDiagonalDroite(colonne, ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
     {return false;}
 
     //Verif de haut en bas de droite a gauche
-    verif = verificationDiagonalGauche(colonne, ligne, nombreAverifier, tableau);
-    if (verif == false) //Si il trouve quelque chose on sort.
+    if (! verificationDiagonalGauche(colonne, ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
     {return false;}
 
     return true; //Si on trouve rien. On sort
