@@ -12,24 +12,27 @@
 using namespace std;
 
 
+//! TYPE DE JEU
+//!-----------------------------------------------------
+
 /**
  * @brief Permettre de jouer au puissance 4 avec un ami
  *
- * @param [in] joueur1 la couleur du joueur numero 1
- * @param [in] joueur2 la couleur du joueur numero 2
+ * @param [in] couleurDuJoueurUn la couleur du joueur numero 1
+ * @param [in] couleurDuJoueurDeux la couleur du joueur numero 2
  * 
  */
-void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJoueurUn, string NomJoueurDeux);
+void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueurDeux, string nomJoueurUn, string nomJoueurDeux);
 
 
 /**
  * @brief Permettre de modifier la couleur du titre, des joueur et de la console
  *
- * @param [in] joueur1 la couleur du joueur numero 1
- * @param [in] joueur2 la couleur du joueur numero 2
+ * @param [in] couleurDuJoueur1 la couleur du joueur numero 1
+ * @param [in] couleurDuJoueur2 la couleur du joueur numero 2
  * 
  */
-void option(unsigned short int& joueur1, unsigned short int& joueur2);
+void option(unsigned short int& couleurDuJoueur1, unsigned short int& couleurDuJoueur2);
 
 //! DECLARATION DES TYPES ENUMERE
 //!-------------------------------------------------------

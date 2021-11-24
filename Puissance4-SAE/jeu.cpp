@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 
-void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJoueurUn, string NomJoueurDeux){
+void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueurDeux, string nomJoueurUn, string nomJoueurDeux){
     
     // TYPES UTILISES DANS LE PROGRAMME PRINCIPAL
     //-------------------------------------------------------
@@ -42,35 +42,31 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
         position = 0;  //position du jeton quand il tombe
         tourDeJeu ++;  //Tour de jeu
 
-        /*cout << "\nChargement ...";     //Texte pour faire style
-        pause(1);                       //Pause permettant de faire style que le chargelment dure 1s*/
-        system("cls");                  //On clear le terminal
-
         //Affiche de l'interface 
         afficherTitre();
-        afficherJeu(tableauDeJeu,joueur1,joueur2);
+        afficherJeu(tableauDeJeu,couleurDuJoueurUn,couleurDuJoueurDeux);
         cout << "\n                        revenir au menu(999)";
         //Si le tour est paire le joueur 2 commence
         if (tourDeJeu % 2 == 1)
         {
-            nomDuJoueur = NomJoueurUn;      //Nom du joueur
+            nomDuJoueur = nomJoueurUn;      //Nom du joueur
             numeroDeLaCase = 1;             //Numero du joueur
 
             //Affichage du tour
             cout << "\n\nC'est a " << nomDuJoueur << " de jouer." << endl;  //Affiche le nom du joueur
             cout << "Vous avez les jetons de couleur ";
-            afficherCouleurJoueur(joueur1);  //Affiche la couleur du jetons du joueur    
+            afficherCouleurJoueur(couleurDuJoueurUn);  //Affiche la couleur du jetons du joueur    
             cout << "." << endl;
         }
         else
         {
-            nomDuJoueur = NomJoueurDeux;    //Nom du joueur
+            nomDuJoueur = nomJoueurDeux;    //Nom du joueur
             numeroDeLaCase = 2;             //Numero du joueur
 
             //Affichage du tour
             cout << "\n\nC'est a " << nomDuJoueur << " de jouer." << endl; //Affiche le nom du joueur
             cout << "Vous avez les jetons de couleur ";
-            afficherCouleurJoueur(joueur2);  //Affiche la couleur du jetons du joueur
+            afficherCouleurJoueur(couleurDuJoueurDeux);  //Affiche la couleur du jetons du joueur
             cout << "." << endl;
         }
 
@@ -110,9 +106,8 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
     // Fin du jeu
     //-------------------------------------------------------
     if (choixDuJoueur!=999){
-        system("cls"); //Clear le terminal
         afficherTitre();
-        afficherJeu(tableauDeJeu,joueur1,joueur2); //Affiche le jeu
+        afficherJeu(tableauDeJeu,couleurDuJoueurUn,couleurDuJoueurDeux); //Affiche le jeu
     }
     
     //Si il y un gagnant
@@ -130,7 +125,7 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
         cout << "\n\nAppuyer sur r pour recommencer, sinon tapper une autre touche.";
         choixDeRenouvellerLaPartie=static_cast<char>(_getwch());
         if (choixDeRenouvellerLaPartie == 'r'){
-            jeuDuo(joueur1,joueur2,NomJoueurUn,NomJoueurDeux);
+            jeu(couleurDuJoueurUn,couleurDuJoueurDeux,nomJoueurUn,nomJoueurDeux);
         }
     } 
 }

@@ -14,17 +14,25 @@ using namespace std;
 int main(void)
 {
     //Variable utilise
-    char modeDeJeu;
-    bool exit = false;
-    string NomJoueurUn;   //Nom du joueur1
-    string NomJoueurDeux; //Nom du joueur2
-    unsigned short int joueur1=14;
-    unsigned short int joueur2=12;
+    char modeDeJeu;                     //Le mode de jeu selectionner par le joueur
+    bool exit;                          //Variable permettant de savoir si le joueur veut quitter le jeu
+    string nomJoueurUn;                 //Nom du joueur1
+    string nomJoueurDeux;               //Nom du joueur2
+    unsigned short int couleurJoueur1;  //La couleur du joueur 1
+    unsigned short int couleurJoueur2;  //La couleur du joueur 2
+    //~ Remaque : Nous avons choisit d'utiliser un unsigned short int pour le nombre de couleur afin de facilité le passage des variables
+    //~           entre les procedures et de permettre de saisir la couleur du joueur facilement
+
+    //Initialisation
+    exit = false;       //Par default le joueur ne quitte pas le jeu
+    couleurJoueur1=14;  //Par default la couleur du joueur 1 est de 14 (Jaune)
+    couleurJoueur2=12;  //Par default la couleur du joueur 2 est de 12 (Rouge)
+
+
 
     while (exit != true)
     {
 
-        system("cls");
         // Regles du jeu
         afficherTitre();
         cout << "Ce programme est un jeu de puisssance 4." << endl;
@@ -39,17 +47,16 @@ int main(void)
         if (modeDeJeu == 'd')
         {
             //Affichage du nom du jeu
-            system("cls");
             afficherTitre();
             cout << "Vous avez selectionne le jeu a 2.\n\n" ;
 
             // Initialisation des noms
             cout << "Saisissez le nom du joueur 1 : ";  //Demande le nom du joueur 1
-            cin >> NomJoueurUn;
+            cin >> nomJoueurUn;
             cout << "Saisissez le nom du joueur 2 : ";  //Demande le nom du joueur 2
-            cin >> NomJoueurDeux;
+            cin >> nomJoueurDeux;
 
-            jeuDuo(joueur1,joueur2,NomJoueurUn,NomJoueurDeux);
+            jeu(couleurJoueur1,couleurJoueur2,nomJoueurUn,nomJoueurDeux);
 
         }
         else if (modeDeJeu == 'x')
@@ -58,7 +65,7 @@ int main(void)
         }
         else if(modeDeJeu == 'o')
         {
-            option(joueur1,joueur2);
+            option(couleurJoueur1,couleurJoueur2);
         }
     }
 

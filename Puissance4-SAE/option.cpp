@@ -8,16 +8,20 @@
 #include <iostream>
 using namespace std;
 
-void option(unsigned short int& joueur1, unsigned short int& joueur2)
+void option(unsigned short int& couleurDuJoueur1, unsigned short int& couleurDuJoueur2)
 {
 
     //Variables
-    string choixDeLoption;
-    bool exit = false;
+    char choixDeLoption;
+    bool exit;
+
+    //Initialisation
+    exit = false;
+
+
     //Affichage du nom du jeu
     while (exit != true)
     {
-        system("cls");
         afficherTitre();
         cout << "Vous avez selectionne l'option.\n\n";
 
@@ -25,28 +29,35 @@ void option(unsigned short int& joueur1, unsigned short int& joueur2)
         cout << "Voulez vous changer la couleur du titre, du joueur 1 ou du joueur 2 / console ?\n";
         cout << "                         joueur 1(j)                    joueur 2 / console (c)\n";
         cout << "Vous pouvez quittez le jeu (x)\n";
-        cout << "\n\nQue voulez vous faire ? ";
-        choixDeLoption=static_cast<char>(_getwch());
         
-        if (choixDeLoption == "x")
-        {
-            break;
-        }
-        system("cls");
+        do{
+            cout << "\n\nQue voulez vous faire ? ";
+            choixDeLoption=static_cast<char>(_getwch());
+        }while (choixDeLoption!='j' || choixDeLoption !='c' || choixDeLoption !='x');
+        
+        
+        if (choixDeLoption == 'x')
+        {break;}
+
         afficherTitre();
         cout << "Vous avez selectionne l'option.\n\n";
         cout << "Les couleurs disponibles sont : \n";
         cout << "Gris = 7,\nbleu = 9,\nvert = 10,\ncyan = 11,\nrouge = 12,\nviolet = 13,\njaune = 14,\nblanc = 15";
         
-        if (choixDeLoption == "j")
+        if (choixDeLoption == 'j')
         {
-            cout << "\n\nQuelle couleur voulez-vous avoir pour le joueur 1 ? ";
-            cin >> joueur1;
+            while(couleurDuJoueur1!=7 || couleurDuJoueur1 < 9 || couleurDuJoueur1 > 15){
+                cout << "\n\nQuelle couleur voulez-vous avoir pour le joueur 1 ? ";
+                cin >> couleurDuJoueur1;
+            }
+            
         }
-        else if (choixDeLoption == "c")
+        else if (choixDeLoption == 'c')
         {
-            cout << "\n\nQuelle couleur voulez-vous avoir pour le joueur 2 / console ? ";
-            cin >> joueur2;
+            while(couleurDuJoueur2!=7 || couleurDuJoueur2 < 9 || couleurDuJoueur2 > 15){
+                cout << "\n\nQuelle couleur voulez-vous avoir pour le joueur 2 / console ? ";
+                cin >> couleurDuJoueur2;
+            }
         }
         
     }
