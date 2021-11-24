@@ -79,7 +79,7 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
         if (choixDuJoueur == 999){break;}
 
         //verification si la colonne est pleine
-        while (choixDuJoueur < 0 || choixDuJoueur > 6 || tableauDeJeu[0][choixDuJoueur] > 0)
+        while (choixDuJoueur > 6 || tableauDeJeu[0][choixDuJoueur] > 0)
         {
             if (choixDuJoueur == 999){statutPartie=false ; break;}
             cout << "Saisissez une case : ";    //Annonce la saisie
@@ -124,12 +124,11 @@ void jeuDuo(unsigned short int joueur1, unsigned short int joueur2, string NomJo
     }else if (egalite==true && choixDuJoueur != 999)
     {
         afficherTexteEnCouleur("\n\nEGALITE ! ! !\n", vert, true);  //Egalité
-        cout << "\n\nAppuyer sur r pour recommencez";
         
     }
     if (choixDuJoueur!=999){
         cout << "\n\nAppuyer sur r pour recommencer, sinon tapper une autre touche.";
-        choixDeRenouvellerLaPartie=_getwch();
+        choixDeRenouvellerLaPartie=static_cast<char>(_getwch());
         if (choixDeRenouvellerLaPartie == 'r'){
             jeuDuo(joueur1,joueur2,NomJoueurUn,NomJoueurDeux);
         }

@@ -26,7 +26,7 @@ void option(unsigned short int& joueur1, unsigned short int& joueur2)
         cout << "                         joueur 1(j)                    joueur 2 / console (c)\n";
         cout << "Vous pouvez quittez le jeu (x)\n";
         cout << "\n\nQue voulez vous faire ? ";
-        choixDeLoption=_getwch();
+        choixDeLoption=static_cast<char>(_getwch());
         
         if (choixDeLoption == "x")
         {
