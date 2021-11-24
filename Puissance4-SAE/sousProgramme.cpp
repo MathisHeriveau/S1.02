@@ -7,9 +7,7 @@
 
 #include "sousProgramme.h"
 #include <iostream>
-
 #include <conio.h> // pour la fonction _getch utilisée dans la procédure pause()
-
 #include <chrono>  // pour la fonction now() utilisée dans la fonction random()
 #include <random>  // pour la fonction random
 
@@ -91,7 +89,11 @@ bool verificationHorizontale(unsigned short int ligne, unsigned short int nombre
 {
 
     //Variable
-    unsigned short int suite = 0; //Calcul le nombre de couleur cote a cote
+    unsigned short int suite; //Calcul le nombre de couleur cote a cote
+
+    //Initialisation
+    suite = 0;
+
     //Traitement
     for (int i = 1; i < 7; i++) //Pour toute la ligne
     {
@@ -112,7 +114,11 @@ bool verificationHorizontale(unsigned short int ligne, unsigned short int nombre
 bool verificationVertical(unsigned short int colonne, unsigned short int nombreAverifier, unsigned short int tableau[6][7])
 {
     //Variable
-    unsigned short int suite = 0; //Calcul le nombre de couleur cote a cote
+    unsigned short int suite; //Calcul le nombre de couleur cote a cote
+
+    //Initialisation
+    suite = 0;
+
     //Traitement
     for (int i = 5; i > 0; i--) //Pour toute la colonne
     {
@@ -132,9 +138,14 @@ bool verificationVertical(unsigned short int colonne, unsigned short int nombreA
 bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int ligne, unsigned short int nombreAverifier, unsigned short int tableau[6][7])
 {
     //Variable
-    unsigned short int suite = 0;                  //Calcul le nombre de couleur cote a cote
-    unsigned short int placementColonne = colonne; //Longueur de la diagonal
-    unsigned short int placementLigne = ligne;     //Placement de la verification
+    unsigned short int placementColonne; //Longueur de la diagonal
+    unsigned short int placementLigne;     //Placement de la verification
+    unsigned short int suite; //Calcul le nombre de couleur cote a cote
+
+    //Initialisation
+    placementColonne = colonne;
+    placementLigne = ligne;
+    suite = 0;
 
     //Initialisation des paramettres
     //Se mettre le plus en Haut a Gauche possible
@@ -167,9 +178,14 @@ bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int l
 bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int ligne, unsigned short int nombreAverifier, unsigned short int tableau[6][7])
 {
     //Variable
-    unsigned short int suite = 0;                  //Calcul le nombre de couleur cote a cote
-    unsigned short int placementColonne = colonne; //Longueur de la diagonal
-    unsigned short int placementLigne = ligne;     //Placement de la verification
+    unsigned short int placementColonne; //Longueur de la diagonal
+    unsigned short int placementLigne;     //Placement de la verification
+    unsigned short int suite; //Calcul le nombre de couleur cote a cote
+
+    //Initialisation
+    placementColonne = colonne;
+    placementLigne = ligne;
+    suite = 0;
 
     //Initialisation des paramettres
     //Se mettre le plus en haut a droite possible
@@ -202,23 +218,23 @@ bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int l
 bool verificationJeu(unsigned short int colonne, unsigned short int ligne, unsigned short int nombreAverifier, unsigned short int tableau[6][7])
 {
     //Variable
-    bool verif;
     //Traitement
     
     //Verif Horizontale
-    if (! verificationHorizontale(ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
+    if (!verificationHorizontale(ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
     {return false;}
 
     //Verif Vertical
-    if (! verificationVertical(colonne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
+    if (!verificationVertical(colonne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
     {return false;}
 
     //Verif de haut en bas de gauche a droite
-    if (! verificationDiagonalDroite(colonne, ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
+
+    if (!verificationDiagonalDroite(colonne, ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
     {return false;}
 
     //Verif de haut en bas de droite a gauche
-    if (! verificationDiagonalGauche(colonne, ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
+    if (!verificationDiagonalGauche(colonne, ligne, nombreAverifier, tableau)) //Si il trouve quelque chose on sort.
     {return false;}
 
     return true; //Si on trouve rien. On sort
