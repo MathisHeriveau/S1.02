@@ -7,13 +7,17 @@
 #ifndef SOUSPROGRAMME_H
 #define SOUSPROGRAMME_H
 
+
+
+// . Importation Des Bibliothèques Nécessaires
 #include <windows.h> // pour afficher du texte en couleur
 #include <iostream>
+
+// . 
 using namespace std;
 
 
-//! TYPE DE JEU
-//!-----------------------------------------------------
+//.  --------------------------------------- TYPE DE JEU -------------------------------------------
 
 /**
  * @brief Permettre de jouer au puissance 4 avec un ami
@@ -34,8 +38,7 @@ void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueu
  */
 void option(unsigned short int& couleurDuJoueur1, unsigned short int& couleurDuJoueur2);
 
-//! DECLARATION DES TYPES ENUMERE
-//!-------------------------------------------------------
+//.  ------------------------------ DECLARATION DES TYPES ENUMERE ----------------------------------
 
 /**
  * @brief Liste de couleurs utilisables avec les
@@ -62,8 +65,7 @@ enum Couleur
     blanc = 15
 };
 
-//! DECLARATION DES SOUS-PROGRAMMES
-//!-------------------------------------------------------
+//.  ----------------------------- DECLARATION DES SOUS-PROGRAMMES ---------------------------------
 
 /**
  * @brief Permet d'afficher l'interface
