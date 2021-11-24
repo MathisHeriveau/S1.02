@@ -20,112 +20,119 @@ void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueu
     //-------------------------------------------------------
     char choixDeRenouvellerLaPartie;      //L'utilisateur choisi de continuer ou pas le jeux
 
-    string nomDuJoueur;   //Nom du joueur au tour donné
-    string nomDuGagnant;  //Nom du gagnant
+    string nomDuGagnant;   //Nom du joueur au tour donné
 
-    bool trouve = false;      //Permettant de savoir si il y a de la place dans la colonne
-    bool statutPartie = true; //Le statut de la partie : true = en jeu ; false = fin du jeu
-    bool egalite = false;     //En cas d'egalité on mets en true
+    bool trouve;        //Permettant de savoir si il y a de la place dans la colonne
+    bool statutPartie;  //Le statut de la partie : true = en jeu ; false = fin du jeu
+    bool egalite;       //En cas d'egalité on mets en true
 
-    unsigned short int tourDeJeu = 2;  //Le nombre de tour de jeu
+    unsigned short int tourDeJeu;  //Le nombre de tour de jeu
     unsigned short int numeroDeLaCase; //Le numero qui sera implementé dans le tableau de jeu
     unsigned short int choixDuJoueur;  //Le choix de la colonne du jeton
-    unsigned short int position = -1;  //Permettant de positionner la propriete a verifier
+    unsigned short int position;  //Permettant de positionner la propriete a verifier
+    unsigned short int choixDuPremierJoueur; //Le choix du premier joueur : 1 = joueur1 ; 2 = joueur2.
 
 
+    //Initialisation
+    trouve = false;      
+    statutPartie = true; 
+    egalite = false;
+    tourDeJeu = 0; 
+    position = 0;
+    choixDuPremierJoueur = static_cast<unsigned short int>(random(0,1));
+    
     // TRAITEMENTS
     //-------------------------------------------------------
     //On mets une pause entre l'interface
-    while (statutPartie != false)
+    do
     {
-        //Initialisation des variables
+        //Rinitialisation des variables a chaque tour
         position = 0;  //position du jeton quand il tombe
         tourDeJeu ++;  //Tour de jeu
 
         //Affiche de l'interface 
         afficherTitre();
         afficherJeu(tableauDeJeu,couleurDuJoueurUn,couleurDuJoueurDeux);
-        cout << "\n                        revenir au menu(999)";
-        //Si le tour est paire le joueur 2 commence
-        if (tourDeJeu % 2 == 1)
+
+        //
+        if (tourDeJeu % 2 == choixDuPremierJoueur)
         {
-            nomDuJoueur = nomJoueurUn;      //Nom du joueur
+            nomDuGagnant = nomJoueurUn;      //Nom du joueur
             numeroDeLaCase = 1;             //Numero du joueur
 
             //Affichage du tour
-            cout << "\n\nC'est a " << nomDuJoueur << " de jouer." << endl;  //Affiche le nom du joueur
+            cout << "\n\nC'est a " << nomJoueurUn << " de jouer." << endl;  //Affiche le nom du joueur
             cout << "Vous avez les jetons de couleur ";
             afficherCouleurJoueur(couleurDuJoueurUn);  //Affiche la couleur du jetons du joueur    
-            cout << "." << endl;
         }
         else
         {
-            nomDuJoueur = nomJoueurDeux;    //Nom du joueur
+            nomDuGagnant = nomJoueurDeux;    //Nom du joueur
             numeroDeLaCase = 2;             //Numero du joueur
 
             //Affichage du tour
-            cout << "\n\nC'est a " << nomDuJoueur << " de jouer." << endl; //Affiche le nom du joueur
+            cout << "\n\nC'est a " << nomJoueurDeux << " de jouer." << endl; //Affiche le nom du joueur
             cout << "Vous avez les jetons de couleur ";
             afficherCouleurJoueur(couleurDuJoueurDeux);  //Affiche la couleur du jetons du joueur
-            cout << "." << endl;
         }
 
-        cout << "Saisissez une case : "; //Saisie de la colonne du jeton
-        cin >> choixDuJoueur;
-        if (choixDuJoueur == 999){break;}
 
         //verification si la colonne est pleine
-        while (choixDuJoueur > 6 || tableauDeJeu[0][choixDuJoueur] > 0)
+        do
         {
-            if (choixDuJoueur == 999){statutPartie=false ; break;}
             cout << "Saisissez une case : ";    //Annonce la saisie
             cin >> choixDuJoueur;
-        }
+            if (choixDuJoueur == 999){statutPartie=false ; break;}
 
-        while (trouve != true) //Mettre le jeton a la bonne case (bonne position de hauteur et de colonne)
-        {   
-            //Si on tombe sur un jeton ou on en trouve pas
-            if (position == 6 || tableauDeJeu[position][choixDuJoueur] > 0)
-            {
-                position--; //On remonte d'un crant
-                tableauDeJeu[position][choixDuJoueur] = numeroDeLaCase; //On met le jeton avec le numero du joueur
-                break; //On sort de la boucle
+        }while (choixDuJoueur > 6 || tableauDeJeu[0][choixDuJoueur] > 0);
+
+        if(choixDuJoueur !=999){
+
+            while (trouve != true ) //Mettre le jeton a la bonne case (bonne position de hauteur et de colonne)
+            {   
+                //Si on tombe sur un jeton ou on en trouve pas
+                if (position == 6 || tableauDeJeu[position][choixDuJoueur] > 0)
+                {
+                    position--; //On remonte d'un crant
+                    tableauDeJeu[position][choixDuJoueur] = numeroDeLaCase; //On met le jeton avec le numero du joueur
+                    break; //On sort de la boucle
+                }
+                position++; //On descend de case
             }
-            position++; //On descend de case
-        }
-        if(choixDuJoueur!=999){
+            
             //Verif
-        statutPartie = verificationJeu(choixDuJoueur, position, numeroDeLaCase, tableauDeJeu);
-        if (statutPartie==false){break;}
-        if (tourDeJeu==44){statutPartie=false; egalite=true;} //Si il n'y a plus de case libre il y a egalite
-        //Fin de la manche
+            statutPartie = verificationJeu(choixDuJoueur, position, numeroDeLaCase, tableauDeJeu);
+            if (statutPartie==false){break;}
+            if (tourDeJeu==44){statutPartie=false; egalite=true;} //Si il n'y a plus de case libre il y a egalite
+            //Fin de la manche
+            
         }
         
-    }
+    }while (statutPartie != false);
 
     // Fin du jeu
     //-------------------------------------------------------
     if (choixDuJoueur!=999){
         afficherTitre();
         afficherJeu(tableauDeJeu,couleurDuJoueurUn,couleurDuJoueurDeux); //Affiche le jeu
-    }
     
-    //Si il y un gagnant
-    if (egalite==false && choixDuJoueur != 999){
-        afficherTexteEnCouleur("\n\nNOUS AVONS UN GAGNANT ! ! !\n", vert, true); //Gagnant 
-        //Affichage de la position du jeton clef
-        cout << nomDuJoueur << " gagne la partie grace au jeton depose a la ligne " << position + 1 << " de la " << choixDuJoueur << "eme colonne(s) !";
+        //Si il y un gagnant
+        if (egalite==false){
+            afficherTexteEnCouleur("\n\nNOUS AVONS UN GAGNANT ! ! !\n", vert, true); //Gagnant 
+            //Affichage de la position du jeton clef
+            cout << nomDuGagnant << " gagne la partie grace au jeton depose a la ligne " << position + 1 << " de la " << choixDuJoueur << "eme colonne(s) !";
+            
+        }else
+        {
+            afficherTexteEnCouleur("\n\nEGALITE ! ! !\n", vert, true);  //Egalité
+            
+        }
         
-    }else if (egalite==true && choixDuJoueur != 999)
-    {
-        afficherTexteEnCouleur("\n\nEGALITE ! ! !\n", vert, true);  //Egalité
-        
-    }
-    if (choixDuJoueur!=999){
         cout << "\n\nAppuyer sur r pour recommencer, sinon tapper une autre touche.";
         choixDeRenouvellerLaPartie=static_cast<char>(_getwch());
         if (choixDeRenouvellerLaPartie == 'r'){
             jeu(couleurDuJoueurUn,couleurDuJoueurDeux,nomJoueurUn,nomJoueurDeux);
         }
-    } 
+        
+    }
 }

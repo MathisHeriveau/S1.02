@@ -53,7 +53,7 @@ void afficherTexteEnCouleur(string chaine, Couleur couleur, bool retourALaLigne)
 }
 
 //Procedure d'affichage du jeu
-void afficherJeu(unsigned short int tableau[6][7], unsigned short int joueur1, unsigned short int joueur2)
+void afficherJeu(unsigned short int tableau[6][7], unsigned short int couleurJoueur1, unsigned short int couleurJoueur2)
 {
 
     //TRAITEMENTS DU SOUS-PROGRAMME
@@ -63,26 +63,24 @@ void afficherJeu(unsigned short int tableau[6][7], unsigned short int joueur1, u
     for (int i = 0; i < 6; i++) //Pour toutes les lignes
     {
         cout << "\n+-----+-----+-----+-----+-----+-----+-----+\n|" ; //Affichage de l'interface
-
         for (int j = 0; j < 7; j++) //Pour toutes les colonnes
         {
             if ((tableau[i][j]) == 1)   //Si c'est le numero du joueur 1
             {
-                afficherOcouleur(joueur1); //Affichage de O en jaune
-                cout << "|";
+                afficherOcouleur(couleurJoueur1); //Affichage de O en jaune
             }
             else if (tableau[i][j] == 2) //Si c'est le numero du joueur 2
             {
-                afficherOcouleur(joueur2); //Affichage de O en rouge
-                cout << "|";
+                afficherOcouleur(couleurJoueur2); //Affichage de O en rouge
             }
-            else if (tableau[i][j] == 0)    //Si c'est une case vide
+            else    //Si c'est une case vide
             {
                 cout << "     |";   //On saute de colonne
             }
         }
     }
     cout << "\n+-----+-----+-----+-----+-----+-----+-----+" ; //Affichage de la derniere ligne
+    cout << "\n                        revenir au menu(999)";
     
 }
 
@@ -228,6 +226,7 @@ bool verificationJeu(unsigned short int colonne, unsigned short int ligne, unsig
 }
 
 void afficherTitre(){
+    system("cls");
     afficherTexteEnCouleur(" P ", bleu, false);
     afficherTexteEnCouleur("U ", jaune, false);
     afficherTexteEnCouleur("I ", rouge, false);
@@ -253,6 +252,7 @@ void afficherCouleurJoueur(unsigned short int couleur){
     case 14: afficherTexteEnCouleur("jaune", jaune, false); break;
     case 15: afficherTexteEnCouleur("blanc", blanc, false); break;   
     }
+    cout << ".\n";
 }
 
 void afficherOcouleur(unsigned short int couleur){
@@ -267,4 +267,5 @@ void afficherOcouleur(unsigned short int couleur){
     case 14: afficherTexteEnCouleur("  O  ", jaune,false); break;
     case 15: afficherTexteEnCouleur("  O  ", blanc,false); break;   
     }
+    cout << "|";
 }
