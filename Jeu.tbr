@@ -1,0 +1,812 @@
+<?xml version="1.1"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>Jeu</nom>
+  <date_creation>24/11/2021 18:18</date_creation>
+  <Elements>
+    <Action>
+      <Position>773;53</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>couleurDuJoueurUn couleurDuJoueurDeux
+nomJoueurUn
+nomJoueurDeux</PreAssertion>
+      <PostAssertion>?</PostAssertion>
+      <Titre>Les joueurs jouent au Puissance 4</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>0</DetailsVideVisible>
+      <Enfants>
+        <Action>
+          <Position>254;140</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>?</PreAssertion>
+          <PostAssertion>tableauDeJeu
+trouve 
+statutPartie
+egalite 
+tourDeJeu 
+position
+choixDuPremierJoueur</PostAssertion>
+          <Titre>Initialisation</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>0</DetailsVideVisible>
+          <Enfants>
+            <Action>
+              <Position>146;248</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>tableauDeJeu</PostAssertion>
+              <Titre>Tableau</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants>
+                <Action>
+                  <Position>-9;335</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>NB_DE_LIGNE ← 6
+</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+                <Action>
+                  <Position>77;401</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>tableauDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] ← {0}</Titre>
+                  <DetailsVisible>0</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+                <Action>
+                  <Position>192;336</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>NB_DE_COLONNE ← 7</Titre>
+                  <DetailsVisible>0</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+              </Enfants>
+            </Action>
+            <Action>
+              <Position>418;234</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>position ← 0</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>539;231</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>tourDeJeu ← 2</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>657;232</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>egalite ← false</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>468;319</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>trouve ← false</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>588;319</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>statutPartie ← true</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>742;320</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>choixDuPremierJoueur ← random(0,1)</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>1085;164</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>tableauDeJeu
+trouve 
+statutPartie
+egalite 
+tourDeJeu 
+position
+choixDuPremierJoueur
+couleurDuJoueurUn couleurDuJoueurDeux
+nomJoueurUn
+nomJoueurDeux</PreAssertion>
+          <PostAssertion>[egalite]
+nomDuGagnant</PostAssertion>
+          <Titre>Demarrage du jeu</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Iteration>
+              <Position>1325.5;425.5</Position>
+              <StyleLien>1</StyleLien>
+              <Titre>?</Titre>
+              <IterationFixe>0</IterationFixe>
+              <Enfants>
+                <Action>
+                  <Position>208;511</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>position
+tourDeJeu</PostAssertion>
+                  <Titre>Rinitialisation des parametres à chaque tour</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants>
+                    <Action>
+                      <Position>152;597</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>position ← 0</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                    <Action>
+                      <Position>293;599</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>tourDeJeu ← tourDeJeu+1</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
+                </Action>
+                <Action>
+                  <Position>703;514</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>Affichage du jeu</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants>
+                    <Action>
+                      <Position>567;597</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>Lancement de la procedure 
+"afficherTitre()"</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                    <Action>
+                      <Position>780;594</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>Lancement de la procedure 
+"afficherJeu()"</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
+                </Action>
+                <Action>
+                  <Position>1249;517</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>couleurDuJoueurUn couleurDuJoueurDeux
+nomJoueurUn
+nomJoueurDeux</PreAssertion>
+                  <PostAssertion>nomDuGagnant
+numeroDeLaCase</PostAssertion>
+                  <Titre>Tour du joueur</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants>
+                    <Condition>
+                      <Position>1341.5;598</Position>
+                      <StyleLien>0</StyleLien>
+                      <estUnique>0</estUnique>
+                      <operationsLogiques>
+                        <operation>
+                          <Titre>tourDeJeu modulo 2 egal au choixDuPremierJoueur</Titre>
+                          <Enfants>
+                            <Action>
+                              <Position>735;698</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>couleurDuJoueurUn
+nomJoueurUn</PreAssertion>
+                              <PostAssertion>nomDuGagnant
+numeroDeLaCase</PostAssertion>
+                              <Titre>Le joueur 1 joue</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Action>
+                                  <Position>309;779</Position>
+                                  <StyleLien>2</StyleLien>
+                                  <PreAssertion>nomJoueurUn</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>Rinitialisation des parametres</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>336;858</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>?</PreAssertion>
+                                      <PostAssertion>?</PostAssertion>
+                                      <Titre>nomDuGagnant ← nomJoueurUn</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>0</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>584;859</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>?</PreAssertion>
+                                      <PostAssertion>?</PostAssertion>
+                                      <Titre>numeroDeLaCase ← 1</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>0</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </Action>
+                                <Action>
+                                  <Position>754;792</Position>
+                                  <StyleLien>2</StyleLien>
+                                  <PreAssertion>couleurDuJoueurUn
+nomJoueurUn</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>Affichage du nom du joueur et de la couleur du joueur</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>848;880</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>?</PreAssertion>
+                                      <PostAssertion>?</PostAssertion>
+                                      <Titre>Affichage nom du joueur</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>0</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>1065;881</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>couleurDuJoueurUn</PreAssertion>
+                                      <PostAssertion>?</PostAssertion>
+                                      <Titre>Lancement de la procedure "afficherCouleurJoueur()"</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>0</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </Action>
+                              </Enfants>
+                            </Action>
+                          </Enfants>
+                        </operation>
+                        <operation>
+                          <Titre>Sinon</Titre>
+                          <Enfants>
+                            <Action>
+                              <Position>1900;715</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>couleurDuJoueurDeux
+nomJoueurDeux</PreAssertion>
+                              <PostAssertion>nomDuGagnant
+numeroDeLaCase</PostAssertion>
+                              <Titre>Le joueur 2 joue</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Action>
+                                  <Position>1474;796</Position>
+                                  <StyleLien>2</StyleLien>
+                                  <PreAssertion>nomJoueurDeux</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>Rinitialisation des parametres</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>1501;875</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>?</PreAssertion>
+                                      <PostAssertion>?</PostAssertion>
+                                      <Titre>nomDuGagnant ← nomJoueurDeux</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>0</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>1749;876</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>?</PreAssertion>
+                                      <PostAssertion>?</PostAssertion>
+                                      <Titre>numeroDeLaCase ← 1</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>0</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </Action>
+                                <Action>
+                                  <Position>1919;809</Position>
+                                  <StyleLien>2</StyleLien>
+                                  <PreAssertion>couleurDuJoueurDeux
+nomJoueurDeux</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>Affichage du nom du joueur et de la couleur du joueur</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>2013;897</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>?</PreAssertion>
+                                      <PostAssertion>?</PostAssertion>
+                                      <Titre>Affichage nom du joueur</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>0</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>2230;898</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>couleurDuJoueurDeux</PreAssertion>
+                                      <PostAssertion>?</PostAssertion>
+                                      <Titre>Lancement de la procedure "afficherCouleurJoueur()"</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>0</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </Action>
+                              </Enfants>
+                            </Action>
+                          </Enfants>
+                        </operation>
+                      </operationsLogiques>
+                    </Condition>
+                  </Enfants>
+                </Action>
+                <Action>
+                  <Position>2640;534</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>choixDuJoueur</PostAssertion>
+                  <Titre>SAISIE/VERIF
+Saisie de la colonne</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants>
+                    <Iteration>
+                      <Position>2700.5;600.5</Position>
+                      <StyleLien>1</StyleLien>
+                      <Titre>?</Titre>
+                      <IterationFixe>0</IterationFixe>
+                      <Enfants>
+                        <Action>
+                          <Position>2525;687</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>?</PreAssertion>
+                          <PostAssertion>choixDuJoueur</PostAssertion>
+                          <Titre>Demande la colonne du pion</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>0</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Condition>
+                          <Position>2919.5;693</Position>
+                          <StyleLien>1</StyleLien>
+                          <estUnique>1</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>La colonne n'est pas pleine et comprise entre 0 et 6</Titre>
+                              <Enfants/>
+                            </operation>
+                            <operation>
+                              <Titre>Sinon</Titre>
+                              <Enfants/>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                      </Enfants>
+                    </Iteration>
+                  </Enfants>
+                </Action>
+                <Action>
+                  <Position>3861;564</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>Le joueur n'abandonne pas</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants>
+                    <Condition>
+                      <Position>3871.5;626</Position>
+                      <StyleLien>1</StyleLien>
+                      <estUnique>1</estUnique>
+                      <operationsLogiques>
+                        <operation>
+                          <Titre>Le joueur n'a pas abandonner</Titre>
+                          <Enfants>
+                            <Action>
+                              <Position>3265;755</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>choixDuJoueur
+trouve
+numeroDeLaCase
+tableauDeJeu</PreAssertion>
+                              <PostAssertion>tableauDeJeu</PostAssertion>
+                              <Titre>Calcul de la hauteur du jetons</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Iteration>
+                                  <Position>3521.5;829.5</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <Titre>?</Titre>
+                                  <IterationFixe>0</IterationFixe>
+                                  <Enfants>
+                                    <Condition>
+                                      <Position>3236.5;926</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <estUnique>1</estUnique>
+                                      <operationsLogiques>
+                                        <operation>
+                                          <Titre>La position du nouveau jeton est trouvé</Titre>
+                                          <Enfants/>
+                                        </operation>
+                                        <operation>
+                                          <Titre>Sinon</Titre>
+                                          <Enfants/>
+                                        </operation>
+                                      </operationsLogiques>
+                                    </Condition>
+                                    <Condition>
+                                      <Position>3562.5;925</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <estUnique>1</estUnique>
+                                      <operationsLogiques>
+                                        <operation>
+                                          <Titre>La position du jeton est en haut et
+La case est disponible</Titre>
+                                          <Enfants>
+                                            <Action>
+                                              <Position>3447;1024</Position>
+                                              <StyleLien>1</StyleLien>
+                                              <PreAssertion>?</PreAssertion>
+                                              <PostAssertion>?</PostAssertion>
+                                              <Titre>position ← position - 1</Titre>
+                                              <DetailsVisible>1</DetailsVisible>
+                                              <DetailsVideVisible>0</DetailsVideVisible>
+                                              <Enfants/>
+                                            </Action>
+                                            <Action>
+                                              <Position>3631;1025</Position>
+                                              <StyleLien>1</StyleLien>
+                                              <PreAssertion>?</PreAssertion>
+                                              <PostAssertion>?</PostAssertion>
+                                              <Titre>Le numero du joueur est mit dans le tableau</Titre>
+                                              <DetailsVisible>1</DetailsVisible>
+                                              <DetailsVideVisible>0</DetailsVideVisible>
+                                              <Enfants/>
+                                            </Action>
+                                            <Sortie>
+                                              <Position>3877;1026</Position>
+                                            </Sortie>
+                                          </Enfants>
+                                        </operation>
+                                        <operation>
+                                          <Titre>Sinon</Titre>
+                                          <Enfants/>
+                                        </operation>
+                                      </operationsLogiques>
+                                    </Condition>
+                                    <Action>
+                                      <Position>3802;916</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>?</PreAssertion>
+                                      <PostAssertion>position</PostAssertion>
+                                      <Titre>Augmentation de la position de 1</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>0</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </Iteration>
+                              </Enfants>
+                            </Action>
+                            <Action>
+                              <Position>4216;765</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>choixDuJoueur
+position
+numeroDeLaCase
+tableauDeJeu</PreAssertion>
+                              <PostAssertion>statutPartie</PostAssertion>
+                              <Titre>Verification si le joueur gagne</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Action>
+                                  <Position>4200;886</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>choixDuJoueur
+position
+numeroDeLaCase
+tableauDeJeu</PreAssertion>
+                                  <PostAssertion>statutPartie</PostAssertion>
+                                  <Titre>statutPartie ← verification(..)</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                                <Action>
+                                  <Position>4735;886</Position>
+                                  <StyleLien>2</StyleLien>
+                                  <PreAssertion>statutPartie</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>Exploitation du resultat de la verif</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants>
+                                    <Condition>
+                                      <Position>4871.5;954</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <estUnique>1</estUnique>
+                                      <operationsLogiques>
+                                        <operation>
+                                          <Titre>statutPartie retourner true</Titre>
+                                          <Enfants/>
+                                        </operation>
+                                        <operation>
+                                          <Titre>Sinon</Titre>
+                                          <Enfants/>
+                                        </operation>
+                                      </operationsLogiques>
+                                    </Condition>
+                                  </Enfants>
+                                </Action>
+                              </Enfants>
+                            </Action>
+                          </Enfants>
+                        </operation>
+                        <operation>
+                          <Titre>Sinon</Titre>
+                          <Enfants/>
+                        </operation>
+                      </operationsLogiques>
+                    </Condition>
+                  </Enfants>
+                </Action>
+                <Condition>
+                  <Position>4348.5;541</Position>
+                  <StyleLien>1</StyleLien>
+                  <estUnique>1</estUnique>
+                  <operationsLogiques>
+                    <operation>
+                      <Titre>Les joueurs ont remplit toute la grille</Titre>
+                      <Enfants/>
+                    </operation>
+                    <operation>
+                      <Titre>Sinon</Titre>
+                      <Enfants/>
+                    </operation>
+                  </operationsLogiques>
+                </Condition>
+              </Enfants>
+            </Iteration>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>2821;159</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>egalite
+nomDuGagnant
+position
+tableauDeJeu
+couleurDuJoueurUn
+couleurDuJoueurDeux
+choixDuJoueur
+nomJoueurUn
+nomJoueurDeux</PreAssertion>
+          <PostAssertion>?</PostAssertion>
+          <Titre>Fin de la partie</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>0</DetailsVideVisible>
+          <Enfants>
+            <Condition>
+              <Position>2978.5;225</Position>
+              <StyleLien>1</StyleLien>
+              <estUnique>1</estUnique>
+              <operationsLogiques>
+                <operation>
+                  <Titre>Si le joueur n'a pas decidé d'abandonner</Titre>
+                  <Enfants>
+                    <Action>
+                      <Position>1611;315</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>Lancement de la procedure afficherTitre()</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                    <Action>
+                      <Position>1864;315</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>tableauDeJeu
+couleurDuJoueurUn
+couleurDuJoueurDeux</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>Lancement de la procedure afficherJeu(..)</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                    <Condition>
+                      <Position>2475.5;318</Position>
+                      <StyleLien>0</StyleLien>
+                      <estUnique>0</estUnique>
+                      <operationsLogiques>
+                        <operation>
+                          <Titre>En cas de non égalité</Titre>
+                          <Enfants>
+                            <Action>
+                              <Position>2166;400</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Afficher en rouge "Nous avons un gagnant"</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                            <Action>
+                              <Position>2417;399</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>nomDuGagnant
+position
+choixDuJoueur</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Afficher le nom et la position du dernier jetons</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                          </Enfants>
+                        </operation>
+                        <operation>
+                          <Titre>Sinon</Titre>
+                          <Enfants>
+                            <Action>
+                              <Position>2844;403</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Afficher "Egalite" en rouge</Titre>
+                              <DetailsVisible>0</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                          </Enfants>
+                        </operation>
+                      </operationsLogiques>
+                    </Condition>
+                    <Action>
+                      <Position>3061;309</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>choixDeRenouvellerLaPartie</PostAssertion>
+                      <Titre>Le joueur choisit de recommencer le partie ou pas</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                    <Action>
+                      <Position>3563;301</Position>
+                      <StyleLien>2</StyleLien>
+                      <PreAssertion>choixDeRenouvellerLaPartie</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>Traitement du choix du joueur</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants>
+                        <Condition>
+                          <Position>3762.5;361</Position>
+                          <StyleLien>1</StyleLien>
+                          <estUnique>1</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>Le joueur choisit de relancer une partie</Titre>
+                              <Enfants>
+                                <Action>
+                                  <Position>3562;418</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>couleurDuJoueurUn
+couleurDuJoueurDeux
+nomJoueurUn
+nomJoueurDeux</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>Lancement de la procedure jeu(..)</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>Sinon</Titre>
+                              <Enfants/>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                      </Enfants>
+                    </Action>
+                  </Enfants>
+                </operation>
+                <operation>
+                  <Titre>Sinon</Titre>
+                  <Enfants/>
+                </operation>
+              </operationsLogiques>
+            </Condition>
+          </Enfants>
+        </Action>
+      </Enfants>
+    </Action>
+    <Sortie>
+      <Position>3004;744</Position>
+    </Sortie>
+    <Sortie>
+      <Position>3303;977</Position>
+    </Sortie>
+    <Sortie>
+      <Position>4952;999</Position>
+    </Sortie>
+    <Sortie>
+      <Position>4431;593</Position>
+    </Sortie>
+  </Elements>
+</Algorithme>
