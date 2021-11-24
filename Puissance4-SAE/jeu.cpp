@@ -103,7 +103,7 @@ void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueu
             //Verif
             statutPartie = verificationJeu(choixDuJoueur, position, numeroDeLaCase, tableauDeJeu);
             if (statutPartie==false){break;}
-            if (tourDeJeu==44){statutPartie=false; egalite=true;} //Si il n'y a plus de case libre il y a egalite
+            if (tourDeJeu==42){statutPartie=false; egalite=true;} //Si il n'y a plus de case libre il y a egalite
             //Fin de la manche
             
         }
@@ -118,13 +118,13 @@ void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueu
     
         //Si il y un gagnant
         if (egalite==false){
-            afficherTexteEnCouleur("\n\nNOUS AVONS UN GAGNANT ! ! !\n", vert, true); //Gagnant 
+            afficherTexteEnCouleur("\n\nNOUS AVONS UN GAGNANT ! ! !\n", rouge, true); //Gagnant 
             //Affichage de la position du jeton clef
             cout << nomDuGagnant << " gagne la partie grace au jeton depose a la ligne " << position + 1 << " de la " << choixDuJoueur << "eme colonne(s) !";
             
         }else
         {
-            afficherTexteEnCouleur("\n\nEGALITE ! ! !\n", vert, true);  //Egalité
+            afficherTexteEnCouleur("\n\nEGALITE ! ! !\n", rouge, true);  //Egalité
             
         }
         
