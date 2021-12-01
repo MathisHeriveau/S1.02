@@ -8,13 +8,27 @@
 #include <iostream>
 using namespace std;
 
-void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueurDeux, string nomJoueurUn, string nomJoueurDeux){
+int main() {
+    // Regles du jeu
+    afficherTitre();
+    cout << "Ce programme est un jeu de puisssance 4." << endl;
+    cout << "Il est concu avec le langage C++." << endl;
+    cout << "Le but de ce jeu est de reussir a aligner quatre de ces jetons horizontalement, verticalement ou encore diagonalement." << endl;
+    cout << "Le premier joueur a reussir cela gagne automatiquement." << endl;
+
+
+    // Initialisation des noms
+    cout << "Saisissez le nom du joueur 1 : ";  //Demande le nom du joueur 1
+    cin >> nomJoueurUn;
+    cout << "Saisissez le nom du joueur 2 : ";  //Demande le nom du joueur 2
+    cin >> nomJoueurDeux;
     
+
     // TYPES UTILISES DANS LE PROGRAMME PRINCIPAL
     //-------------------------------------------------------
     const unsigned short int NB_DE_LIGNE = 6;
     const unsigned short int NB_DE_COLONNE = 7;
-    unsigned short int tableauDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {caseVide}; //Tableau du jeu
+    Case tableauDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {caseVide}; //Tableau du jeu
 
     // VARIABLES UTILISEES DANS LE PROGRAMME PRINCIPA
     //-------------------------------------------------------
@@ -27,7 +41,7 @@ void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueu
     bool egalite;       //En cas d'egalité on mets en true
 
     unsigned short int tourDeJeu;  //Le nombre de tour de jeu
-    unsigned short int numeroDeLaCase; //Le numero qui sera implementé dans le tableau de jeu
+    Case pion; //Le numero qui sera implementé dans le tableau de jeu
     unsigned short int choixDuJoueur;  //Le choix de la colonne du jeton
     unsigned short int position;  //Permettant de positionner la propriete a verifier
     unsigned short int choixDuPremierJoueur; //Le choix du premier joueur : 1 = joueur1 ; 2 = joueur2.
@@ -58,7 +72,7 @@ void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueu
         if (tourDeJeu % 2 == choixDuPremierJoueur)
         {
             nomDuGagnant = nomJoueurUn;      //Nom du joueur
-            numeroDeLaCase = 1;             //Numero du joueur
+            pion = pionRouge;             //Numero du joueur
 
             //Affichage du tour
             cout << "\n\nC'est a " << nomJoueurUn << " de jouer." << endl;  //Affiche le nom du joueur
@@ -68,7 +82,7 @@ void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueu
         else
         {
             nomDuGagnant = nomJoueurDeux;    //Nom du joueur
-            numeroDeLaCase = 2;             //Numero du joueur
+            pion = pionJaune;             //Numero du joueur
 
             //Affichage du tour
             cout << "\n\nC'est a " << nomJoueurDeux << " de jouer." << endl; //Affiche le nom du joueur
@@ -94,14 +108,14 @@ void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueu
                 if (position == 6 || tableauDeJeu[position][choixDuJoueur] > 0)
                 {
                     position--; //On remonte d'un crant
-                    tableauDeJeu[position][choixDuJoueur] = numeroDeLaCase; //On met le jeton avec le numero du joueur
+                    tableauDeJeu[position][choixDuJoueur] = pion; //On met le jeton avec le numero du joueur
                     break; //On sort de la boucle
                 }
                 position++; //On descend de case
             }
             
             //Verif
-            statutPartie = verificationJeu(choixDuJoueur, position, numeroDeLaCase, tableauDeJeu);
+            statutPartie = verificationJeu(choixDuJoueur, position, pion, tableauDeJeu);
             if (statutPartie==false){break;}
             if (tourDeJeu==42){statutPartie=false; egalite=true;} //Si il n'y a plus de case libre il y a egalite
             //Fin de la manche
