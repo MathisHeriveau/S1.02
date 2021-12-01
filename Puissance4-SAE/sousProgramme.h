@@ -18,27 +18,6 @@
 using namespace std;
 
 
-//.  --------------------------------------- TYPE DE JEU -------------------------------------------
-
-/**
- * @brief Permettre de jouer au puissance 4 avec un ami
- *
- * @param [in] couleurDuJoueurUn la couleur du joueur numero 1
- * @param [in] couleurDuJoueurDeux la couleur du joueur numero 2
- * 
- */
-void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueurDeux, string nomJoueurUn, string nomJoueurDeux);
-
-
-/**
- * @brief Permettre de modifier la couleur du titre, des joueur et de la console
- *
- * @param [in] couleurDuJoueur1 la couleur du joueur numero 1
- * @param [in] couleurDuJoueur2 la couleur du joueur numero 2
- * 
- */
-void option(unsigned short int& couleurDuJoueur1, unsigned short int& couleurDuJoueur2);
-
 //.  ------------------------------ DECLARATION DES TYPES ENUMERE ----------------------------------
 
 /**
@@ -51,7 +30,7 @@ enum Case
     caseVide = 0,
     pionJaune,
     pionRouge
-}
+};
 
 /**
  * @brief Liste de couleurs utilisables avec les
@@ -86,24 +65,7 @@ enum Couleur
  * @param [in] tableau le tableau de taille 6x7 qui va etre afficher 
  * 
  */
-void afficherJeu(unsigned short int tableau[6][7], unsigned short int joueur1, unsigned short int joueur2);
-
-
-/**
- * @brief Permet d'afficher l'interface
- *
- * @param [in] couleur la couleur du joueur
- * 
- */
-void afficherOcouleur(unsigned short int couleur);
-
-/**
- * @brief Permet d'afficher l'interface
- *
- * @param [in] couleur la couleur du joueur
- * 
- */
-void afficherCouleurJoueur(unsigned short int couleur);
+void afficherJeu(Case tableau[6][7]);
 
 /**
  * 
@@ -141,7 +103,7 @@ int random(int min, int max);
  * @param [in] nombreAverifier Comme chaque joueur a un numero, on verifiera qu'un seul joueur a la fois
  * @param [in] tableau le tableau contenant toutes les informations du jeu
  */
-bool verificationJeu(unsigned short int colonne, unsigned short int ligne, unsigned short int nombreAverifier, unsigned short int tableau[6][7]);
+bool verificationJeu(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case tableau[6][7]);
 
 
 /**
@@ -151,7 +113,7 @@ bool verificationJeu(unsigned short int colonne, unsigned short int ligne, unsig
  * @param [in] nombreAverifier Comme chaque joueur a un numero, on verifiera qu'un seul joueur a la fois
  * @param [in] tableau le tableau contenant toutes les informations du jeu
  */
-bool verificationHorizontale(unsigned short int ligne, unsigned short int nombreAverifier, unsigned short int tableau[6][7]);
+bool verificationHorizontale(unsigned short int ligne, Case caseDuJeu, Case tableau[6][7]);
 
 /**
  * @brief Permet de verifier si la ligne vertical est gagnante pour le joueur 1 ou 2
@@ -160,7 +122,7 @@ bool verificationHorizontale(unsigned short int ligne, unsigned short int nombre
  * @param [in] nombreAverifier Comme chaque joueur a un numero, on verifiera qu'un seul joueur a la fois
  * @param [in] tableau le tableau contenant toutes les informations du jeu
  */
-bool verificationVertical(unsigned short int colonne, unsigned short int nombreAverifier, unsigned short int tableau[6][7]);
+bool verificationVertical(unsigned short int colonne, Case caseDuJeu, Case tableau[6][7]);
 
 
 /**
@@ -171,7 +133,7 @@ bool verificationVertical(unsigned short int colonne, unsigned short int nombreA
  * @param [in] nombreAverifier Comme chaque joueur a un numero, on verifiera qu'un seul joueur a la fois
  * @param [in] tableau le tableau contenant toutes les informations du jeu
  */
-bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int ligne, unsigned short int nombreAverifier, unsigned short int tableau[6][7]);
+bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case tableau[6][7]);
 
 
 /**
@@ -182,7 +144,7 @@ bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int l
  * @param [in] nombreAverifier Comme chaque joueur a un numero, on verifiera qu'un seul joueur a la fois
  * @param [in] tableau le tableau contenant toutes les informations du jeu
  */
-bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int ligne, unsigned short int nombreAverifier, unsigned short int tableau[6][7]);
+bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case tableau[6][7]);
 
 
 

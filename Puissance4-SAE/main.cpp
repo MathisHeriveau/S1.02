@@ -1,5 +1,5 @@
 /**
- * @file jeuEnDuo.cpp
+ * @file main.cpp
  * @author Mathis Heriveau
  * @brief Corps du module sousProgramme.h
  * @date 27 octobre 2021
@@ -9,7 +9,40 @@
 using namespace std;
 
 int main() {
-    // Regles du jeu
+
+    // TYPES UTILISES DANS LE PROGRAMME PRINCIPAL
+    //-------------------------------------------------------
+    const unsigned short int NB_DE_LIGNE = 6;
+    const unsigned short int NB_DE_COLONNE = 7;
+    Case grilleDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {caseVide}; //grille du jeu
+
+    // VARIABLES UTILISEES DANS LE PROGRAMME PRINCIPA
+    //-------------------------------------------------------
+    Case pion; //Le numero qui sera implementé dans le grille de jeu
+
+    string nomDuGagnant;   //Nom du joueur au tour donné
+    string nomJoueurUn;    //Nom du joueur un
+    string nomJoueurDeux;  //Nom du joueur deux
+
+    bool trouve;        //Permettant de savoir si il y a de la place dans la colonne
+    bool statutPartie;  //Le statut de la partie : true = en jeu ; false = fin du jeu
+    bool egalite;       //En cas d'egalité on mets en true
+
+    unsigned short int tourDeJeu;  //Le nombre de tour de jeu
+    unsigned short int choixDuJoueur;  //Le choix de la colonne du jeton
+    unsigned short int position;  //Permettant de positionner la propriete a verifier
+    unsigned short int choixDuPremierJoueur; //Le choix du premier joueur : 1 = joueur1 ; 2 = joueur2.
+
+
+    //Initialisation
+    trouve = false;      
+    statutPartie = true; 
+    egalite = false;
+    tourDeJeu = 0; 
+    position = 0;
+    choixDuPremierJoueur = static_cast<unsigned short int>(random(0,1));
+    
+     // Regles du jeu
     afficherTitre();
     cout << "Ce programme est un jeu de puisssance 4." << endl;
     cout << "Il est concu avec le langage C++." << endl;
@@ -24,37 +57,6 @@ int main() {
     cin >> nomJoueurDeux;
     
 
-    // TYPES UTILISES DANS LE PROGRAMME PRINCIPAL
-    //-------------------------------------------------------
-    const unsigned short int NB_DE_LIGNE = 6;
-    const unsigned short int NB_DE_COLONNE = 7;
-    Case grilleDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {caseVide}; //grille du jeu
-
-    // VARIABLES UTILISEES DANS LE PROGRAMME PRINCIPA
-    //-------------------------------------------------------
-    char choixDeRenouvellerLaPartie;      //L'utilisateur choisi de continuer ou pas le jeux
-
-    string nomDuGagnant;   //Nom du joueur au tour donné
-
-    bool trouve;        //Permettant de savoir si il y a de la place dans la colonne
-    bool statutPartie;  //Le statut de la partie : true = en jeu ; false = fin du jeu
-    bool egalite;       //En cas d'egalité on mets en true
-
-    unsigned short int tourDeJeu;  //Le nombre de tour de jeu
-    Case pion; //Le numero qui sera implementé dans le grille de jeu
-    unsigned short int choixDuJoueur;  //Le choix de la colonne du jeton
-    unsigned short int position;  //Permettant de positionner la propriete a verifier
-    unsigned short int choixDuPremierJoueur; //Le choix du premier joueur : 1 = joueur1 ; 2 = joueur2.
-
-
-    //Initialisation
-    trouve = false;      
-    statutPartie = true; 
-    egalite = false;
-    tourDeJeu = 0; 
-    position = 0;
-    choixDuPremierJoueur = static_cast<unsigned short int>(random(0,1));
-    
     // TRAITEMENTS
     //-------------------------------------------------------
     //On mets une pause entre l'interface
@@ -66,7 +68,7 @@ int main() {
 
         //Affiche de l'interface 
         afficherTitre();
-        afficherJeu(grilleDeJeu,couleurDuJoueurUn,couleurDuJoueurDeux);
+        afficherJeu(grilleDeJeu);
 
         //
         if (tourDeJeu % 2 == choixDuPremierJoueur)
@@ -77,7 +79,7 @@ int main() {
             //Affichage du tour
             cout << "\n\nC'est a " << nomJoueurUn << " de jouer." << endl;  //Affiche le nom du joueur
             cout << "Vous avez les jetons de couleur ";
-            afficherCouleurJoueur(couleurDuJoueurUn);  //Affiche la couleur du jetons du joueur    
+            afficherTexteEnCouleur("rouge", rouge, true);   
         }
         else
         {
@@ -87,7 +89,7 @@ int main() {
             //Affichage du tour
             cout << "\n\nC'est a " << nomJoueurDeux << " de jouer." << endl; //Affiche le nom du joueur
             cout << "Vous avez les jetons de couleur ";
-            afficherCouleurJoueur(couleurDuJoueurDeux);  //Affiche la couleur du jetons du joueur
+            afficherTexteEnCouleur("jaune", jaune, true); 
         }
 
 
@@ -128,7 +130,7 @@ int main() {
     //-------------------------------------------------------
     if (choixDuJoueur!=999){
         afficherTitre();
-        afficherJeu(grilleDeJeu,couleurDuJoueurUn,couleurDuJoueurDeux); //Affiche le jeu
+        afficherJeu(grilleDeJeu); //Affiche le jeu
     
         //Si il y un gagnant
         if (egalite==false){
@@ -139,14 +141,8 @@ int main() {
         }else
         {
             afficherTexteEnCouleur("\n\nEGALITE ! ! !\n", rouge, true);  //Egalité
-            
         }
-        
-        cout << "\n\nAppuyer sur r pour recommencer, sinon tapper une autre touche.";
-        choixDeRenouvellerLaPartie=static_cast<char>(_getwch());
-        if (choixDeRenouvellerLaPartie == 'r'){
-            jeu(couleurDuJoueurUn,couleurDuJoueurDeux,nomJoueurUn,nomJoueurDeux);
-        }
+
         
     }
 }
