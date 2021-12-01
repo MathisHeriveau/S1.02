@@ -67,10 +67,12 @@ void afficherJeu(Case grille[6][7])
             if ((grille[i][j]) == pionJaune)   //Si c'est le numero du joueur 1
             {
                 afficherTexteEnCouleur("  O  ", jaune, false);
+                cout << "|";
             }
             else if (grille[i][j] == pionRouge) //Si c'est le numero du joueur 2
             {
                 afficherTexteEnCouleur("  O  ", rouge, false);
+                cout << "|";
             }
             else    //Si c'est une case vide
             {
@@ -213,31 +215,6 @@ bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int l
     return true; //Si on trouve rien. On sort
 }
 
-//Fonction de verification complete 
-bool verificationJeu(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case grille[6][7])
-{
-    //Variable
-    //Traitement
-    
-    //Verif Horizontale
-    if (!verificationHorizontale(ligne, caseDuJeu, grille)) //Si il trouve quelque chose on sort.
-    {return false;}
-
-    //Verif Vertical
-    if (!verificationVertical(colonne, caseDuJeu, grille)) //Si il trouve quelque chose on sort.
-    {return false;}
-
-    //Verif de haut en bas de gauche a droite
-
-    if (!verificationDiagonalDroite(colonne, ligne, caseDuJeu, grille)) //Si il trouve quelque chose on sort.
-    {return false;}
-
-    //Verif de haut en bas de droite a gauche
-    if (!verificationDiagonalGauche(colonne, ligne, caseDuJeu, grille)) //Si il trouve quelque chose on sort.
-    {return false;}
-
-    return true; //Si on trouve rien. On sort
-}
 
 void afficherTitre(){
     system("cls");

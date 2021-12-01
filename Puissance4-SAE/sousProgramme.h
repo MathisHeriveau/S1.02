@@ -32,6 +32,12 @@ enum Case
     pionRouge
 };
 
+enum TypeDeVictoire{
+    horizontalement,
+    verticalement,
+    diagonalement
+};
+
 /**
  * @brief Liste de couleurs utilisables avec les
  * procedures #afficherTexteEnCouleur
@@ -94,16 +100,6 @@ void afficherTexteEnCouleur(string chaine, Couleur couleur, bool retourALaLigne 
  */
 int random(int min, int max);
 
-
-/**
- * @brief Permet de verifier la ligne horizontale/verticale et la diagonale gauche/droite
- *
- * @param [in] ligne permet de localisé la diagonal a verifier
- * @param [in] colonne permet de localisé la diagonal a verifier
- * @param [in] nombreAverifier Comme chaque joueur a un numero, on verifiera qu'un seul joueur a la fois
- * @param [in] tableau le tableau contenant toutes les informations du jeu
- */
-bool verificationJeu(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case tableau[6][7]);
 
 
 /**
