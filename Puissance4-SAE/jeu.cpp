@@ -28,7 +28,7 @@ int main() {
     //-------------------------------------------------------
     const unsigned short int NB_DE_LIGNE = 6;
     const unsigned short int NB_DE_COLONNE = 7;
-    Case tableauDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {caseVide}; //Tableau du jeu
+    Case grilleDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {caseVide}; //grille du jeu
 
     // VARIABLES UTILISEES DANS LE PROGRAMME PRINCIPA
     //-------------------------------------------------------
@@ -41,7 +41,7 @@ int main() {
     bool egalite;       //En cas d'egalité on mets en true
 
     unsigned short int tourDeJeu;  //Le nombre de tour de jeu
-    Case pion; //Le numero qui sera implementé dans le tableau de jeu
+    Case pion; //Le numero qui sera implementé dans le grille de jeu
     unsigned short int choixDuJoueur;  //Le choix de la colonne du jeton
     unsigned short int position;  //Permettant de positionner la propriete a verifier
     unsigned short int choixDuPremierJoueur; //Le choix du premier joueur : 1 = joueur1 ; 2 = joueur2.
@@ -66,7 +66,7 @@ int main() {
 
         //Affiche de l'interface 
         afficherTitre();
-        afficherJeu(tableauDeJeu,couleurDuJoueurUn,couleurDuJoueurDeux);
+        afficherJeu(grilleDeJeu,couleurDuJoueurUn,couleurDuJoueurDeux);
 
         //
         if (tourDeJeu % 2 == choixDuPremierJoueur)
@@ -98,24 +98,24 @@ int main() {
             cin >> choixDuJoueur;
             if (choixDuJoueur == 999){statutPartie=false ; break;}
 
-        }while (choixDuJoueur > 6 || tableauDeJeu[0][choixDuJoueur] > 0);
+        }while (choixDuJoueur > 6 || grilleDeJeu[0][choixDuJoueur] > 0);
 
         if(choixDuJoueur !=999){
 
             while (trouve != true ) //Mettre le jeton a la bonne case (bonne position de hauteur et de colonne)
             {   
                 //Si on tombe sur un jeton ou on en trouve pas
-                if (position == 6 || tableauDeJeu[position][choixDuJoueur] > 0)
+                if (position == 6 || grilleDeJeu[position][choixDuJoueur] > 0)
                 {
                     position--; //On remonte d'un crant
-                    tableauDeJeu[position][choixDuJoueur] = pion; //On met le jeton avec le numero du joueur
+                    grilleDeJeu[position][choixDuJoueur] = pion; //On met le jeton avec le numero du joueur
                     break; //On sort de la boucle
                 }
                 position++; //On descend de case
             }
             
             //Verif
-            statutPartie = verificationJeu(choixDuJoueur, position, pion, tableauDeJeu);
+            statutPartie = verificationJeu(choixDuJoueur, position, pion, grilleDeJeu);
             if (statutPartie==false){break;}
             if (tourDeJeu==42){statutPartie=false; egalite=true;} //Si il n'y a plus de case libre il y a egalite
             //Fin de la manche
@@ -128,7 +128,7 @@ int main() {
     //-------------------------------------------------------
     if (choixDuJoueur!=999){
         afficherTitre();
-        afficherJeu(tableauDeJeu,couleurDuJoueurUn,couleurDuJoueurDeux); //Affiche le jeu
+        afficherJeu(grilleDeJeu,couleurDuJoueurUn,couleurDuJoueurDeux); //Affiche le jeu
     
         //Si il y un gagnant
         if (egalite==false){

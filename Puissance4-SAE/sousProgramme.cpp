@@ -53,7 +53,7 @@ void afficherTexteEnCouleur(string chaine, Couleur couleur, bool retourALaLigne)
 }
 
 //Procedure d'affichage du jeu
-void afficherJeu(unsigned short int tableau[6][7], unsigned short int couleurJoueur1, unsigned short int couleurJoueur2)
+void afficherJeu(Case grille[6][7], unsigned short int couleurJoueur1, unsigned short int couleurJoueur2)
 {
 
     //TRAITEMENTS DU SOUS-PROGRAMME
@@ -65,11 +65,11 @@ void afficherJeu(unsigned short int tableau[6][7], unsigned short int couleurJou
         cout << "\n+-----+-----+-----+-----+-----+-----+-----+\n|" ; //Affichage de l'interface
         for (int j = 0; j < 7; j++) //Pour toutes les colonnes
         {
-            if ((tableau[i][j]) == pionJaune)   //Si c'est le numero du joueur 1
+            if ((grille[i][j]) == pionJaune)   //Si c'est le numero du joueur 1
             {
                 afficherOcouleur(couleurJoueur1); //Affichage de O en jaune
             }
-            else if (tableau[i][j] == pionRouge) //Si c'est le numero du joueur 2
+            else if (grille[i][j] == pionRouge) //Si c'est le numero du joueur 2
             {
                 afficherOcouleur(couleurJoueur2); //Affichage de O en rouge
             }
@@ -85,7 +85,7 @@ void afficherJeu(unsigned short int tableau[6][7], unsigned short int couleurJou
 }
 
 //Fonction de verification de la ligne horizontale
-bool verificationHorizontale(unsigned short int ligne, Case case, unsigned short int tableau[6][7])
+bool verificationHorizontale(unsigned short int ligne, Case case, Case grille[6][7])
 {
 
     //Variable
@@ -98,7 +98,7 @@ bool verificationHorizontale(unsigned short int ligne, Case case, unsigned short
     for (int i = 1; i < 7; i++) //Pour toute la ligne
     {
         //Si il y en a 2 a coté
-        if (tableau[ligne][i] == case && case == tableau[ligne][i - 1]) 
+        if (grille[ligne][i] == case && case == grille[ligne][i - 1]) 
         {
             suite++; //Augmentation de la suite
             if (suite == 3) //Si il en trouve 3 fois 2 a coté le joueur a gagner 
@@ -111,7 +111,7 @@ bool verificationHorizontale(unsigned short int ligne, Case case, unsigned short
 }
 
 //Fonction de verification de la ligne verticale
-bool verificationVertical(unsigned short int colonne, Case case, unsigned short int tableau[6][7])
+bool verificationVertical(unsigned short int colonne, Case case, Case grille[6][7])
 {
     //Variable
     unsigned short int suite; //Calcul le nombre de couleur cote a cote
@@ -123,7 +123,7 @@ bool verificationVertical(unsigned short int colonne, Case case, unsigned short 
     for (int i = 5; i > 0; i--) //Pour toute la colonne
     {
         //Si il en trouve 2 a coté
-        if (tableau[i][colonne] == case && case == tableau[i - 1][colonne])
+        if (grille[i][colonne] == case && case == grille[i - 1][colonne])
         {
             suite++; //Augmentation de la suite
             if (suite == 3)  //Si il en trouve 3 fois 2 a coté le joueur a gagner 
@@ -135,7 +135,7 @@ bool verificationVertical(unsigned short int colonne, Case case, unsigned short 
 }
 
 //Fonction de verification de la diagonale droite
-bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int ligne, Case case, unsigned short int tableau[6][7])
+bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int ligne, Case case, Case grille[6][7])
 {
     //Variable
     unsigned short int placementColonne; //Longueur de la diagonal
@@ -160,7 +160,7 @@ bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int l
     while (placementLigne < 5 && placementColonne < 6)
     {
         //Si on trouve 2 jetons a coter
-        if (tableau[placementLigne][placementColonne] == case && tableau[placementLigne + 1][placementColonne + 1] == case)
+        if (grille[placementLigne][placementColonne] == case && grille[placementLigne + 1][placementColonne + 1] == case)
         {
             suite++; //Augmentation de la suite
             if (suite == 3) //Si on en trouve 3. On sort
@@ -175,7 +175,7 @@ bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int l
 }
 
 //Fonction de verification de la diagonal gauche
-bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int ligne, Case case, unsigned short int tableau[6][7])
+bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int ligne, Case case, Case grille[6][7])
 {
     //Variable
     unsigned short int placementColonne; //Longueur de la diagonal
@@ -200,7 +200,7 @@ bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int l
     while (placementLigne < 5 && placementColonne > 0)
     {
         //Si on trouve 2 jetons cote a cote
-        if (tableau[placementLigne][placementColonne] == caseVide && tableau[placementLigne + 1][placementColonne - 1] == caseVide)
+        if (grille[placementLigne][placementColonne] == caseVide && grille[placementLigne + 1][placementColonne - 1] == caseVide)
         {
             suite++; //Augmentation de la suite
             if (suite == 3) //Si il en trouve 3 d'affiler. On sort
@@ -215,26 +215,26 @@ bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int l
 }
 
 //Fonction de verification complete 
-bool verificationJeu(unsigned short int colonne, unsigned short int ligne, Case case, unsigned short int tableau[6][7])
+bool verificationJeu(unsigned short int colonne, unsigned short int ligne, Case case, Case grille[6][7])
 {
     //Variable
     //Traitement
     
     //Verif Horizontale
-    if (!verificationHorizontale(ligne, case, tableau)) //Si il trouve quelque chose on sort.
+    if (!verificationHorizontale(ligne, case, grille)) //Si il trouve quelque chose on sort.
     {return false;}
 
     //Verif Vertical
-    if (!verificationVertical(colonne, case, tableau)) //Si il trouve quelque chose on sort.
+    if (!verificationVertical(colonne, case, grille)) //Si il trouve quelque chose on sort.
     {return false;}
 
     //Verif de haut en bas de gauche a droite
 
-    if (!verificationDiagonalDroite(colonne, ligne, case, tableau)) //Si il trouve quelque chose on sort.
+    if (!verificationDiagonalDroite(colonne, ligne, case, grille)) //Si il trouve quelque chose on sort.
     {return false;}
 
     //Verif de haut en bas de droite a gauche
-    if (!verificationDiagonalGauche(colonne, ligne, case, tableau)) //Si il trouve quelque chose on sort.
+    if (!verificationDiagonalGauche(colonne, ligne, case, grille)) //Si il trouve quelque chose on sort.
     {return false;}
 
     return true; //Si on trouve rien. On sort
