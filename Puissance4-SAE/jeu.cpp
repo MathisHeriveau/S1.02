@@ -14,7 +14,7 @@ void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueu
     //-------------------------------------------------------
     const unsigned short int NB_DE_LIGNE = 6;
     const unsigned short int NB_DE_COLONNE = 7;
-    unsigned short int tableauDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {0}; //Tableau du jeu
+    unsigned short int tableauDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {caseVide}; //Tableau du jeu
 
     // VARIABLES UTILISEES DANS LE PROGRAMME PRINCIPA
     //-------------------------------------------------------

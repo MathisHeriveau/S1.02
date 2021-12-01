@@ -45,6 +45,7 @@ void option(unsigned short int& couleurDuJoueur1, unsigned short int& couleurDuJ
  * @brief Liste des possibilitées de case
  * procedures // todo dire les procédures
  */
+
 enum Case
 {
     caseVide = 0,
