@@ -27,7 +27,6 @@ int main()
     string nomJoueurUn;   //Nom du joueur un
     string nomJoueurDeux; //Nom du joueur deux
 
-    bool trouve;       //Permettant de savoir si il y a de la place dans la colonne
     bool statutPartie; //Le statut de la partie : true = en jeu ; false = fin du jeu
     bool egalite;      //En cas d'egalité on mets en true
 
@@ -37,7 +36,6 @@ int main()
     unsigned short int choixDuPremierJoueur; //Le choix du premier joueur : 1 = joueur1 ; 2 = joueur2.
 
     //Initialisation
-    trouve = false;
     statutPartie = true;
     egalite = false;
     tourDeJeu = 0;
@@ -108,7 +106,7 @@ int main()
         if (choixDuJoueur != 999)
         {
 
-            while (trouve != true) //Mettre le jeton a la bonne case (bonne position de hauteur et de colonne)
+            while (true) //Mettre le jeton a la bonne case (bonne position de hauteur et de colonne)
             {
                 //Si on tombe sur un jeton ou on en trouve pas
                 if (position == 6 || grilleDeJeu[position][choixDuJoueur] > 0)
