@@ -1,18 +1,20 @@
 /**
  * @file sousProgramme.h
- * @author Mathis Heriveau
+ * @author Mathis Heriveau, Tom Planche
  * @brief Fichier d'entête du module sousProgramme
  * @date 27 octobre 2021
+ * todo dire les procédures l.46
  */
 #ifndef SOUSPROGRAMME_H
 #define SOUSPROGRAMME_H
+
 
 
 // . Importation Des Bibliothèques Nécessaires
 #include <windows.h> // pour afficher du texte en couleur
 #include <iostream>
 
-// . 
+
 using namespace std;
 
 
@@ -38,6 +40,17 @@ void jeu(unsigned short int couleurDuJoueurUn, unsigned short int couleurDuJoueu
 void option(unsigned short int& couleurDuJoueur1, unsigned short int& couleurDuJoueur2);
 
 //.  ------------------------------ DECLARATION DES TYPES ENUMERE ----------------------------------
+
+/**
+ * @brief Liste des possibilitées de case
+ * procedures // todo dire les procédures
+ */
+enum Case
+{
+    caseVide = 0,
+    pionJaune,
+    pionRouge
+}
 
 /**
  * @brief Liste de couleurs utilisables avec les
