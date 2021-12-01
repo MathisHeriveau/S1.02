@@ -67,10 +67,12 @@ void afficherJeu(Case grille[6][7])
             if ((grille[i][j]) == pionJaune)   //Si c'est le numero du joueur 1
             {
                 afficherTexteEnCouleur("  O  ", jaune, false);
+                cout << "|";
             }
             else if (grille[i][j] == pionRouge) //Si c'est le numero du joueur 2
             {
                 afficherTexteEnCouleur("  O  ", rouge, false);
+                cout << "|";
             }
             else    //Si c'est une case vide
             {
