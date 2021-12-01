@@ -39,7 +39,7 @@ int main()
 
     unsigned short int nbTours;              // Le nombre de tour de jeu
     unsigned short int choixDuJoueur;        // Le choix de la colonne du jeton
-    unsigned short int positionCase;             // Permettant de positionner la propriete a verifier
+    unsigned short int positionCase;             // Permettant de partir du bas de la colonne pour vérifier si on peut mettre un jeton
     unsigned short int choixDuPremierJoueur; // Le choix du premier joueur : 1 = joueur1 ; 2 = joueur2.
     
 
@@ -57,7 +57,7 @@ int main()
     cout << "Le but de ce jeu est de reussir a aligner quatre de ces jetons horizontalement, verticalement ou encore diagonalement." << endl;
     cout << "Le premier joueur a reussir cela gagne automatiquement." << endl;
 
-    // Initialisation des noms
+    //.  ------------------------------- INITIALISATION DES NOMS -----------------------------------
     cout << "Saisissez le nom du joueur 1 : "; //Demande le nom du joueur 1
     cin >> nomJoueurUn;
     cout << "Saisissez le nom du joueur 2 : "; //Demande le nom du joueur 2
@@ -68,43 +68,44 @@ int main()
     //.  ===========================================================================================
     //.                                        TRAITEMENTS                                          
     //.  ===========================================================================================
-    //On mets une pause entre l'interface
+
+    // Bouble do-while simulant le jeu.
     do
     {
-        //Rinitialisation des variables a chaque tour
-        positionCase = 0; //position du jeton quand il tombe
-        nbTours++;  //Tour de jeu
+        // Réinitialisation des variables à chaque tour
+        positionCase = 0; // Position du jeton quand il tombe
+        nbTours++;  // Tour de jeu
 
-        //Affiche de l'interface
+        // Affichage de l'interface
         afficherTitre();
         afficherJeu(grilleDeJeu);
 
-        //
+        // Si le nombre de tours est pair, c'est au tour du joueur qui a commencé.
         if (nbTours % 2 == choixDuPremierJoueur)
         {
-            nomDuGagnant = nomJoueurUn; //Nom du joueur
-            jeton = pionRouge;          //Numero du joueur
+            nomDuGagnant = nomJoueurUn; // Nom du joueur
+            jeton = pionRouge;          // Numéro du joueur
 
-            //Affichage du tour
-            cout << "\n\nC'est a " << nomJoueurUn << " de jouer." << endl; //Affiche le nom du joueur
-            cout << "Vous avez les jetons de couleur ";
+            // Affichage des informations sur le tour actuel
+            cout << "\n\nC'est a " << nomJoueurUn << " de jouer." << endl; // Affiche le nom du joueur
+            cout << "Vous avez les jetons de couleur "; // Affichage des informations sur le jeton du joueur
             afficherTexteEnCouleur("rouge", rouge, true);
         }
-        else
+        else // Sinon, c'est à l'autre joueur
         {
-            nomDuGagnant = nomJoueurDeux; //Nom du joueur
-            jeton = pionJaune;            //Numero du joueur
+            nomDuGagnant = nomJoueurDeux; // Nom du joueur
+            jeton = pionJaune;            // Numéro du joueur
 
-            //Affichage du tour
-            cout << "\n\nC'est a " << nomJoueurDeux << " de jouer." << endl; //Affiche le nom du joueur
-            cout << "Vous avez les jetons de couleur ";
+            // Affichage des informations sur le tour actuel
+            cout << "\n\nC'est a " << nomJoueurDeux << " de jouer." << endl; // Affiche le nom du joueur
+            cout << "Vous avez les jetons de couleur "; // Affichage des informations sur le jeton du joueur
             afficherTexteEnCouleur("jaune", jaune, true);
         }
 
-        //verification si la colonne est pleine
+        // Saisie-vérif du numéro de la case
         do
         {
-            cout << "Saisissez une case : "; //Annonce la saisie
+            cout << "Saisissez une case : "; // Annonce la saisie
             cin >> choixDuJoueur;
             if (choixDuJoueur == 999)
             {
@@ -123,7 +124,7 @@ int main()
                 if (positionCase == 6 || grilleDeJeu[positionCase][choixDuJoueur] > 0)
                 {
                     positionCase--;                                   //On remonte d'un crant
-                    grilleDeJeu[positionCase][choixDuJoueur] = jeton; //On met le jeton avec le numero du joueur
+                    grilleDeJeu[positionCase][choixDuJoueur] = jeton; //On met le jeton avec le numéro du joueur
                     break;                                        //On sort de la boucle
                 }
                 positionCase++; //On descend de case
