@@ -11,7 +11,9 @@
 
 
 // . Importation Des Bibliothèques Nécessaires
-#include <windows.h> // pour afficher du texte en couleur
+# if defined(WIN32) || defined(_WIN32) || defined(__WIN32) 
+    #include <windows.h>
+# endif
 #include <iostream>
 
 

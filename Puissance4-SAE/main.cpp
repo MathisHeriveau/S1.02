@@ -113,7 +113,7 @@ int main()
                 break;
             }
 
-        } while (choixDuJoueur > 6 || grilleDeJeu[0][choixDuJoueur] > 0);
+        } while (choixDuJoueur > 6 || grilleDeJeu[0][choixDuJoueur] != caseVide);
 
         if (choixDuJoueur != 999)
         {
@@ -200,5 +200,7 @@ int main()
         {
             afficherTexteEnCouleur("\n\nEGALITE ! ! !\n", rouge, true); //Egalité
         }
+
+        cout << endl;
     }
 }
