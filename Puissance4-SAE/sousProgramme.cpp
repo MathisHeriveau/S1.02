@@ -82,28 +82,6 @@ int random(int min, int max)
 }
 
 
-//Fonction pause avec touche
-void pause(unsigned int dureeEnSecondes) {
-    if (dureeEnSecondes == 0) {
-        # ifdef _WIN32
-            char touche;
-            touche = char(getch());
-            touche = ' ';
-            cout << touche << endl;
-        # else
-            std::cin.ignore();
-        # endif
-    } else {
-        # ifdef _WIN32
-            const unsigned short int UNE_MILLISECONDE = 1000;
-            Sleep(dureeEnSecondes * UNE_MILLISECONDE);
-        # else
-            const unsigned int MICRO_SECONDE = 1000000;
-            usleep(dureeEnSecondes * MICRO_SECONDE);
-        # endif
-    }
-}
-
 void afficherTexteEnCouleur(string chaine, Couleur couleur, bool retourALaLigne) {
     # ifdef _WIN32
         HANDLE idTerminal = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -120,22 +98,6 @@ void afficherTexteEnCouleur(string chaine, Couleur couleur, bool retourALaLigne)
     }
 }
 
-
-void afficherTexteEnCouleur(char caractere, Couleur couleur, bool retourALaLigne) {
-    # ifdef _WIN32
-        HANDLE idTerminal = GetStdHandle(STD_OUTPUT_HANDLE);
-        SetConsoleTextAttribute(idTerminal, couleur);
-        cout << caractere << flush;
-        SetConsoleTextAttribute(idTerminal, gris);
-    # else
-        string codeCouleur = getCodeCouleur(couleur);
-        cout << codeCouleur << caractere << RESET << flush;
-    # endif
-
-    if (retourALaLigne) {
-        cout << endl;
-    }
-}
 
 //Procedure d'affichage du jeu
 void afficherJeu(Case grille[6][7])

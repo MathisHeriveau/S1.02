@@ -19,11 +19,11 @@ int main()
     //.  ------------------------------- DECLARATIONS VARIABLES ------------------------------------
 
     //. Constantes Utilisees Dans Le Programme Principal
-    const unsigned short int NB_DE_LIGNE = 6;
-    const unsigned short int NB_DE_COLONNE = 7;
+    const unsigned short int NB_DE_LIGNE = 6; //Le nombre de ligne dans la grille du puissance 4
+    const unsigned short int NB_DE_COLONNE = 7; //Le nombre de colonne dans la grille du puissance 4
     
     //. Types Utilisés Dans Le Programme Principal
-    Case grilleDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {caseVide}; // grille du jeu
+    Case grilleDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {caseVide}; // La grille de jeu contenant l'ensemble des jetons
     
     Case jeton; // Jeton du joueur 1 et du joueur 2
     
@@ -31,16 +31,16 @@ int main()
 
     //. Constantes Utilisees Dans Le Programme Principal
     string nomDuGagnant;  //Nom du joueur au tour donné
-    string nomJoueurUn;   //Nom du joueur un
-    string nomJoueurDeux; //Nom du joueur deux
+    string nomJoueurUn;   //Correspond au nom du joueur 1
+    string nomJoueurDeux; //Correspond au nom du joueur 2 
 
-    bool statutPartie; //Le statut de la partie : true = en jeu ; false = fin du jeu
-    bool egalite;      //En cas d'egalité on mets en true
+    bool statutPartie; //Caractérise le statut de la partie : true = en jeu, false = fin du jeu 
+    bool egalite;      //Cette variable ce mets a true dès lors qu’il y a une égalité 
 
-    unsigned short int nbTours;              // Le nombre de tour de jeu
+    unsigned short int nbTours;              // Permet de compter le nombre de tour, permettant de savoir qui joue et quand Est-ce qu'il y a une égalité 
     unsigned short int choixDuJoueur;        // Le choix de la colonne du jeton
-    unsigned short int positionCase;             // Permettant de partir du bas de la colonne pour vérifier si on peut mettre un jeton
-    unsigned short int choixDuPremierJoueur; // Le choix du premier joueur : 1 = joueur1 ; 2 = joueur2.
+    unsigned short int positionCase;         // Permet de savoir a qu’elle hauteur le jeton doit être positionné dans la colonne 
+    unsigned short int choixDuPremierJoueur; // Grace a un random, la valeur indique le premier joueur qui commencera la partie : 0 pour le joueur rouge et 1 pour le joueur jaune. 
     
 
     //.  -------------------------------- DEFINITIONS VARIABLES ------------------------------------
