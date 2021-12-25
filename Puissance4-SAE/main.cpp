@@ -119,31 +119,31 @@ int main()
 
             while (true) // Permet de mettre le jeton sur la bonne case.
             {
-                //Si on tombe sur un jeton ou on en trouve pas
+                // Si on tombe sur un jeton ou on en trouve pas
                 if (positionCase == 6 || grilleDeJeu[positionCase][choixDuJoueur] > 0)
                 {
-                    positionCase--;                                   //On remonte d'un crant
-                    grilleDeJeu[positionCase][choixDuJoueur] = jeton; //On met le jeton avec le numéro du joueur
-                    break;                                        //On sort de la boucle
+                    positionCase--;                                   // On remonte d'un crant
+                    grilleDeJeu[positionCase][choixDuJoueur] = jeton; // On met le jeton avec le numéro du joueur
+                    break;                                        // On sort de la boucle
                 }
-                positionCase++; //On descend de case
+                positionCase++; // On descend de case
             }
 
-            //Verif
+            // Vérification Horizontale
             if (verificationHorizontale(positionCase, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
             {
                 statutPartie = false;
                 maniereDeGagner = horizontalement;
             }
 
-            //Verif Vertical
+            // Vérification Verticale
             if (verificationVerticale(choixDuJoueur, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
             {
                 statutPartie = false;
                 maniereDeGagner = verticalement;
             }
 
-            //Verif de haut en bas de gauche a droite
+            // Vérification des diagonales
             if (verificationDiagonaleDroite(choixDuJoueur, positionCase, jeton, grilleDeJeu) || verificationDiagonaleGauche(choixDuJoueur, positionCase, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
             {
                 statutPartie = false;
@@ -159,33 +159,34 @@ int main()
             {
                 statutPartie = false;
                 egalite = true;
-            } //Si il n'y a plus de case libre il y a egalite
-            //Fin de la manche
+            } // S'il n'y a plus de case libre, alors il y a égalité
+            // Fin de la manche
         }
 
     } while (statutPartie != false);
 
-    // Fin du jeu
-    //-------------------------------------------------------
+    //.  ------------------------------------- FIN DU JEU ------------------------------------------
     if (choixDuJoueur != 999)
     {
         afficherTitre();
-        afficherJeu(grilleDeJeu); //Affiche le jeu
+        afficherJeu(grilleDeJeu); // Affiche le jeu
 
-        //Si il y un gagnant
+        // S'il y un gagnant
         if (egalite == false)
         {
-            afficherTexteEnCouleur("\n\nNOUS AVONS UN GAGNANT ! ! !\n", rouge, true); //Gagnant
-            //Affichage de la position du jeton clef
+            afficherTexteEnCouleur("\n\nNOUS AVONS UN GAGNANT ! ! !\n", rouge, true); // Gagnant
+            // Affichage de la position du jeton clé
             cout << nomDuGagnant ;
-            switch (maniereDeGagner)
-            {
-            case horizontalement: cout << " gagne la partie en alignant 4 jetons horizontalement.";
-                break;
-            case verticalement: cout << " gagne la partie en alignant 4 jetons verticalement.";
-                break;
-            case diagonalement: cout << " gagne la partie en alignant 4 jetons diagonalement.";
-                break;
+            switch (maniereDeGagner) {
+                case horizontalement:
+                    cout << " gagne la partie en alignant 4 jetons horizontalement.";
+                    break;
+                case verticalement:
+                    cout << " gagne la partie en alignant 4 jetons verticalement.";
+                    break;
+                case diagonalement:
+                    cout << " gagne la partie en alignant 4 jetons diagonalement.";
+                    break;
             }
         }
         else
