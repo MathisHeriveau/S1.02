@@ -101,12 +101,9 @@ int main()
         }
 
         // Saisie-vérif du numéro de la case
-        do
-        {
-            cout << "Saisissez une case : "; // Annonce la saisie
-            cin >> choixDuJoueur;
-            if (choixDuJoueur == 999)
-            {
+        do {
+            choixDuJoueur = saisieVerifCase();
+            if (choixDuJoueur == 999) {
                 statutPartie = false;
                 break;
             }

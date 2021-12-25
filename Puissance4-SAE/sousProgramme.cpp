@@ -330,11 +330,11 @@ void afficherTitre(){
 
 unsigned short int saisieVerifCase() {
     string str;
-    regex regex_pattern("-?[0-6]+.?[0-6]+");
+    regex regex_pattern("[0-6]");
     do {
         cout << "Saisissez une case : ";
         cin >> str;
     } while(!regex_match(str, regex_pattern));
 
-    return stod(str);
+    return stoi(str);
 }

@@ -4,7 +4,6 @@
   * @brief Fichier d'entête du module sousProgramme
   * @date 27-10-2021
   * 
-  * todo dire les procédures l.46
 \**/
 
 
@@ -88,36 +87,29 @@ enum Couleur {
 
 
 //.  ----------------------------- DECLARATION DES SOUS-PROGRAMMES ---------------------------------
-/**
- * @brief Permet d'afficher l'interface
- *
- * @param [in] tableau le tableau de taille 6x7 qui va etre afficher 
- * 
- */
 
 /**\
-  * @brief 
+  * @brief Permet d'afficher la grille de jeu.
   * 
-  * @param tableau 
+  * @param tableau tableau entier du jeu.
 \**/
 void afficherJeu(Case tableau[6][7]);
 
-/**
- * 
- * @brief Permet d'afficher le titre
- * 
- */
+
+/**\
+  * @brief Affiche le titre "puissance 4" en couleur.
+  * 
+\**/
 void afficherTitre();
 
-/**
- * @brief Permet d'afficher une chaine de caractères en couleur.
- *
- * @param [in] chaine la chaine à afficher.
- * @param [in] couleur la couleur à utiliser pour afficher la chaine. La couleur doit faire partie
- * des valeurs proposées par le type #Couleur
- * @param [in] retourALaLigne indique si l'affichage de la chaine doit être suivi d'un
- * retour à la ligne (true) ou pas (false).
- */
+
+/**\
+  * @brief Permet d'afficher une chaîne de caractères en couleur
+  * 
+  * @param chaine Chaîne de caractère à afficher.
+  * @param couleur Couleur à utiliser pour afficher la chaîne. Doit faire partie du type Couleur défini au dessus.
+  * @param retourALaLigne Définit sur false, si true ajoute un retour à la ligne.
+\**/
 void afficherTexteEnCouleur(string chaine, Couleur couleur, bool retourALaLigne = false);
 
 
@@ -128,48 +120,44 @@ void afficherTexteEnCouleur(string chaine, Couleur couleur, bool retourALaLigne 
 void effacer();
 
 
-/**
- * @brief Permet de verifier la ligne horizontale/verticale et la diagonale gauche/droite
- *
- * @param [in] min borne minimum
- * @param [in] max borne maximum
- */
+/**\
+  * @brief Retourne un nombre aléatoire entre min et max.
+  * 
+  * @param min Borne basse.
+  * @param max Borne haute.
+  * @return int Entier choisi aléatoirement entre min et max.
+\**/
 int random(int min, int max);
 
 
 /**\
-  * @brief 
+  * @brief Permet la saisie et véfification d'un numéro de case (entier compris entre 0 et 6 inclus).
   * 
-  * @return unsigned short int 
+  * @return unsigned short int numéro de case bien saisi.
 \**/
 unsigned short int saisieVerifCase();
 
 
-/**
- * @brief Permet de verifier si la ligne horizontal est gagnante pour le joueur 1 ou 2
- *
- * @param [in] ligne le numero de la ligne a verifier
- * @param [in] nombreAverifier Comme chaque joueur a un numero, on verifiera qu'un seul joueur a la fois
- * @param [in] tableau le tableau contenant toutes les informations du jeu
- */
+/**\
+  * @brief Permet de verifier si la ligne horizontal est gagnante pour le joueur 1 ou 2.
+  * 
+  * @param ligne Numéro de la ligne à vérifier.
+  * @param caseDuJeu Dernière case jouée.
+  * @param tableau Tableau entier du jeu.
+  * @return true Quatres pions sont alignés horizontalement sur la ligne.
+  * @return false Il n'y a pas quatres pions alignés dans cette ligne.
+\**/
 bool verificationHorizontale(unsigned short int ligne, Case caseDuJeu, Case tableau[6][7]);
 
-/**
- * @brief Permet de verifier si la ligne vertical est gagnante pour le joueur 1 ou 2
- *
- * @param [in] colonne le numero de la colonne a verifier
- * @param [in] nombreAverifier Comme chaque joueur a un numero, on verifiera qu'un seul joueur a la fois
- * @param [in] tableau le tableau contenant toutes les informations du jeu
- */
 
 /**\
-  * @brief Permet de vérifier si il y a quatre pions dans la colonne indiquée.
+  * @brief Permet de vérifier si il y a quatre pions alignés dans la colonne indiquée.
   * 
   * @param colonne numéro de la colonne à vérifier.
   * @param caseDuJeu Dernière case jouée
-  * @param tableau 
-  * @return true 
-  * @return false 
+  * @param tableau tableau entier du jeu
+  * @return true Quatres pions sont alignés verticalement, fin de la partie.
+  * @return false Il n'y a pas de pions alignés verticalement.
 \**/
 bool verificationVerticale(unsigned short int colonne, Case caseDuJeu, Case tableau[6][7]);
 
@@ -181,7 +169,7 @@ bool verificationVerticale(unsigned short int colonne, Case caseDuJeu, Case tabl
   * @param ligne cooronée sur y de la diagonale à vérifier
   * @param caseDuJeu dernière case en jeu
   * @param tableau tableau entier du jeu
-  * @return true Quatres pions sont alignés diagonalelent, fin de la partie.
+  * @return true Quatres pions sont alignés diagonalement, fin de la partie.
   * @return false Il n'y a pas de pions alignés diagonalement.
 \**/
 bool verificationDiagonaleDroite(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case tableau[6][7]);
