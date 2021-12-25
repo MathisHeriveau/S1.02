@@ -1,12 +1,10 @@
 /**
  * @file main.cpp
- * @author Mathis Heriveau
- * @brief Corps du module sousProgramme.h
+ * @author Mathis Heriveau, Tom Planche
+ * @brief Fichier principal du projet
  * @date 27 octobre 2021
  */
 #include "sousProgramme.h"
-#include <iostream>
-using namespace std;
 
 int main()
 {
@@ -138,21 +136,21 @@ int main()
             }
 
             //Verif Vertical
-            if (!verificationVertical(choixDuJoueur, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
+            if (!verificationVerticale(choixDuJoueur, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
             {
                 statutPartie = false;
                 maniereDeGagner = verticalement;
             }
 
             //Verif de haut en bas de gauche a droite
-            if (!verificationDiagonalDroite(choixDuJoueur, positionCase, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
+            if (!verificationDiagonaleDroite(choixDuJoueur, positionCase, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
             {
                 statutPartie = false;
                 maniereDeGagner = diagonalement;
             }
 
             //Verif de haut en bas de droite a gauche
-            if (!verificationDiagonalGauche(choixDuJoueur, positionCase, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
+            if (!verificationDiagonaleGauche(choixDuJoueur, positionCase, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
             {
                 statutPartie = false;
                 maniereDeGagner = diagonalement;

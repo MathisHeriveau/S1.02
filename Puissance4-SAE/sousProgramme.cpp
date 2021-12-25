@@ -1,9 +1,11 @@
-/**
- * @file sousProgramme.cpp
- * @author Mathis Heriveau, Tom Planche
- * @brief Corps du module sousProgramme.h
- * @date 27 octobre 2021
- */
+/**\
+  * @file sousProgramme.cpp
+  * @author Tom Planche, Mathis Hériveau
+  * @brief Coprs du module sousProgramme
+  * @remarks Ce corps permet un fonctionnement sous architecture Windows ainsi que macOs.
+  * @date 24-11-2021
+  * 
+\**/
 
 #include "sousProgramme.h"
 
@@ -29,7 +31,8 @@
     #define BLANC "\033[0;37m"
 
     // Retourne le code couleur de la couleur passé en paramètre
-    string getCodeCouleur (Couleur couleur) {
+    string getCodeCouleur (Couleur couleur)
+    {
         string codeCouleur;
         switch (couleur)
         {
@@ -75,7 +78,7 @@ int random(int min, int max)
 {
     std::default_random_engine generateur;
     std::uniform_int_distribution<int> distributionNombres;
-    unsigned int tempsActuel = static_cast<unsigned int>(chrono::steady_clock::now().time_since_epoch().count());
+    unsigned int tempsActuel = static_cast<unsigned int>(steady_clock::now().time_since_epoch().count());
     generateur.seed(tempsActuel);
 
     return ((distributionNombres(generateur) % (max + 1)) + min);
@@ -160,7 +163,7 @@ bool verificationHorizontale(unsigned short int ligne, Case caseDuJeu, Case gril
 }
 
 //Fonction de verification de la ligne verticale
-bool verificationVertical(unsigned short int colonne, Case caseDuJeu, Case grille[6][7])
+bool verificationVerticale(unsigned short int colonne, Case caseDuJeu, Case grille[6][7])
 {
     //Variable
     unsigned short int suite; //Calcul le nombre de couleur cote a cote
@@ -184,7 +187,7 @@ bool verificationVertical(unsigned short int colonne, Case caseDuJeu, Case grill
 }
 
 //Fonction de verification de la diagonale droite
-bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case grille[6][7])
+bool verificationDiagonaleDroite(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case grille[6][7])
 {
     //Variable
     unsigned short int placementColonne; //Longueur de la diagonal
@@ -224,7 +227,7 @@ bool verificationDiagonalDroite(unsigned short int colonne, unsigned short int l
 }
 
 //Fonction de verification de la diagonal gauche
-bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case grille[6][7])
+bool verificationDiagonaleGauche(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case grille[6][7])
 {
     //Variable
     unsigned short int placementColonne; //Longueur de la diagonal
@@ -263,9 +266,54 @@ bool verificationDiagonalGauche(unsigned short int colonne, unsigned short int l
     return true; //Si on trouve rien. On sort
 }
 
+void effacer() {
+    # ifdef _WIN32
+        HANDLE idTerminal;
+        CONSOLE_SCREEN_BUFFER_INFO caracteristiquesTerminal;
+        DWORD count;
+        DWORD nbreCellulesDansTerminal;
+        COORD coordonneesOrigine = {0, 0};
+
+        idTerminal = GetStdHandle(STD_OUTPUT_HANDLE);
+        if (idTerminal == INVALID_HANDLE_VALUE)
+        {
+            return;
+        }
+
+        /* Calculer le nombre de cellules du terminal */
+        if (!GetConsoleScreenBufferInfo(idTerminal, &caracteristiquesTerminal))
+        {
+            return;
+        }
+        nbreCellulesDansTerminal = caracteristiquesTerminal.dwSize.X * caracteristiquesTerminal.dwSize.Y;
+
+        /* Remplir le terminal avec des espaces */
+        if (!FillConsoleOutputCharacter(idTerminal, (TCHAR)' ', nbreCellulesDansTerminal, coordonneesOrigine, &count))
+        {
+            return;
+        }
+
+        /*Remplir le terminal avec les couleurs courantes */
+        if (!FillConsoleOutputAttribute(
+                idTerminal,
+                caracteristiquesTerminal.wAttributes,
+                nbreCellulesDansTerminal,
+                coordonneesOrigine,
+                &count))
+        {
+            return;
+        }
+
+        /* Déplacer le curseur au début du terminal */
+        SetConsoleCursorPosition(idTerminal, coordonneesOrigine);
+    #else
+        cout << "\033[2J\033[1;1H";
+    #endif
+}
+
 
 void afficherTitre(){
-    system("cls");
+    effacer();
     afficherTexteEnCouleur(" P ", bleu, false);
     afficherTexteEnCouleur("U ", jaune, false);
     afficherTexteEnCouleur("I ", rouge, false);
@@ -277,4 +325,16 @@ void afficherTitre(){
     afficherTexteEnCouleur("E ", rouge, false);
     afficherTexteEnCouleur(" 4\n", bleu, true);
 
+}
+
+
+unsigned short int saisieVerifCase() {
+    string str;
+    regex regex_pattern("-?[0-6]+.?[0-6]+");
+    do {
+        cout << "Saisissez une case : ";
+        cin >> str;
+    } while(!regex_match(str, regex_pattern));
+
+    return stod(str);
 }
