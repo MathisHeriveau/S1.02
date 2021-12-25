@@ -15,9 +15,6 @@
     #include <unistd.h>
 #endif
 
-#include <chrono>  // pour la fonction now() utilisée dans la fonction random()
-#include <random>  // pour la fonction random
-
 // . Si L'appareil utilisé est sous macOs
 # ifdef __APPLE__
 
@@ -154,12 +151,12 @@ bool verificationHorizontale(unsigned short int ligne, Case caseDuJeu, Case gril
         {
             suite++; //Augmentation de la suite
             if (suite == 3) //Si il en trouve 3 fois 2 a coté le joueur a gagner 
-            {return false;}
+            {return true;}
         }
         //Sinon il remet le compteur a 0
         else {suite = 0;}
     }
-    return true;//Si on a rien trouvé on sort
+    return false;//Si on a rien trouvé on sort
 }
 
 //Fonction de verification de la ligne verticale
@@ -179,11 +176,11 @@ bool verificationVerticale(unsigned short int colonne, Case caseDuJeu, Case gril
         {
             suite++; //Augmentation de la suite
             if (suite == 3)  //Si il en trouve 3 fois 2 a coté le joueur a gagner 
-            {return false;}
+            {return true;}
         }
         else{suite = 0;} //On remet le compteur a 0
     }
-    return true; //Si on trouve rien. On sort
+    return false; //Si on trouve rien. On sort
 }
 
 //Fonction de verification de la diagonale droite
@@ -216,14 +213,14 @@ bool verificationDiagonaleDroite(unsigned short int colonne, unsigned short int 
         {
             suite++; //Augmentation de la suite
             if (suite == 3) //Si on en trouve 3. On sort
-            {return false;}
+            {return true;}
         }
         else {suite = 0;} //On remet le compteur a 0
 
         placementColonne++; //On se deplace vers la droite
         placementLigne++;   //On se deplace verse le bas
     }
-    return true; //Si on trouve rien? On sort
+    return false; //Si on trouve rien? On sort
 }
 
 //Fonction de verification de la diagonal gauche
@@ -256,14 +253,14 @@ bool verificationDiagonaleGauche(unsigned short int colonne, unsigned short int 
         {
             suite++; //Augmentation de la suite
             if (suite == 3) //Si il en trouve 3 d'affiler. On sort
-            {return false;}
+            {return true;}
         }
         else{suite = 0;} //On remet le compteur a 0
 
         placementColonne--; //On va vers la gauche
         placementLigne++;   //On descend
     }
-    return true; //Si on trouve rien. On sort
+    return false; //Si on trouve rien. On sort
 }
 
 void effacer() {

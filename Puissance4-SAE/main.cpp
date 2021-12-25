@@ -1,9 +1,11 @@
-/**
- * @file main.cpp
- * @author Mathis Heriveau, Tom Planche
- * @brief Fichier principal du projet
- * @date 27 octobre 2021
- */
+/**\
+  * @file main.cpp
+  * @author Mathis Hériveau, Tom Planche
+  * @brief Fichier principal
+  * @date 25-11-2021
+  * 
+\**/
+
 #include "sousProgramme.h"
 
 int main()
@@ -13,49 +15,49 @@ int main()
     //.                                      INITIALISATION                                         
     //.  ===========================================================================================
 
-    
-    //.  ------------------------------- DECLARATIONS VARIABLES ------------------------------------
 
-    //. Constantes Utilisees Dans Le Programme Principal
-    const unsigned short int NB_DE_LIGNE = 6; //Le nombre de ligne dans la grille du puissance 4
-    const unsigned short int NB_DE_COLONNE = 7; //Le nombre de colonne dans la grille du puissance 4
+    //.  ------------------------------- DÉCLARATIONS VARIABLES ------------------------------------
+
+    //. Constantes Utilisées Dans Le Programme Principal
+    const unsigned short int NB_DE_LIGNE = 6; // Nombre de lignes dans la grille du puissance 4.
+    const unsigned short int NB_DE_COLONNE = 7; // Nombre de colonnes dans la grille du puissance 4.
     
-    //. Types Utilisés Dans Le Programme Principal
-    Case grilleDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {caseVide}; // La grille de jeu contenant l'ensemble des jetons
+
+    Case grilleDeJeu[NB_DE_LIGNE][NB_DE_COLONNE] = {caseVide}; // La grille du jeu contenant l'ensemble des jetons.
     
-    Case jeton; // Jeton du joueur 1 et du joueur 2
+    Case jeton; // Jeton en jeu.
     
     TypeDeVictoire maniereDeGagner; // Manière dont le gagnant aligne les jetons
 
-    //. Constantes Utilisees Dans Le Programme Principal
-    string nomDuGagnant;  //Nom du joueur au tour donné
-    string nomJoueurUn;   //Correspond au nom du joueur 1
-    string nomJoueurDeux; //Correspond au nom du joueur 2 
 
-    bool statutPartie; //Caractérise le statut de la partie : true = en jeu, false = fin du jeu 
-    bool egalite;      //Cette variable ce mets a true dès lors qu’il y a une égalité 
+    string nomDuGagnant;  // Nom du joueur gagnant.
+    string nomJoueurUn;   // Nom du joueur 1
+    string nomJoueurDeux; // Nom du joueur 2 
 
-    unsigned short int nbTours;              // Permet de compter le nombre de tour, permettant de savoir qui joue et quand Est-ce qu'il y a une égalité 
-    unsigned short int choixDuJoueur;        // Le choix de la colonne du jeton
-    unsigned short int positionCase;         // Permet de savoir a qu’elle hauteur le jeton doit être positionné dans la colonne 
+    bool statutPartie; // Définit le statut de la partie, s'il passe  à false, la partie est finie.
+    bool egalite;      // Passe à true s'il y a une égalité.
+
+    unsigned short int nbTours;              // Compte le nombre de tours, permettant de savoir qui joue et quand il y a une égalité.
+    unsigned short int choixDuJoueur;        // Choix de la colonne du joueur en cours.
+    unsigned short int positionCase;         // Dernière position du dernier jeton posé, permet de faire une vérification que pour les bonnes zones 
     unsigned short int choixDuPremierJoueur; // Grace a un random, la valeur indique le premier joueur qui commencera la partie : 0 pour le joueur rouge et 1 pour le joueur jaune. 
     
 
-    //.  -------------------------------- DEFINITIONS VARIABLES ------------------------------------
+    //.  -------------------------------- DÉFINITIONS VARIABLES ------------------------------------
     statutPartie = true;
     egalite = false;
     nbTours = 0;
     positionCase = 0;
     choixDuPremierJoueur = static_cast<unsigned short int>(random(0, 1));
 
-    //.  ------------------------------- AFFICHAGE REGLES DU JEU -----------------------------------
+    //.  ------------------------------- AFFICHAGE RÈGLES DU JEU -----------------------------------
     afficherTitre();
     cout << "Ce programme est un jeu de puisssance 4." << endl;
     cout << "Il est concu avec le langage C++." << endl;
     cout << "Le but de ce jeu est de reussir a aligner quatre de ces jetons horizontalement, verticalement ou encore diagonalement." << endl;
     cout << "Le premier joueur a reussir cela gagne automatiquement." << endl;
 
-    //.  ------------------------------- INITIALISATION DES NOMS -----------------------------------
+    //.  ------------------------- INITIALISATION DES NOMS DES JOUEURS -----------------------------
     cout << "Saisissez le nom du joueur 1 : "; //Demande le nom du joueur 1
     cin >> nomJoueurUn;
     cout << "Saisissez le nom du joueur 2 : "; //Demande le nom du joueur 2
@@ -67,7 +69,7 @@ int main()
     //.                                        TRAITEMENTS                                          
     //.  ===========================================================================================
 
-    // Bouble do-while simulant le jeu.
+    // do-while simulant le jeu.
     do
     {
         // Réinitialisation des variables à chaque tour
@@ -100,20 +102,22 @@ int main()
             afficherTexteEnCouleur("jaune", jaune, true);
         }
 
+
         // Saisie-vérif du numéro de la case
         do {
             choixDuJoueur = saisieVerifCase();
+            // On indique au joueur que s'il veut quitter la partie, il peut saisir 999.
             if (choixDuJoueur == 999) {
                 statutPartie = false;
                 break;
             }
-
-        } while (choixDuJoueur > 6 || grilleDeJeu[0][choixDuJoueur] != caseVide);
+        // On ne sort pas de la boucle si la colonne choisie n'est pas pleine.
+        } while (grilleDeJeu[0][choixDuJoueur] != caseVide);
 
         if (choixDuJoueur != 999)
         {
 
-            while (true) //Mettre le jeton a la bonne case (bonne position de hauteur et de colonne)
+            while (true) // Permet de mettre le jeton sur la bonne case.
             {
                 //Si on tombe sur un jeton ou on en trouve pas
                 if (positionCase == 6 || grilleDeJeu[positionCase][choixDuJoueur] > 0)
@@ -126,28 +130,21 @@ int main()
             }
 
             //Verif
-            if (!verificationHorizontale(positionCase, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
+            if (verificationHorizontale(positionCase, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
             {
                 statutPartie = false;
                 maniereDeGagner = horizontalement;
             }
 
             //Verif Vertical
-            if (!verificationVerticale(choixDuJoueur, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
+            if (verificationVerticale(choixDuJoueur, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
             {
                 statutPartie = false;
                 maniereDeGagner = verticalement;
             }
 
             //Verif de haut en bas de gauche a droite
-            if (!verificationDiagonaleDroite(choixDuJoueur, positionCase, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
-            {
-                statutPartie = false;
-                maniereDeGagner = diagonalement;
-            }
-
-            //Verif de haut en bas de droite a gauche
-            if (!verificationDiagonaleGauche(choixDuJoueur, positionCase, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
+            if (verificationDiagonaleDroite(choixDuJoueur, positionCase, jeton, grilleDeJeu) || verificationDiagonaleGauche(choixDuJoueur, positionCase, jeton, grilleDeJeu)) //Si il trouve quelque chose on sort.
             {
                 statutPartie = false;
                 maniereDeGagner = diagonalement;

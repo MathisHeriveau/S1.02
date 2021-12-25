@@ -20,6 +20,7 @@
 #include <iostream>
 #include <regex>
 #include <chrono>
+#include <random>
 
 using std::cout;
 using std::cin;
