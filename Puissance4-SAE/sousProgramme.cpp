@@ -2,20 +2,22 @@
   * @file sousProgramme.cpp
   * @author Tom Planche, Mathis Hériveau
   * @brief Coprs du module sousProgramme
-  * @remarks Ce corps permet un fonctionnement sous architecture Windows ainsi que macOs.
+  * @remarks Ce corps permet un fonctionnement sous architecture Windows ainsi que macOs. Tous les commentaires liés aux sous programmes sont détaillés dans sousProgramme.h
   * @date 24-11-2021
   * 
 \**/
 
 #include "sousProgramme.h"
 
+// Si l'appareil utilisé est sous Windows 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
     #include <conio.h>
-#else
+// Sinon
+#else 
     #include <unistd.h>
 #endif
 
-// . Si L'appareil utilisé est sous macOs
+// Si L'appareil utilisé est sous macOs
 # ifdef __APPLE__
 
     #define RESET "\033[0m"
@@ -27,8 +29,13 @@
     #define CYAN "\033[0;36m"
     #define BLANC "\033[0;37m"
 
-    // Retourne le code couleur de la couleur passé en paramètre
-    string getCodeCouleur (Couleur couleur)
+    /**\
+      * @brief Retourne le code couleur de la couleur passée en paramètre
+      * 
+      * @param couleur Couleur désirée
+      * @return string Couleur sous forme de string
+    \**/
+    string getCodeCouleur(Couleur couleur)
     {
         string codeCouleur;
         switch (couleur)
@@ -70,7 +77,7 @@
     }
 # endif
 
-//Fonction random
+
 int random(int min, int max)
 {
     std::default_random_engine generateur;
@@ -99,7 +106,7 @@ void afficherTexteEnCouleur(string chaine, Couleur couleur, bool retourALaLigne)
 }
 
 
-//Procedure d'affichage du jeu
+// Procédure d'affichage du jeu
 void afficherJeu(Case grille[6][7])
 {
 
