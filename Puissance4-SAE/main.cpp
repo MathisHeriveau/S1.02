@@ -58,7 +58,7 @@ int main()
     cout << "Le premier joueur a reussir cela gagne automatiquement." << endl;
 
     //.  ------------------------- INITIALISATION DES NOMS DES JOUEURS -----------------------------
-    cout << "Saisissez le nom du joueur 1 : "; //Demande le nom du joueur 1
+    cout << "\nSaisissez le nom du joueur 1 : "; //Demande le nom du joueur 1
     cin >> nomJoueurUn;
     cout << "Saisissez le nom du joueur 2 : "; //Demande le nom du joueur 2
     cin >> nomJoueurDeux;

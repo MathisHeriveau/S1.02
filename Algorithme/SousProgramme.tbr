@@ -2,19 +2,19 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>SousProgramme</nom>
-  <date_creation>24/11/2021 20:24</date_creation>
+  <date_creation>9/12/2021 11:55</date_creation>
   <Elements>
     <Action>
-      <Position>281;25</Position>
+      <Position>399;7</Position>
       <StyleLien>2</StyleLien>
       <PreAssertion>?</PreAssertion>
       <PostAssertion>?</PostAssertion>
-      <Titre>Procedure afficherTitre()</Titre>
+      <Titre>Procedure afficherTitre</Titre>
       <DetailsVisible>1</DetailsVisible>
       <DetailsVideVisible>0</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>-5;118</Position>
+          <Position>113;100</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -24,7 +24,7 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>79;214</Position>
+          <Position>197;196</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -34,7 +34,7 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>230;219</Position>
+          <Position>348;201</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -44,7 +44,7 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>148;280</Position>
+          <Position>266;262</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -54,7 +54,7 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>314;280</Position>
+          <Position>432;262</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -64,7 +64,7 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>391;222</Position>
+          <Position>509;204</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -74,7 +74,7 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>469;282</Position>
+          <Position>587;264</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -84,7 +84,7 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>553;222</Position>
+          <Position>671;204</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -94,7 +94,7 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>633;281</Position>
+          <Position>751;263</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -104,7 +104,7 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>712;224</Position>
+          <Position>830;206</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -114,7 +114,7 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>803;278</Position>
+          <Position>921;260</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -128,20 +128,17 @@
     <Action>
       <Position>222;441</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>tableau[6][7]
-couleurJoueur1
-couleurJoueur2</PreAssertion>
+      <PreAssertion>grille[6][7]
+de type Case</PreAssertion>
       <PostAssertion>?</PostAssertion>
-      <Titre>Procedure afficherJeu()</Titre>
+      <Titre>Procedure afficherJeu</Titre>
       <DetailsVisible>1</DetailsVisible>
       <DetailsVideVisible>0</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>356;560</Position>
+          <Position>391;562</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>tableau[6][7]
-couleurJoueur1
-couleurJoueur2</PreAssertion>
+          <PreAssertion>grille[6][7]</PreAssertion>
           <PostAssertion>?</PostAssertion>
           <Titre>Afficher toutes les lignes</Titre>
           <DetailsVisible>1</DetailsVisible>
@@ -154,21 +151,20 @@ couleurJoueur2</PreAssertion>
               <IterationFixe>1</IterationFixe>
               <Enfants>
                 <Action>
-                  <Position>243;721</Position>
+                  <Position>234;726</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
-                  <Titre>Affichage de l'interLigne</Titre>
+                  <Titre>Affichage de l'interLigne
+"+-----+-----+-----+-----+-----+-----+-----+"</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>532;727</Position>
+                  <Position>566;728</Position>
                   <StyleLien>2</StyleLien>
-                  <PreAssertion>tableau[6][7]
-couleurJoueur1
-couleurJoueur2</PreAssertion>
+                  <PreAssertion>grille[6][7]</PreAssertion>
                   <PostAssertion>?</PostAssertion>
                   <Titre>Afficher pour toutes les colonnes</Titre>
                   <DetailsVisible>1</DetailsVisible>
@@ -186,35 +182,33 @@ couleurJoueur2</PreAssertion>
                           <estUnique>0</estUnique>
                           <operationsLogiques>
                             <operation>
-                              <Titre>tableau[i][J] correspond au numero du joueur 1</Titre>
+                              <Titre>grille[i][j]) == pionJaune</Titre>
                               <Enfants>
-                                <Action>
-                                  <Position>191;965</Position>
+                                <Procedure>
+                                  <Position>465;963</Position>
                                   <StyleLien>1</StyleLien>
-                                  <PreAssertion>couleurJoueur1</PreAssertion>
+                                  <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
-                                  <Titre>Lancement de la procedure 
-afficherOcouleur()</Titre>
-                                  <DetailsVisible>1</DetailsVisible>
-                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Titre>afficherTexteEnCouleur("  O  ", jaune, false)</Titre>
+                                  <DetailsVisible>0</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
                                   <Enfants/>
-                                </Action>
+                                </Procedure>
                               </Enfants>
                             </operation>
                             <operation>
-                              <Titre>tableau[i][J] correspond au numero du joueur2</Titre>
+                              <Titre>grille[i][j] == pionRouge</Titre>
                               <Enfants>
-                                <Action>
-                                  <Position>578;967</Position>
+                                <Procedure>
+                                  <Position>714;957</Position>
                                   <StyleLien>1</StyleLien>
-                                  <PreAssertion>couleurJoueur2</PreAssertion>
+                                  <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
-                                  <Titre>Lancement de la procedure 
-afficherOcouleur()</Titre>
-                                  <DetailsVisible>1</DetailsVisible>
-                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Titre>afficherTexteEnCouleur("  O  ", rouge, false)</Titre>
+                                  <DetailsVisible>0</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
                                   <Enfants/>
-                                </Action>
+                                </Procedure>
                               </Enfants>
                             </operation>
                             <operation>
@@ -244,452 +238,79 @@ afficherOcouleur()</Titre>
         </Action>
         <Action>
           <Position>71;562</Position>
-          <StyleLien>1</StyleLien>
+          <StyleLien>2</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
           <Titre>Affichage des numeros de colonnes</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>0</DetailsVideVisible>
-          <Enfants/>
+          <Enfants>
+            <Action>
+              <Position>70;623</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>Affiche " 0  1  2  3  4  5  6 "</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+          </Enfants>
         </Action>
         <Action>
-          <Position>779;562</Position>
-          <StyleLien>1</StyleLien>
+          <Position>903;549</Position>
+          <StyleLien>2</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
           <Titre>Affichage de la derniere ligne et de la possibilité de quitter</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>0</DetailsVideVisible>
-          <Enfants/>
+          <Enfants>
+            <Action>
+              <Position>827;641</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>Affiche "+-----+-----+-----+-----+-----+-----+-----+"</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>1039;640</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>Affiche "revenir au menu(999)"</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+          </Enfants>
         </Action>
       </Enfants>
     </Action>
     <Action>
-      <Position>1340;42</Position>
+      <Position>279;1170</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>couleur</PreAssertion>
-      <PostAssertion>?</PostAssertion>
-      <Titre>Procedure afficherCouleurJoueur()</Titre>
-      <DetailsVisible>1</DetailsVisible>
-      <DetailsVideVisible>0</DetailsVideVisible>
-      <Enfants>
-        <ConditionMultiple>
-          <Position>1384.5;127</Position>
-          <StyleLien>0</StyleLien>
-          <Titre>couleur</Titre>
-          <operationsLogiques>
-            <operation>
-              <Titre>7</Titre>
-              <Enfants>
-                <Action>
-                  <Position>1107;198</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "gris" en gris</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>9</Titre>
-              <Enfants>
-                <Action>
-                  <Position>1194;256</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "bleu" en bleu</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>10</Titre>
-              <Enfants>
-                <Action>
-                  <Position>1265;312</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "vert" en vert</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>11</Titre>
-              <Enfants>
-                <Action>
-                  <Position>1360;370</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "cyan" en cyan</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>12</Titre>
-              <Enfants>
-                <Action>
-                  <Position>1529;368</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "rouge" en rouge</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>13</Titre>
-              <Enfants>
-                <Action>
-                  <Position>1638;311</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "violet" en violet</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>14</Titre>
-              <Enfants>
-                <Action>
-                  <Position>1734;252</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "jaune" en jaune</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>15</Titre>
-              <Enfants>
-                <Action>
-                  <Position>1803;192</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "blanc" en blanc</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-          </operationsLogiques>
-        </ConditionMultiple>
-      </Enfants>
-    </Action>
-    <Action>
-      <Position>2338;53</Position>
-      <StyleLien>2</StyleLien>
-      <PreAssertion>couleur</PreAssertion>
-      <PostAssertion>?</PostAssertion>
-      <Titre>Procedure afficherOcouleur()</Titre>
-      <DetailsVisible>1</DetailsVisible>
-      <DetailsVideVisible>0</DetailsVideVisible>
-      <Enfants>
-        <ConditionMultiple>
-          <Position>2382.5;138</Position>
-          <StyleLien>0</StyleLien>
-          <Titre>couleur</Titre>
-          <operationsLogiques>
-            <operation>
-              <Titre>7</Titre>
-              <Enfants>
-                <Action>
-                  <Position>2105;209</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "  O  " en gris</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>9</Titre>
-              <Enfants>
-                <Action>
-                  <Position>2192;267</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "  O  " en bleu</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>10</Titre>
-              <Enfants>
-                <Action>
-                  <Position>2263;323</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "  O  " en vert</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>11</Titre>
-              <Enfants>
-                <Action>
-                  <Position>2358;381</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "  O  " en cyan</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>12</Titre>
-              <Enfants>
-                <Action>
-                  <Position>2527;379</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "  O  " en rouge</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>13</Titre>
-              <Enfants>
-                <Action>
-                  <Position>2636;322</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "  O  " en violet</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>14</Titre>
-              <Enfants>
-                <Action>
-                  <Position>2732;263</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "  O  " en jaune</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>15</Titre>
-              <Enfants>
-                <Action>
-                  <Position>2801;203</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche "  O  " en blanc</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-          </operationsLogiques>
-        </ConditionMultiple>
-      </Enfants>
-    </Action>
-    <Action>
-      <Position>1823;620</Position>
-      <StyleLien>2</StyleLien>
-      <PreAssertion>colonne
-ligne
-nombreAverifier
-tableau</PreAssertion>
+      <PreAssertion>ligne, grille
+caseDuJeu</PreAssertion>
       <PostAssertion>bool</PostAssertion>
-      <Titre>Fonction verificationJeu(..)</Titre>
-      <DetailsVisible>1</DetailsVisible>
-      <DetailsVideVisible>1</DetailsVideVisible>
-      <Enfants>
-        <Condition>
-          <Position>1619.5;761</Position>
-          <StyleLien>1</StyleLien>
-          <estUnique>1</estUnique>
-          <operationsLogiques>
-            <operation>
-              <Titre>Si la procedure verificationHorizontale() renvoie true</Titre>
-              <Enfants>
-                <Action>
-                  <Position>1652;846</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>retourner false</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>Sinon</Titre>
-              <Enfants/>
-            </operation>
-          </operationsLogiques>
-        </Condition>
-        <Condition>
-          <Position>1860.5;768</Position>
-          <StyleLien>1</StyleLien>
-          <estUnique>1</estUnique>
-          <operationsLogiques>
-            <operation>
-              <Titre>Si la procedure verificationVertical() renvoie true</Titre>
-              <Enfants>
-                <Action>
-                  <Position>1905;850</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>retourner false</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>Sinon</Titre>
-              <Enfants/>
-            </operation>
-          </operationsLogiques>
-        </Condition>
-        <Condition>
-          <Position>2095.5;767</Position>
-          <StyleLien>1</StyleLien>
-          <estUnique>1</estUnique>
-          <operationsLogiques>
-            <operation>
-              <Titre>Si la procedure verificationDiagonalDroite() renvoie true</Titre>
-              <Enfants>
-                <Action>
-                  <Position>2093;858</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>retourner false</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>Sinon</Titre>
-              <Enfants/>
-            </operation>
-          </operationsLogiques>
-        </Condition>
-        <Condition>
-          <Position>2317.5;767</Position>
-          <StyleLien>1</StyleLien>
-          <estUnique>1</estUnique>
-          <operationsLogiques>
-            <operation>
-              <Titre>Si la procedure verificationDiagonalGauche() renvoie true</Titre>
-              <Enfants>
-                <Action>
-                  <Position>2264;855</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>retourner false</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-              </Enfants>
-            </operation>
-            <operation>
-              <Titre>Sinon</Titre>
-              <Enfants/>
-            </operation>
-          </operationsLogiques>
-        </Condition>
-        <Action>
-          <Position>2561;757</Position>
-          <StyleLien>1</StyleLien>
-          <PreAssertion>?</PreAssertion>
-          <PostAssertion>?</PostAssertion>
-          <Titre>retourner true</Titre>
-          <DetailsVisible>1</DetailsVisible>
-          <DetailsVideVisible>0</DetailsVideVisible>
-          <Enfants/>
-        </Action>
-      </Enfants>
-    </Action>
-    <Action>
-      <Position>195;1172</Position>
-      <StyleLien>2</StyleLien>
-      <PreAssertion>ligne
-nombreAverifier
-tableau</PreAssertion>
-      <PostAssertion>bool</PostAssertion>
-      <Titre>Procedure verificationHorizontale(..)</Titre>
+      <Titre>Fonction verificationHorizontale(..)</Titre>
       <DetailsVisible>1</DetailsVisible>
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>111;1274</Position>
+          <Position>11;1267</Position>
           <StyleLien>2</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>suite</PostAssertion>
-          <Titre>Initialisation</Titre>
+          <Titre>Initialisation de la suite de couleur</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>0</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>121;1336</Position>
+              <Position>69;1336</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>?</PreAssertion>
               <PostAssertion>?</PostAssertion>
@@ -701,12 +322,10 @@ tableau</PreAssertion>
           </Enfants>
         </Action>
         <Action>
-          <Position>327;1273</Position>
+          <Position>359;1264</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>suite
-tableau
-ligne
-nombreAverifier</PreAssertion>
+          <PreAssertion>suite, grille
+ligne, caseDuJeu</PreAssertion>
           <PostAssertion>?</PostAssertion>
           <Titre>Parcours séquentielle
 Verification de la ligne</Titre>
@@ -725,18 +344,8 @@ Verification de la ligne</Titre>
                   <estUnique>0</estUnique>
                   <operationsLogiques>
                     <operation>
-                      <Titre>Il y a 2 jetons de la même couleur cote a cote</Titre>
+                      <Titre>grille[ligne][i] == caseDuJeu et caseDuJeu == grille[ligne][i - 1]</Titre>
                       <Enfants>
-                        <Action>
-                          <Position>257;1508</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>?</PreAssertion>
-                          <PostAssertion>?</PostAssertion>
-                          <Titre>suite ← suite + 1</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
-                        </Action>
                         <Action>
                           <Position>424;1519</Position>
                           <StyleLien>2</StyleLien>
@@ -747,15 +356,15 @@ Verification de la ligne</Titre>
                           <DetailsVideVisible>0</DetailsVideVisible>
                           <Enfants>
                             <Condition>
-                              <Position>504.5;1591</Position>
+                              <Position>542.5;1583</Position>
                               <StyleLien>1</StyleLien>
                               <estUnique>1</estUnique>
                               <operationsLogiques>
                                 <operation>
-                                  <Titre>Une suite de 4 jetons conséqutif</Titre>
+                                  <Titre>suite == 3</Titre>
                                   <Enfants>
                                     <Action>
-                                      <Position>536;1647</Position>
+                                      <Position>535;1648</Position>
                                       <StyleLien>1</StyleLien>
                                       <PreAssertion>?</PreAssertion>
                                       <PostAssertion>?</PostAssertion>
@@ -774,20 +383,52 @@ Verification de la ligne</Titre>
                             </Condition>
                           </Enfants>
                         </Action>
+                        <Action>
+                          <Position>99;1523</Position>
+                          <StyleLien>2</StyleLien>
+                          <PreAssertion>?</PreAssertion>
+                          <PostAssertion>suite</PostAssertion>
+                          <Titre>Incrementation de la suite de couleur</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>0</DetailsVideVisible>
+                          <Enfants>
+                            <Action>
+                              <Position>135;1599</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>suite ← suite + 1</Titre>
+                              <DetailsVisible>0</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                          </Enfants>
+                        </Action>
                       </Enfants>
                     </operation>
                     <operation>
                       <Titre>Sinon</Titre>
                       <Enfants>
                         <Action>
-                          <Position>701;1467</Position>
-                          <StyleLien>1</StyleLien>
+                          <Position>738;1507</Position>
+                          <StyleLien>2</StyleLien>
                           <PreAssertion>?</PreAssertion>
-                          <PostAssertion>?</PostAssertion>
-                          <Titre>suite ← 0</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
+                          <PostAssertion>suite</PostAssertion>
+                          <Titre>Reinitialisation de la suite</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>0</DetailsVideVisible>
+                          <Enfants>
+                            <Action>
+                              <Position>795;1574</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>suite ← 0</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                          </Enfants>
                         </Action>
                       </Enfants>
                     </operation>
@@ -810,27 +451,373 @@ Verification de la ligne</Titre>
       </Enfants>
     </Action>
     <Action>
-      <Position>1118;1220</Position>
+      <Position>3171;1178</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>colonne
+      <PreAssertion>ligne, colonne
 nombreAverifier
 tableau</PreAssertion>
       <PostAssertion>bool</PostAssertion>
-      <Titre>Procedure verificationVertical(..)</Titre>
+      <Titre>Fonction verificationDiagonalDroite</Titre>
       <DetailsVisible>1</DetailsVisible>
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>1034;1322</Position>
+          <Position>3441;1300</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>?</PreAssertion>
-          <PostAssertion>suite</PostAssertion>
-          <Titre>Initialisation</Titre>
+          <PreAssertion>nombreAverifier, suite
+placementLigne
+placementColonne</PreAssertion>
+          <PostAssertion>?</PostAssertion>
+          <Titre>Parcours séquentielle
+Verification de la diagonal</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>0</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>1044;1384</Position>
+              <Position>3071;1405</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>placementLigne
+placementColonne</PreAssertion>
+              <PostAssertion>placementLigne
+placementColonne</PostAssertion>
+              <Titre>Se mettre le plus en haut à gauche possible</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants>
+                <Iteration>
+                  <Position>3328.5;1483.5</Position>
+                  <StyleLien>1</StyleLien>
+                  <Titre>?</Titre>
+                  <IterationFixe>0</IterationFixe>
+                  <Enfants>
+                    <Condition>
+                      <Position>2832.5;1588</Position>
+                      <StyleLien>1</StyleLien>
+                      <estUnique>1</estUnique>
+                      <operationsLogiques>
+                        <operation>
+                          <Titre>placementLigne == 0 ou placementColonne == 0</Titre>
+                          <Enfants/>
+                        </operation>
+                        <operation>
+                          <Titre>Sinon</Titre>
+                          <Enfants/>
+                        </operation>
+                      </operationsLogiques>
+                    </Condition>
+                    <Action>
+                      <Position>3054;1587</Position>
+                      <StyleLien>2</StyleLien>
+                      <PreAssertion>placementLigne
+placementColonne</PreAssertion>
+                      <PostAssertion>placementLigne
+placementColonne</PostAssertion>
+                      <Titre>On se deplace en haut a gauche</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants>
+                        <Action>
+                          <Position>3067;1695</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>?</PreAssertion>
+                          <PostAssertion>?</PostAssertion>
+                          <Titre>placementLigne ← placementLigne - 1</Titre>
+                          <DetailsVisible>0</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Action>
+                          <Position>3307;1696</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>?</PreAssertion>
+                          <PostAssertion>?</PostAssertion>
+                          <Titre>placementColonne ←
+placementColonne - 1</Titre>
+                          <DetailsVisible>0</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                      </Enfants>
+                    </Action>
+                  </Enfants>
+                </Iteration>
+              </Enfants>
+            </Action>
+            <Action>
+              <Position>4050;1391</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>placementLigne
+placementColonne
+nombreAverifier, suite</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>Verification</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants>
+                <Iteration>
+                  <Position>4257.5;1469.5</Position>
+                  <StyleLien>1</StyleLien>
+                  <Titre>?</Titre>
+                  <IterationFixe>0</IterationFixe>
+                  <Enfants>
+                    <Condition>
+                      <Position>3633.5;1571</Position>
+                      <StyleLien>1</StyleLien>
+                      <estUnique>1</estUnique>
+                      <operationsLogiques>
+                        <operation>
+                          <Titre>placementLigne >= 5 ou placementColonne >= 6</Titre>
+                          <Enfants/>
+                        </operation>
+                        <operation>
+                          <Titre>Sinon</Titre>
+                          <Enfants/>
+                        </operation>
+                      </operationsLogiques>
+                    </Condition>
+                    <Action>
+                      <Position>4663;1565</Position>
+                      <StyleLien>2</StyleLien>
+                      <PreAssertion>placementLigne
+placementColonne</PreAssertion>
+                      <PostAssertion>placementLigne
+placementColonne</PostAssertion>
+                      <Titre>On se deplace en bas a droite</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants>
+                        <Action>
+                          <Position>4676;1673</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>?</PreAssertion>
+                          <PostAssertion>?</PostAssertion>
+                          <Titre>placementLigne ← placementLigne + 1</Titre>
+                          <DetailsVisible>0</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Action>
+                          <Position>4913;1674</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>?</PreAssertion>
+                          <PostAssertion>?</PostAssertion>
+                          <Titre>placementColonne ←
+placementColonne + 1</Titre>
+                          <DetailsVisible>0</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                      </Enfants>
+                    </Action>
+                    <Condition>
+                      <Position>4067.5;1592</Position>
+                      <StyleLien>0</StyleLien>
+                      <estUnique>0</estUnique>
+                      <operationsLogiques>
+                        <operation>
+                          <Titre>grille[placementLigne][placementColonne] == caseDuJeu et grille[placementLigne + 1][placementColonne + 1] == caseDuJeu</Titre>
+                          <Enfants>
+                            <Action>
+                              <Position>4047;1703</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>suite</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Les 4 jetons sont alignés</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants>
+                                <Condition>
+                                  <Position>4165.5;1767</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <estUnique>1</estUnique>
+                                  <operationsLogiques>
+                                    <operation>
+                                      <Titre>suite == 3</Titre>
+                                      <Enfants>
+                                        <Action>
+                                          <Position>4158;1832</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <PreAssertion>?</PreAssertion>
+                                          <PostAssertion>?</PostAssertion>
+                                          <Titre>retourner false</Titre>
+                                          <DetailsVisible>0</DetailsVisible>
+                                          <DetailsVideVisible>1</DetailsVideVisible>
+                                          <Enfants/>
+                                        </Action>
+                                      </Enfants>
+                                    </operation>
+                                    <operation>
+                                      <Titre>Sinon</Titre>
+                                      <Enfants/>
+                                    </operation>
+                                  </operationsLogiques>
+                                </Condition>
+                              </Enfants>
+                            </Action>
+                            <Action>
+                              <Position>3722;1707</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>suite</PostAssertion>
+                              <Titre>Incrementation de la suite de couleur</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants>
+                                <Action>
+                                  <Position>3758;1783</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>suite ← suite + 1</Titre>
+                                  <DetailsVisible>0</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
+                            </Action>
+                          </Enfants>
+                        </operation>
+                        <operation>
+                          <Titre>Sinon</Titre>
+                          <Enfants>
+                            <Action>
+                              <Position>4361;1691</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>suite</PostAssertion>
+                              <Titre>Reinitialisation de la suite</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants>
+                                <Action>
+                                  <Position>4418;1758</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>suite ← 0</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
+                            </Action>
+                          </Enfants>
+                        </operation>
+                      </operationsLogiques>
+                    </Condition>
+                  </Enfants>
+                </Iteration>
+              </Enfants>
+            </Action>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>2427;1288</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>colonne
+ligne</PreAssertion>
+          <PostAssertion>suite
+placementColonne
+placementLigne</PostAssertion>
+          <Titre>Initialisation</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Action>
+              <Position>2217;1369</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>suite</PostAssertion>
+              <Titre>Initialisation de la suite de couleur</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants>
+                <Action>
+                  <Position>2272;1438</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>suite ← 0</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+              </Enfants>
+            </Action>
+            <Action>
+              <Position>2529;1368</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>colonne
+ligne</PreAssertion>
+              <PostAssertion>placementColonne
+placementLigne</PostAssertion>
+              <Titre>Initialisation des placements de recherche pour etre precis</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants>
+                <Action>
+                  <Position>2523;1444</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>placementColonne ← colonne</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+                <Action>
+                  <Position>2749;1444</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>placementLigne ← ligne</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+              </Enfants>
+            </Action>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>4170;1286</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>?</PreAssertion>
+          <PostAssertion>?</PostAssertion>
+          <Titre>retourner true</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+      </Enfants>
+    </Action>
+    <Sortie>
+      <Position>2906;1644</Position>
+    </Sortie>
+    <Sortie>
+      <Position>3712;1624</Position>
+    </Sortie>
+    <Action>
+      <Position>1324;1182</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>ligne, grille
+caseDuJeu</PreAssertion>
+      <PostAssertion>bool</PostAssertion>
+      <Titre>Fonction verificationVertical(..)</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Action>
+          <Position>1056;1279</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>?</PreAssertion>
+          <PostAssertion>suite</PostAssertion>
+          <Titre>Initialisation de la suite de couleur</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>0</DetailsVideVisible>
+          <Enfants>
+            <Action>
+              <Position>1114;1348</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>?</PreAssertion>
               <PostAssertion>?</PostAssertion>
@@ -842,34 +829,53 @@ tableau</PreAssertion>
           </Enfants>
         </Action>
         <Action>
-          <Position>1245;1321</Position>
+          <Position>1404;1276</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>suite
-tableau
-colonne
-nombreAverifier</PreAssertion>
+          <PreAssertion>suite, grille
+ligne, caseDuJeu</PreAssertion>
           <PostAssertion>?</PostAssertion>
           <Titre>Parcours séquentielle
-Verification de la colonne</Titre>
+Verification de la ligne</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>0</DetailsVideVisible>
           <Enfants>
             <Iteration>
-              <Position>1481.5;1387.5</Position>
+              <Position>1596.5;1353.5</Position>
               <StyleLien>1</StyleLien>
-              <Titre>i allant de 5 à 0</Titre>
+              <Titre>i allant de 0 à 6</Titre>
               <IterationFixe>1</IterationFixe>
               <Enfants>
                 <Condition>
-                  <Position>1374.5;1467</Position>
+                  <Position>1489.5;1420</Position>
                   <StyleLien>0</StyleLien>
                   <estUnique>0</estUnique>
                   <operationsLogiques>
                     <operation>
-                      <Titre>Il y a 2 jetons de la même couleur cote a cote</Titre>
+                      <Titre>grille[i][colonne] == caseDuJeu et caseDuJeu == grille[i - 1][colonne]</Titre>
                       <Enfants>
                         <Action>
-                          <Position>1319;1588</Position>
+                          <Position>1144;1535</Position>
+                          <StyleLien>2</StyleLien>
+                          <PreAssertion>?</PreAssertion>
+                          <PostAssertion>suite</PostAssertion>
+                          <Titre>Incrementation de la suite de couleur</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>0</DetailsVideVisible>
+                          <Enfants>
+                            <Action>
+                              <Position>1180;1611</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>suite ← suite + 1</Titre>
+                              <DetailsVisible>0</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                          </Enfants>
+                        </Action>
+                        <Action>
+                          <Position>1469;1531</Position>
                           <StyleLien>2</StyleLien>
                           <PreAssertion>suite</PreAssertion>
                           <PostAssertion>?</PostAssertion>
@@ -878,15 +884,15 @@ Verification de la colonne</Titre>
                           <DetailsVideVisible>0</DetailsVideVisible>
                           <Enfants>
                             <Condition>
-                              <Position>1399.5;1660</Position>
+                              <Position>1587.5;1595</Position>
                               <StyleLien>1</StyleLien>
                               <estUnique>1</estUnique>
                               <operationsLogiques>
                                 <operation>
-                                  <Titre>Une suite de 4 jetons conséqutif</Titre>
+                                  <Titre>suite == 3</Titre>
                                   <Enfants>
                                     <Action>
-                                      <Position>1431;1716</Position>
+                                      <Position>1558;1655</Position>
                                       <StyleLien>1</StyleLien>
                                       <PreAssertion>?</PreAssertion>
                                       <PostAssertion>?</PostAssertion>
@@ -905,30 +911,31 @@ Verification de la colonne</Titre>
                             </Condition>
                           </Enfants>
                         </Action>
-                        <Action>
-                          <Position>1152;1577</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>?</PreAssertion>
-                          <PostAssertion>?</PostAssertion>
-                          <Titre>suite ← suite + 1</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
-                        </Action>
                       </Enfants>
                     </operation>
                     <operation>
                       <Titre>Sinon</Titre>
                       <Enfants>
                         <Action>
-                          <Position>1600;1533</Position>
-                          <StyleLien>1</StyleLien>
+                          <Position>1783;1519</Position>
+                          <StyleLien>2</StyleLien>
                           <PreAssertion>?</PreAssertion>
-                          <PostAssertion>?</PostAssertion>
-                          <Titre>suite ← 0</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
+                          <PostAssertion>suite</PostAssertion>
+                          <Titre>Reinitialisation de la suite</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>0</DetailsVideVisible>
+                          <Enfants>
+                            <Action>
+                              <Position>1840;1586</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>suite ← 0</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                          </Enfants>
                         </Action>
                       </Enfants>
                     </operation>
@@ -939,7 +946,7 @@ Verification de la colonne</Titre>
           </Enfants>
         </Action>
         <Action>
-          <Position>1643;1317</Position>
+          <Position>1807;1276</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -950,22 +957,24 @@ Verification de la colonne</Titre>
         </Action>
       </Enfants>
     </Action>
+    <Sortie>
+      <Position>2030;712</Position>
+    </Sortie>
     <Action>
-      <Position>3027;1222</Position>
+      <Position>2288;244</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>ligne
-colonne
+      <PreAssertion>ligne, colonne
 nombreAverifier
 tableau</PreAssertion>
       <PostAssertion>bool</PostAssertion>
-      <Titre>Procedure verificationDiagonalDroite(..)</Titre>
+      <Titre>Fonction verificationDiagonalGauche </Titre>
       <DetailsVisible>1</DetailsVisible>
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>3055;1339</Position>
+          <Position>2565;368</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>suite
+          <PreAssertion>nombreAverifier, suite
 placementLigne
 placementColonne</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -975,7 +984,7 @@ Verification de la diagonal</Titre>
           <DetailsVideVisible>0</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>2590;1431</Position>
+              <Position>2195;473</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>placementLigne
 placementColonne</PreAssertion>
@@ -986,18 +995,18 @@ placementColonne</PostAssertion>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants>
                 <Iteration>
-                  <Position>2851.5;1504.5</Position>
+                  <Position>2452.5;551.5</Position>
                   <StyleLien>1</StyleLien>
                   <Titre>?</Titre>
                   <IterationFixe>0</IterationFixe>
                   <Enfants>
                     <Condition>
-                      <Position>2401.5;1611</Position>
+                      <Position>1956.5;656</Position>
                       <StyleLien>1</StyleLien>
                       <estUnique>1</estUnique>
                       <operationsLogiques>
                         <operation>
-                          <Titre>Le placement se trouve sur un bord en haut a gauche</Titre>
+                          <Titre>placementLigne == 0 ou placementColonne == 6</Titre>
                           <Enfants/>
                         </operation>
                         <operation>
@@ -1007,7 +1016,7 @@ placementColonne</PostAssertion>
                       </operationsLogiques>
                     </Condition>
                     <Action>
-                      <Position>2623;1610</Position>
+                      <Position>2178;655</Position>
                       <StyleLien>2</StyleLien>
                       <PreAssertion>placementLigne
 placementColonne</PreAssertion>
@@ -1018,7 +1027,7 @@ placementColonne</PostAssertion>
                       <DetailsVideVisible>1</DetailsVideVisible>
                       <Enfants>
                         <Action>
-                          <Position>2636;1718</Position>
+                          <Position>2191;763</Position>
                           <StyleLien>1</StyleLien>
                           <PreAssertion>?</PreAssertion>
                           <PostAssertion>?</PostAssertion>
@@ -1028,12 +1037,12 @@ placementColonne</PostAssertion>
                           <Enfants/>
                         </Action>
                         <Action>
-                          <Position>2876;1719</Position>
+                          <Position>2431;764</Position>
                           <StyleLien>1</StyleLien>
                           <PreAssertion>?</PreAssertion>
                           <PostAssertion>?</PostAssertion>
                           <Titre>placementColonne ←
-placementColonne - 1</Titre>
+placementColonne + 1</Titre>
                           <DetailsVisible>0</DetailsVisible>
                           <DetailsVideVisible>1</DetailsVideVisible>
                           <Enfants/>
@@ -1045,114 +1054,39 @@ placementColonne - 1</Titre>
               </Enfants>
             </Action>
             <Action>
-              <Position>3509;1422</Position>
+              <Position>3174;459</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>placementLigne
 placementColonne
-nombreAverifier
-suite</PreAssertion>
+nombreAverifier, suite</PreAssertion>
               <PostAssertion>?</PostAssertion>
               <Titre>Verification</Titre>
               <DetailsVisible>1</DetailsVisible>
               <DetailsVideVisible>0</DetailsVideVisible>
               <Enfants>
                 <Iteration>
-                  <Position>3716.5;1500.5</Position>
+                  <Position>3381.5;537.5</Position>
                   <StyleLien>1</StyleLien>
                   <Titre>?</Titre>
                   <IterationFixe>0</IterationFixe>
                   <Enfants>
                     <Condition>
-                      <Position>3287.5;1603</Position>
+                      <Position>2757.5;639</Position>
                       <StyleLien>1</StyleLien>
                       <estUnique>1</estUnique>
                       <operationsLogiques>
                         <operation>
-                          <Titre>Le placement se trouve sur un bord en bas a droite</Titre>
+                          <Titre>placementLigne >= 5 ou placementColonne &lt;= 0</Titre>
                           <Enfants/>
                         </operation>
                         <operation>
                           <Titre>Sinon</Titre>
                           <Enfants/>
-                        </operation>
-                      </operationsLogiques>
-                    </Condition>
-                    <Condition>
-                      <Position>3655.5;1619</Position>
-                      <StyleLien>0</StyleLien>
-                      <estUnique>0</estUnique>
-                      <operationsLogiques>
-                        <operation>
-                          <Titre>Il y a 2 jetons de la même couleur cote a cote</Titre>
-                          <Enfants>
-                            <Action>
-                              <Position>3371;1719</Position>
-                              <StyleLien>1</StyleLien>
-                              <PreAssertion>?</PreAssertion>
-                              <PostAssertion>?</PostAssertion>
-                              <Titre>suite ← suite + 1</Titre>
-                              <DetailsVisible>0</DetailsVisible>
-                              <DetailsVideVisible>1</DetailsVideVisible>
-                              <Enfants/>
-                            </Action>
-                            <Action>
-                              <Position>3538;1730</Position>
-                              <StyleLien>2</StyleLien>
-                              <PreAssertion>suite</PreAssertion>
-                              <PostAssertion>?</PostAssertion>
-                              <Titre>Les 4 jetons sont alignés</Titre>
-                              <DetailsVisible>1</DetailsVisible>
-                              <DetailsVideVisible>0</DetailsVideVisible>
-                              <Enfants>
-                                <Condition>
-                                  <Position>3618.5;1802</Position>
-                                  <StyleLien>1</StyleLien>
-                                  <estUnique>1</estUnique>
-                                  <operationsLogiques>
-                                    <operation>
-                                      <Titre>Une suite de 4 jetons conséqutif</Titre>
-                                      <Enfants>
-                                        <Action>
-                                          <Position>3650;1858</Position>
-                                          <StyleLien>1</StyleLien>
-                                          <PreAssertion>?</PreAssertion>
-                                          <PostAssertion>?</PostAssertion>
-                                          <Titre>retourner false</Titre>
-                                          <DetailsVisible>0</DetailsVisible>
-                                          <DetailsVideVisible>1</DetailsVideVisible>
-                                          <Enfants/>
-                                        </Action>
-                                      </Enfants>
-                                    </operation>
-                                    <operation>
-                                      <Titre>Sinon</Titre>
-                                      <Enfants/>
-                                    </operation>
-                                  </operationsLogiques>
-                                </Condition>
-                              </Enfants>
-                            </Action>
-                          </Enfants>
-                        </operation>
-                        <operation>
-                          <Titre>Sinon</Titre>
-                          <Enfants>
-                            <Action>
-                              <Position>3856;1732</Position>
-                              <StyleLien>1</StyleLien>
-                              <PreAssertion>?</PreAssertion>
-                              <PostAssertion>?</PostAssertion>
-                              <Titre>suite ← 0</Titre>
-                              <DetailsVisible>0</DetailsVisible>
-                              <DetailsVideVisible>1</DetailsVideVisible>
-                              <Enfants/>
-                            </Action>
-                          </Enfants>
                         </operation>
                       </operationsLogiques>
                     </Condition>
                     <Action>
-                      <Position>3981;1608</Position>
+                      <Position>3787;633</Position>
                       <StyleLien>2</StyleLien>
                       <PreAssertion>placementLigne
 placementColonne</PreAssertion>
@@ -1163,7 +1097,7 @@ placementColonne</PostAssertion>
                       <DetailsVideVisible>1</DetailsVideVisible>
                       <Enfants>
                         <Action>
-                          <Position>3994;1716</Position>
+                          <Position>3800;741</Position>
                           <StyleLien>1</StyleLien>
                           <PreAssertion>?</PreAssertion>
                           <PostAssertion>?</PostAssertion>
@@ -1173,239 +1107,28 @@ placementColonne</PostAssertion>
                           <Enfants/>
                         </Action>
                         <Action>
-                          <Position>4234;1717</Position>
+                          <Position>4037;742</Position>
                           <StyleLien>1</StyleLien>
                           <PreAssertion>?</PreAssertion>
                           <PostAssertion>?</PostAssertion>
                           <Titre>placementColonne ←
-placementColonne + 1</Titre>
+placementColonne - 1</Titre>
                           <DetailsVisible>0</DetailsVisible>
                           <DetailsVideVisible>1</DetailsVideVisible>
                           <Enfants/>
                         </Action>
                       </Enfants>
                     </Action>
-                  </Enfants>
-                </Iteration>
-              </Enfants>
-            </Action>
-          </Enfants>
-        </Action>
-        <Action>
-          <Position>2031;1332</Position>
-          <StyleLien>2</StyleLien>
-          <PreAssertion>colonne
-ligne</PreAssertion>
-          <PostAssertion>suite
-placementColonne
-placementLigne</PostAssertion>
-          <Titre>Initialisation</Titre>
-          <DetailsVisible>1</DetailsVisible>
-          <DetailsVideVisible>1</DetailsVideVisible>
-          <Enfants>
-            <Action>
-              <Position>1987;1420</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>?</PreAssertion>
-              <PostAssertion>?</PostAssertion>
-              <Titre>suite ← 0</Titre>
-              <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>0</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-            <Action>
-              <Position>2074;1421</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>?</PreAssertion>
-              <PostAssertion>?</PostAssertion>
-              <Titre>placementColonne ← colonne</Titre>
-              <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>0</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-            <Action>
-              <Position>2297;1421</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>?</PreAssertion>
-              <PostAssertion>?</PostAssertion>
-              <Titre>placementLigne ← ligne</Titre>
-              <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>0</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-          </Enfants>
-        </Action>
-        <Action>
-          <Position>3874;1331</Position>
-          <StyleLien>1</StyleLien>
-          <PreAssertion>?</PreAssertion>
-          <PostAssertion>?</PostAssertion>
-          <Titre>retourner true</Titre>
-          <DetailsVisible>0</DetailsVisible>
-          <DetailsVideVisible>1</DetailsVideVisible>
-          <Enfants/>
-        </Action>
-      </Enfants>
-    </Action>
-    <Sortie>
-      <Position>2464;1661</Position>
-    </Sortie>
-    <Sortie>
-      <Position>3366;1656</Position>
-    </Sortie>
-    <Sortie>
-      <Position>4494;811</Position>
-    </Sortie>
-    <Sortie>
-      <Position>3592;816</Position>
-    </Sortie>
-    <Action>
-      <Position>4155;377</Position>
-      <StyleLien>2</StyleLien>
-      <PreAssertion>ligne
-colonne
-nombreAverifier
-tableau</PreAssertion>
-      <PostAssertion>bool</PostAssertion>
-      <Titre>Procedure verificationDiagonalGauche (..)</Titre>
-      <DetailsVisible>1</DetailsVisible>
-      <DetailsVideVisible>1</DetailsVideVisible>
-      <Enfants>
-        <Action>
-          <Position>4183;494</Position>
-          <StyleLien>2</StyleLien>
-          <PreAssertion>suite
-placementLigne
-placementColonne</PreAssertion>
-          <PostAssertion>?</PostAssertion>
-          <Titre>Parcours séquentielle
-Verification de la diagonal</Titre>
-          <DetailsVisible>1</DetailsVisible>
-          <DetailsVideVisible>0</DetailsVideVisible>
-          <Enfants>
-            <Action>
-              <Position>3718;586</Position>
-              <StyleLien>2</StyleLien>
-              <PreAssertion>placementLigne
-placementColonne</PreAssertion>
-              <PostAssertion>placementLigne
-placementColonne</PostAssertion>
-              <Titre>Se mettre le plus en haut à droite possible</Titre>
-              <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants>
-                <Iteration>
-                  <Position>3979.5;659.5</Position>
-                  <StyleLien>1</StyleLien>
-                  <Titre>?</Titre>
-                  <IterationFixe>0</IterationFixe>
-                  <Enfants>
                     <Condition>
-                      <Position>3529.5;766</Position>
-                      <StyleLien>1</StyleLien>
-                      <estUnique>1</estUnique>
-                      <operationsLogiques>
-                        <operation>
-                          <Titre>Le placement se trouve sur un bord en haut a gauche</Titre>
-                          <Enfants/>
-                        </operation>
-                        <operation>
-                          <Titre>Sinon</Titre>
-                          <Enfants/>
-                        </operation>
-                      </operationsLogiques>
-                    </Condition>
-                    <Action>
-                      <Position>3751;765</Position>
-                      <StyleLien>2</StyleLien>
-                      <PreAssertion>placementLigne
-placementColonne</PreAssertion>
-                      <PostAssertion>placementLigne
-placementColonne</PostAssertion>
-                      <Titre>On se deplace en haut a droite</Titre>
-                      <DetailsVisible>1</DetailsVisible>
-                      <DetailsVideVisible>1</DetailsVideVisible>
-                      <Enfants>
-                        <Action>
-                          <Position>3764;873</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>?</PreAssertion>
-                          <PostAssertion>?</PostAssertion>
-                          <Titre>placementLigne ← placementLigne - 1</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
-                        </Action>
-                        <Action>
-                          <Position>4004;874</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>?</PreAssertion>
-                          <PostAssertion>?</PostAssertion>
-                          <Titre>placementColonne ←
-placementColonne + 1</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
-                        </Action>
-                      </Enfants>
-                    </Action>
-                  </Enfants>
-                </Iteration>
-              </Enfants>
-            </Action>
-            <Action>
-              <Position>4637;577</Position>
-              <StyleLien>2</StyleLien>
-              <PreAssertion>placementLigne
-placementColonne
-nombreAverifier
-suite</PreAssertion>
-              <PostAssertion>?</PostAssertion>
-              <Titre>Verification</Titre>
-              <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>0</DetailsVideVisible>
-              <Enfants>
-                <Iteration>
-                  <Position>4844.5;655.5</Position>
-                  <StyleLien>1</StyleLien>
-                  <Titre>?</Titre>
-                  <IterationFixe>0</IterationFixe>
-                  <Enfants>
-                    <Condition>
-                      <Position>4415.5;758</Position>
-                      <StyleLien>1</StyleLien>
-                      <estUnique>1</estUnique>
-                      <operationsLogiques>
-                        <operation>
-                          <Titre>Le placement se trouve sur un bord en bas a gauche</Titre>
-                          <Enfants/>
-                        </operation>
-                        <operation>
-                          <Titre>Sinon</Titre>
-                          <Enfants/>
-                        </operation>
-                      </operationsLogiques>
-                    </Condition>
-                    <Condition>
-                      <Position>4783.5;774</Position>
+                      <Position>3191.5;660</Position>
                       <StyleLien>0</StyleLien>
                       <estUnique>0</estUnique>
                       <operationsLogiques>
                         <operation>
-                          <Titre>Il y a 2 jetons de la même couleur cote a cote</Titre>
+                          <Titre>grille[placementLigne][placementColonne] == caseDuJeu et grille[placementLigne + 1][placementColonne - 1] == caseDuJeu</Titre>
                           <Enfants>
                             <Action>
-                              <Position>4499;874</Position>
-                              <StyleLien>1</StyleLien>
-                              <PreAssertion>?</PreAssertion>
-                              <PostAssertion>?</PostAssertion>
-                              <Titre>suite ← suite + 1</Titre>
-                              <DetailsVisible>0</DetailsVisible>
-                              <DetailsVideVisible>1</DetailsVideVisible>
-                              <Enfants/>
-                            </Action>
-                            <Action>
-                              <Position>4666;885</Position>
+                              <Position>3171;771</Position>
                               <StyleLien>2</StyleLien>
                               <PreAssertion>suite</PreAssertion>
                               <PostAssertion>?</PostAssertion>
@@ -1414,15 +1137,15 @@ suite</PreAssertion>
                               <DetailsVideVisible>0</DetailsVideVisible>
                               <Enfants>
                                 <Condition>
-                                  <Position>4746.5;957</Position>
+                                  <Position>3289.5;835</Position>
                                   <StyleLien>1</StyleLien>
                                   <estUnique>1</estUnique>
                                   <operationsLogiques>
                                     <operation>
-                                      <Titre>Une suite de 4 jetons conséqutif</Titre>
+                                      <Titre>suite == 3</Titre>
                                       <Enfants>
                                         <Action>
-                                          <Position>4778;1013</Position>
+                                          <Position>3282;900</Position>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>?</PreAssertion>
                                           <PostAssertion>?</PostAssertion>
@@ -1441,59 +1164,57 @@ suite</PreAssertion>
                                 </Condition>
                               </Enfants>
                             </Action>
+                            <Action>
+                              <Position>2846;775</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>suite</PostAssertion>
+                              <Titre>Incrementation de la suite de couleur</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants>
+                                <Action>
+                                  <Position>2882;851</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>suite ← suite + 1</Titre>
+                                  <DetailsVisible>0</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
+                            </Action>
                           </Enfants>
                         </operation>
                         <operation>
                           <Titre>Sinon</Titre>
                           <Enfants>
                             <Action>
-                              <Position>4984;887</Position>
-                              <StyleLien>1</StyleLien>
+                              <Position>3485;759</Position>
+                              <StyleLien>2</StyleLien>
                               <PreAssertion>?</PreAssertion>
-                              <PostAssertion>?</PostAssertion>
-                              <Titre>suite ← 0</Titre>
-                              <DetailsVisible>0</DetailsVisible>
-                              <DetailsVideVisible>1</DetailsVideVisible>
-                              <Enfants/>
+                              <PostAssertion>suite</PostAssertion>
+                              <Titre>Reinitialisation de la suite</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants>
+                                <Action>
+                                  <Position>3542;826</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>suite ← 0</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
                             </Action>
                           </Enfants>
                         </operation>
                       </operationsLogiques>
                     </Condition>
-                    <Action>
-                      <Position>5109;763</Position>
-                      <StyleLien>2</StyleLien>
-                      <PreAssertion>placementLigne
-placementColonne</PreAssertion>
-                      <PostAssertion>placementLigne
-placementColonne</PostAssertion>
-                      <Titre>On se deplace en bas a gauche</Titre>
-                      <DetailsVisible>1</DetailsVisible>
-                      <DetailsVideVisible>1</DetailsVideVisible>
-                      <Enfants>
-                        <Action>
-                          <Position>5122;871</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>?</PreAssertion>
-                          <PostAssertion>?</PostAssertion>
-                          <Titre>placementLigne ← placementLigne + 1</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
-                        </Action>
-                        <Action>
-                          <Position>5362;872</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>?</PreAssertion>
-                          <PostAssertion>?</PostAssertion>
-                          <Titre>placementColonne ←
-placementColonne - 1</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
-                        </Action>
-                      </Enfants>
-                    </Action>
                   </Enfants>
                 </Iteration>
               </Enfants>
@@ -1501,7 +1222,7 @@ placementColonne - 1</Titre>
           </Enfants>
         </Action>
         <Action>
-          <Position>3159;487</Position>
+          <Position>1551;356</Position>
           <StyleLien>2</StyleLien>
           <PreAssertion>colonne
 ligne</PreAssertion>
@@ -1513,39 +1234,63 @@ placementLigne</PostAssertion>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>3115;575</Position>
-              <StyleLien>1</StyleLien>
+              <Position>1341;437</Position>
+              <StyleLien>2</StyleLien>
               <PreAssertion>?</PreAssertion>
-              <PostAssertion>?</PostAssertion>
-              <Titre>suite ← 0</Titre>
+              <PostAssertion>suite</PostAssertion>
+              <Titre>Initialisation de la suite de couleur</Titre>
               <DetailsVisible>1</DetailsVisible>
               <DetailsVideVisible>0</DetailsVideVisible>
-              <Enfants/>
+              <Enfants>
+                <Action>
+                  <Position>1396;506</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>suite ← 0</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+              </Enfants>
             </Action>
             <Action>
-              <Position>3202;576</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>?</PreAssertion>
-              <PostAssertion>?</PostAssertion>
-              <Titre>placementColonne ← colonne</Titre>
+              <Position>1653;436</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>colonne
+ligne</PreAssertion>
+              <PostAssertion>placementColonne
+placementLigne</PostAssertion>
+              <Titre>Initialisation des placements de recherche pour etre precis</Titre>
               <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>0</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-            <Action>
-              <Position>3425;576</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>?</PreAssertion>
-              <PostAssertion>?</PostAssertion>
-              <Titre>placementLigne ← ligne</Titre>
-              <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>0</DetailsVideVisible>
-              <Enfants/>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants>
+                <Action>
+                  <Position>1647;512</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>placementColonne ← colonne</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+                <Action>
+                  <Position>1873;512</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>placementLigne ← ligne</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+              </Enfants>
             </Action>
           </Enfants>
         </Action>
         <Action>
-          <Position>5002;486</Position>
+          <Position>3294;354</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -1556,5 +1301,8 @@ placementLigne</PostAssertion>
         </Action>
       </Enfants>
     </Action>
+    <Sortie>
+      <Position>2836;692</Position>
+    </Sortie>
   </Elements>
 </Algorithme>
