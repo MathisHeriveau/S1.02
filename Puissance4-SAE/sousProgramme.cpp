@@ -272,44 +272,7 @@ bool verificationDiagonaleGauche(unsigned short int colonne, unsigned short int 
 
 void effacer() {
     # ifdef _WIN32
-        HANDLE idTerminal;
-        CONSOLE_SCREEN_BUFFER_INFO caracteristiquesTerminal;
-        DWORD count;
-        DWORD nbreCellulesDansTerminal;
-        COORD coordonneesOrigine = {0, 0};
-
-        idTerminal = GetStdHandle(STD_OUTPUT_HANDLE);
-        if (idTerminal == INVALID_HANDLE_VALUE)
-        {
-            return;
-        }
-
-        /* Calculer le nombre de cellules du terminal */
-        if (!GetConsoleScreenBufferInfo(idTerminal, &caracteristiquesTerminal))
-        {
-            return;
-        }
-        nbreCellulesDansTerminal = caracteristiquesTerminal.dwSize.X * caracteristiquesTerminal.dwSize.Y;
-
-        /* Remplir le terminal avec des espaces */
-        if (!FillConsoleOutputCharacter(idTerminal, (TCHAR)' ', nbreCellulesDansTerminal, coordonneesOrigine, &count))
-        {
-            return;
-        }
-
-        /*Remplir le terminal avec les couleurs courantes */
-        if (!FillConsoleOutputAttribute(
-                idTerminal,
-                caracteristiquesTerminal.wAttributes,
-                nbreCellulesDansTerminal,
-                coordonneesOrigine,
-                &count))
-        {
-            return;
-        }
-
-        /* Déplacer le curseur au début du terminal */
-        SetConsoleCursorPosition(idTerminal, coordonneesOrigine);
+    system("cls");
     #else
         cout << "\033[2J\033[1;1H";
     #endif
@@ -340,5 +303,5 @@ unsigned short int saisieVerifCase() {
         cin >> str;
     } while(!regex_match(str, regex_pattern));
 
-    return stoi(str);
+    return static_cast<unsigned short int>(stoi(str));
 }
