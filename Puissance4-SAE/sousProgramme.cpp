@@ -334,7 +334,7 @@ void afficherTitre(){
 
 unsigned short int saisieVerifCase() {
     string str;
-    regex regex_pattern("[0-6]");
+    regex regex_pattern("[0-6]|999");
     do {
         cout << "Saisissez une case : ";
         cin >> str;

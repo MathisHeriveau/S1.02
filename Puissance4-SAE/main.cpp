@@ -87,7 +87,7 @@ int main()
             jeton = pionRouge;          // Numéro du joueur
 
             // Affichage des informations sur le tour actuel
-            cout << "\n\nC'est a " << nomJoueurUn << " de jouer." << endl; // Affiche le nom du joueur
+            cout << "\n\nC'est à " << nomJoueurUn << " de jouer." << endl; // Affiche le nom du joueur
             cout << "Vous avez les jetons de couleur "; // Affichage des informations sur le jeton du joueur
             afficherTexteEnCouleur("rouge", rouge, true);
         }
