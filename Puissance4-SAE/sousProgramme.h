@@ -22,13 +22,7 @@
 #include <chrono>
 #include <random>
 
-using std::cout;
-using std::cin;
-using std::endl;
-using std::string;
-using std::flush;
-using std::regex;
-
+using namespace std;
 using namespace std::chrono;
 
 
