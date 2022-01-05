@@ -34,8 +34,8 @@ int main()
     string nomJoueurUn;   // Nom du joueur 1
     string nomJoueurDeux; // Nom du joueur 2 
 
-    bool statutPartie; // Définit le statut de la partie, s'il passe  à false, la partie est finie.
-    bool egalite;      // Passe à true s'il y a une égalité.
+    bool statutPartie;    // Définit le statut de la partie, s'il passe  à false, la partie est finie.
+    bool egalite;         // Passe à true s'il y a une égalité.
 
     unsigned short int nbTours;              // Compte le nombre de tours, permettant de savoir qui joue et quand il y a une égalité.
     unsigned short int choixDuJoueur;        // Choix de la colonne du joueur en cours.
@@ -48,7 +48,7 @@ int main()
     egalite = false;
     nbTours = 0;
     positionCase = 0;
-    choixDuPremierJoueur = static_cast<unsigned short int>(random(0, 1));
+    choixDuPremierJoueur = static_cast<unsigned short int>(random(0, 1)); // static_cast force la conversion du random en unsigned short int
 
     //.  ------------------------------- AFFICHAGE RÈGLES DU JEU -----------------------------------
     afficherTitre();
@@ -58,29 +58,29 @@ int main()
     cout << "Le premier joueur a reussir cela gagne automatiquement." << endl;
 
     //.  ------------------------- INITIALISATION DES NOMS DES JOUEURS -----------------------------
-    cout << "\nSaisissez le nom du joueur 1 : "; //Demande le nom du joueur 1
+    cout << "\nSaisissez le nom du joueur 1 : "; // Demande le nom du joueur 1
     cin >> nomJoueurUn;
-    cout << "Saisissez le nom du joueur 2 : "; //Demande le nom du joueur 2
+    cout << "Saisissez le nom du joueur 2 : ";   // Demande le nom du joueur 2
     cin >> nomJoueurDeux;
 
 
 
     //.  ===========================================================================================
-    //.                                        TRAITEMENTS                                          
+    //.                                            JEU                                              
     //.  ===========================================================================================
 
     // do-while simulant le jeu.
     do
     {
-        // Réinitialisation des variables à chaque tour
+        //.  ------------------ RÉINITIALISATION DES PARAMÈTRES À CHAQUE TOUR ----------------------
         positionCase = 0; // Position du jeton quand il tombe
         nbTours++;  // Tour de jeu
 
-        // Affichage de l'interface
+        //.  -------------------------------- AFFICHAGE DU JEU -------------------------------------
         afficherTitre();
         afficherJeu(grilleDeJeu);
 
-        // Si le nombre de tours est pair, c'est au tour du joueur qui a commencé.
+        //.  --------------------------------- TOUR DU JOUEUR --------------------------------------
         if (nbTours % 2 == choixDuPremierJoueur)
         {
             nomDuGagnant = nomJoueurUn; // Nom du joueur
@@ -88,7 +88,7 @@ int main()
 
             // Affichage des informations sur le tour actuel
             cout << "\n\nC'est à " << nomJoueurUn << " de jouer." << endl; // Affiche le nom du joueur
-            cout << "Vous avez les jetons de couleur "; // Affichage des informations sur le jeton du joueur
+            cout << "Vous avez les jetons de couleur ";                    // Affichage des informations sur le jeton du joueur
             afficherTexteEnCouleur("rouge", rouge, true);
         }
         else // Sinon, c'est à l'autre joueur
@@ -98,12 +98,12 @@ int main()
 
             // Affichage des informations sur le tour actuel
             cout << "\n\nC'est a " << nomJoueurDeux << " de jouer." << endl; // Affiche le nom du joueur
-            cout << "Vous avez les jetons de couleur "; // Affichage des informations sur le jeton du joueur
+            cout << "Vous avez les jetons de couleur ";                      // Affichage des informations sur le jeton du joueur
             afficherTexteEnCouleur("jaune", jaune, true);
         }
 
 
-        // Saisie-vérif du numéro de la case
+        //.  ---------------------------------- SAISIE/VÉRIF ---------------------------------------
         do {
             choixDuJoueur = saisieVerifCase();
             // On indique au joueur que s'il veut quitter la partie, il peut saisir 999.
@@ -114,6 +114,7 @@ int main()
         // On ne sort pas de la boucle si la colonne choisie n'est pas pleine.
         } while (grilleDeJeu[0][choixDuJoueur] != caseVide);
 
+        //.  --------------------------- LE JOUEUR N'ABAONDONNE PAS --------------------------------
         if (choixDuJoueur != 999)
         {
 
@@ -124,7 +125,7 @@ int main()
                 {
                     positionCase--;                                   // On remonte d'un crant
                     grilleDeJeu[positionCase][choixDuJoueur] = jeton; // On met le jeton avec le numéro du joueur
-                    break;                                        // On sort de la boucle
+                    break;                                            // On sort de la boucle
                 }
                 positionCase++; // On descend de case
             }
@@ -165,7 +166,9 @@ int main()
 
     } while (statutPartie != false);
 
-    //.  ------------------------------------- FIN DU JEU ------------------------------------------
+    //.  ===========================================================================================
+    //.                                     FIN DE LA PARTIE                                        
+    //.  ===========================================================================================
     if (choixDuJoueur != 999)
     {
         afficherTitre();
@@ -191,7 +194,7 @@ int main()
         }
         else
         {
-            afficherTexteEnCouleur("\n\nEGALITE ! ! !\n", rouge, true); //Egalité
+            afficherTexteEnCouleur("\n\nEGALITE ! ! !\n", rouge, true); // Égalité
         }
 
         cout << endl;
