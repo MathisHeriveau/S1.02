@@ -123,7 +123,7 @@ int main()
                 // Si on tombe sur un jeton ou on en trouve pas
                 if (positionCase == 6 || grilleDeJeu[positionCase][choixDuJoueur] > 0)
                 {
-                    positionCase--;                                   // On remonte d'un crant
+                    positionCase--;                                   // On remonte d'un cran
                     grilleDeJeu[positionCase][choixDuJoueur] = jeton; // On met le jeton avec le numéro du joueur
                     break;                                            // On sort de la boucle
                 }
@@ -163,7 +163,7 @@ int main()
             } // S'il n'y a plus de case libre, alors il y a égalité
             // Fin de la manche
         }
-
+    //.  ----------------------------------- LE JEU S'ARRETE ---------------------------------------
     } while (statutPartie != false);
 
     //.  ===========================================================================================
@@ -198,5 +198,7 @@ int main()
         }
 
         cout << endl;
+    } else {
+        cout << "Vous avez quitté. Au plaisir de vous revoir." << endl;
     }
 }

@@ -296,12 +296,14 @@ void afficherTitre(){
 
 
 unsigned short int saisieVerifCase() {
-    string str;
-    regex regex_pattern("[0-6]|999");
+    string saisie;
+    regex motif_regex("[0-6]|999"); // [0-6] correspont à la borne tel que 0 <= x <= 6.
+                                    // Le caractère '|' correspond à un "ou"
+                                    // Ce motif veut dont dire "pour tout nombre entre 0 et 6 compris ou égal à 999."
     do {
         cout << "Saisissez une case : ";
-        cin >> str;
-    } while(!regex_match(str, regex_pattern));
+        cin >> saisie;
+    } while(!regex_match(saisie, motif_regex)); // regex_match retourne true si il y a une correspondance entre le motif et la saisie.
 
-    return static_cast<unsigned short int>(stoi(str));
+    return static_cast<unsigned short int>(stoi(saisie)); // Conversion de saisie de char en int puis de int en unsigned short int
 }
