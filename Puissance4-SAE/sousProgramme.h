@@ -86,9 +86,9 @@ enum Couleur {
 /**\
   * @brief Permet d'afficher la grille de jeu.
   * 
-  * @param tableau tableau entier du jeu.
+  * @param grille grille entier du jeu.
 \**/
-void afficherJeu(Case tableau[6][7]);
+void afficherJeu(Case grille[6][7]);
 
 
 /**\
@@ -138,11 +138,11 @@ unsigned short int saisieVerifCase();
   * 
   * @param ligne Numéro de la ligne à vérifier.
   * @param caseDuJeu Dernière case jouée.
-  * @param tableau Tableau entier du jeu.
+  * @param grille Tableau entier du jeu.
   * @return true Quatres pions sont alignés horizontalement sur la ligne.
   * @return false Il n'y a pas quatres pions alignés dans cette ligne.
 \**/
-bool verificationHorizontale(unsigned short int ligne, Case caseDuJeu, Case tableau[6][7]);
+bool verificationHorizontale(unsigned short int ligne, Case caseDuJeu, Case grille[6][7]);
 
 
 /**\
@@ -150,11 +150,11 @@ bool verificationHorizontale(unsigned short int ligne, Case caseDuJeu, Case tabl
   * 
   * @param colonne numéro de la colonne à vérifier.
   * @param caseDuJeu Dernière case jouée
-  * @param tableau tableau entier du jeu
+  * @param grille grille entier du jeu
   * @return true Quatres pions sont alignés verticalement, fin de la partie.
   * @return false Il n'y a pas de pions alignés verticalement.
 \**/
-bool verificationVerticale(unsigned short int colonne, Case caseDuJeu, Case tableau[6][7]);
+bool verificationVerticale(unsigned short int colonne, Case caseDuJeu, Case grille[6][7]);
 
 
 /**\
@@ -163,11 +163,11 @@ bool verificationVerticale(unsigned short int colonne, Case caseDuJeu, Case tabl
   * @param colonne cooronée sur x de la diagonale à vérifier
   * @param ligne cooronée sur y de la diagonale à vérifier
   * @param caseDuJeu dernière case en jeu
-  * @param tableau tableau entier du jeu
+  * @param grille grille entier du jeu
   * @return true Quatres pions sont alignés diagonalement, fin de la partie.
   * @return false Il n'y a pas de pions alignés diagonalement.
 \**/
-bool verificationDiagonaleDroite(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case tableau[6][7]);
+bool verificationDiagonaleDroite(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case grille[6][7]);
 
 
 /**\
@@ -176,11 +176,11 @@ bool verificationDiagonaleDroite(unsigned short int colonne, unsigned short int 
   * @param colonne cooronée sur x de la diagonale à vérifier
   * @param ligne cooronée sur y de la diagonale à vérifier
   * @param caseDuJeu dernière case en jeu
-  * @param tableau tableau entier du jeu
+  * @param grille grille entier du jeu
   * @return true Quatres pions sont alignés diagonalelent, fin de la partie.
   * @return false Il n'y a pas de pions alignés diagonalement.
 \**/
-bool verificationDiagonaleGauche(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case tableau[6][7]);
+bool verificationDiagonaleGauche(unsigned short int colonne, unsigned short int ligne, Case caseDuJeu, Case grille[6][7]);
 
 
 

@@ -305,5 +305,5 @@ unsigned short int saisieVerifCase() {
         cin >> saisie;
     } while(!regex_match(saisie, motif_regex)); // regex_match retourne true si il y a une correspondance entre le motif et la saisie.
 
-    return static_cast<unsigned short int>(stoi(saisie)); // Conversion de saisie de char en int puis de int en unsigned short int
+    return static_cast<unsigned short int>(stoi(saisie)); // Conversion de saisie de char en int puis de int en unsigned short int.
 }
